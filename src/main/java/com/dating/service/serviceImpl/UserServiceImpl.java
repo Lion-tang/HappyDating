@@ -1,15 +1,16 @@
 package com.dating.service.serviceImpl;
 
 import com.dating.pojo.User;
-import com.dating.repository.UserMapper;
+import com.dating.mapper.UserMapper;
 import com.dating.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
     @Override

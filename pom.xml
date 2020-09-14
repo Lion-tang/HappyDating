@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.3.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from mapper -->
     </parent>
     <groupId>com.dating</groupId>
     <artifactId>blinddate</artifactId>
@@ -59,6 +59,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
         </dependency>
     </dependencies>
 
