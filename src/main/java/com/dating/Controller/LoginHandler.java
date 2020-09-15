@@ -2,6 +2,7 @@ package com.dating.Controller;
 
 import com.dating.pojo.User;
 import com.dating.service.UserService;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -13,6 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 @Controller
 public class LoginHandler {
@@ -46,11 +53,12 @@ public class LoginHandler {
         } catch (IncorrectCredentialsException e) {
             model.addAttribute("msg", "密码错误");
             e.printStackTrace();
-            return "login";
+            return "index";
+        }
         }
 
 
-    }
+
 
     @GetMapping("/{url}")
     public String urlHandler(@PathVariable("url") String url)

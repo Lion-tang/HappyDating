@@ -10,10 +10,14 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class LoginRealm extends AuthorizingRealm {
 
-    @Autowired
+import javax.annotation.Resource;
+
+
+public class LoginRealm extends AuthorizingRealm {
+    @Resource
     private UserService userService;
+
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         Subject subject = SecurityUtils.getSubject();
