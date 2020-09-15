@@ -75,7 +75,7 @@
         <include refid="where_condition"/>
     </select>
 
-    <select id="getDaters" parameterType="com.dating.pojo.UserInfo" resultType="com.dating.pojo.UserInfo">
+    <select id="isExist" parameterType="com.dating.pojo.UserInfo">
         <include refid="base_select"/>
         <where>
             <if test = "userName != null">
