@@ -13,5 +13,5 @@ public class UserInfo {
     private Integer weight;
     private String edu;
     private Integer salary;
-    private Integer telephone;
+    private Long telephone;
 }

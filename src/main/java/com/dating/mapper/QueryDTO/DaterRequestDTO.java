@@ -13,7 +13,7 @@ public class DaterRequestDTO {
     private Integer weight;
     private String edu;
     private Integer salary;
-    private Integer telephone;
+    private Long telephone;
     private String name;
     private Integer min_age;
     private Integer max_age;

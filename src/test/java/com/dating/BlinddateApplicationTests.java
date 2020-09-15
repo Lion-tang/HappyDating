@@ -31,8 +31,20 @@ class BlinddateApplicationTests {
     void updateUserTest(){
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName("yangyonzghi");
+        userInfo.setNick_name("真爱已死");
+        userInfo.setAge(22);
+        userInfo.setEdu("中南大学");
+        userInfo.setHeight(173);
+        userInfo.setWeight(69);
+        userInfo.setTelephone(13978884549L);
         userInfo.setSalary(15);
         System.out.println(userService.alterUserInfo(userInfo));
     }
 
+    @Test
+    void deleteUserTest(){
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUserName("yangyonzghi");
+        System.out.println(userService.deleteUser(userInfo));
+    }
 }

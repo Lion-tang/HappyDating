@@ -18,9 +18,9 @@
         FROM daters
     </sql>
 
-<!--    <sql id="order_condition">-->
-<!--        order by update_time desc-->
-<!--    </sql>-->
+    <sql id="order_condition">
+        order by update_time desc
+    </sql>
 
     <!-- 查询条件 -->
     <sql id="where_condition">
@@ -75,6 +75,15 @@
         <include refid="where_condition"/>
     </select>
 
+    <select id="getDaters" parameterType="com.dating.pojo.UserInfo" resultType="com.dating.pojo.UserInfo">
+        <include refid="base_select"/>
+        <where>
+            <if test = "userName != null">
+                AND user_name = #{userName}
+            </if>
+        </where>
+    </select>
+
     <!-- 通过主键id更新 -->
     <update id="updateByUserName" parameterType="com.dating.pojo.UserInfo">
         UPDATE daters
@@ -82,9 +91,6 @@
             <if test="nick_name != null">
                 nick_name = #{nick_name},
             </if>
-<!--            <if test="name != null">-->
-<!--                name = #{name},-->
-<!--            </if>-->
             <if test="age != null">
                 age = #{age},
             </if>
@@ -109,5 +115,10 @@
         </set>
         WHERE user_name = #{userName}
     </update>
+
+    <delete id="deleteUser" parameterType="com.dating.pojo.UserInfo">
+        DELETE FROM daters
+        <include refid="where_condition"/>
+    </delete>
 
 </mapper>

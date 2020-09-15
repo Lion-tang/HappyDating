@@ -16,4 +16,8 @@ public interface DatersMapper {
 
     public boolean updateByUserName(UserInfo userInfo);
 
+    public boolean isExist(UserInfo userInfo);
+
+    public boolean deleteUser(UserInfo userInfo);
+
 }

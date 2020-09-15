@@ -31,4 +31,12 @@ public class UserController {
         }
         return "失败";
     }
+
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
+    public String delete(UserInfo userInfo) {
+        if (userService.deleteUser(userInfo)) {
+            return "成功";
+        }
+        return "失败";
+    }
 }

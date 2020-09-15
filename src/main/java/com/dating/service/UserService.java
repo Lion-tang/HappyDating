@@ -14,5 +14,7 @@ public interface UserService {
 
     public boolean alterUserInfo(UserInfo userInfo);
 
+    public boolean deleteUser(UserInfo userInfo);
+
 }
 
