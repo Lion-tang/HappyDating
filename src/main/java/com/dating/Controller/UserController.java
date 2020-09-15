@@ -1,10 +1,11 @@
 package com.dating.Controller;
 
 import com.dating.mapper.QueryDTO.DaterRequestDTO;
-import com.dating.pojo.Dater;
+import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,11 +16,27 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping("/getDaters")
-    public String getDaters(DaterRequestDTO daterRequestDTO){
+    @RequestMapping(value = "/getDaters", method = RequestMethod.GET)
+    public List<String> getDaters(DaterRequestDTO daterRequestDTO) {
         //check
         //service(daterRequestDTO)
-        String response = userService.getDaters(daterRequestDTO);
+        List<String> response = userService.getDaters(daterRequestDTO);
         return response;
+    }
+
+    @RequestMapping(value = "/updateInfo", method = RequestMethod.POST)
+    public String updateUserInfo(UserInfo userInfo) {
+        if (userService.alterUserInfo(userInfo)) {
+            return "成功";
+        }
+        return "失败";
+    }
+
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
+    public String delete(UserInfo userInfo) {
+        if (userService.deleteUser(userInfo)) {
+            return "成功";
+        }
+        return "失败";
     }
 }

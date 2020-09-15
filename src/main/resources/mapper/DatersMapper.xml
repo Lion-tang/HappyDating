@@ -7,7 +7,8 @@
     <sql id="base_select">
         SELECT
         id                  AS id,
-        name                AS name,
+        user_name           AS userName,
+        nick_name           AS name,
         age                 AS age,
         sex                 AS sex,
         height              AS height,
@@ -17,14 +18,21 @@
         FROM daters
     </sql>
 
+    <sql id="order_condition">
+        order by update_time desc
+    </sql>
+
     <!-- 查询条件 -->
     <sql id="where_condition">
         <where>
             <if test="id != null">
                 AND id = #{id}
             </if>
-            <if test="name != null">
-                AND name = #{name}
+            <if test="userName != null">
+                AND user_name = #{userName}
+            </if>
+            <if test="nick_name != null">
+                AND nick_name = #{nick_name}
             </if>
             <if test="min_age != null">
                 AND age >= #{min_age}
@@ -62,9 +70,55 @@
         </where>
     </sql>
 
-    <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.Dater">
+    <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.UserInfo">
         <include refid="base_select"/>
         <include refid="where_condition"/>
     </select>
+
+    <select id="isExist" parameterType="com.dating.pojo.UserInfo">
+        <include refid="base_select"/>
+        <where>
+            <if test = "userName != null">
+                AND user_name = #{userName}
+            </if>
+        </where>
+    </select>
+
+    <!-- 通过主键id更新 -->
+    <update id="updateByUserName" parameterType="com.dating.pojo.UserInfo">
+        UPDATE daters
+        <set>
+            <if test="nick_name != null">
+                nick_name = #{nick_name},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="height != null">
+                height = #{height},
+            </if>
+            <if test="weight != null">
+                weight = #{weight},
+            </if>
+            <if test="edu != null">
+                edu = #{edu},
+            </if>
+            <if test="salary != null">
+                salary = #{salary},
+            </if>
+            <if test="telephone != null">
+                telephone = #{telephone},
+            </if>
+        </set>
+        WHERE user_name = #{userName}
+    </update>
+
+    <delete id="deleteUser" parameterType="com.dating.pojo.UserInfo">
+        DELETE FROM daters
+        <include refid="where_condition"/>
+    </delete>
 
 </mapper>
