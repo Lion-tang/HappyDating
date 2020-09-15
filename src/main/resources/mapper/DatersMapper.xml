@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dating.mapper.DatersMapper">
+
+    <!-- 通过字段名字映射 -->
+    <sql id="base_select">
+        SELECT
+        id                  AS id,
+        name                AS name,
+        age                 AS age,
+        sex                 AS sex,
+        height              AS height,
+        weight              AS weight,
+        edu                 AS edu,
+        salary              AS salary
+        FROM daters
+    </sql>
+
+    <!-- 查询条件 -->
+    <sql id="where_condition">
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="name != null">
+                AND name = #{name}
+            </if>
+            <if test="min_age != null">
+                AND age >= #{min_age}
+            </if>
+            <if test="max_age != null">
+                AND #{max_age} >= age
+            </if>
+            <if test="sex != null">
+                AND sex = #{sex}
+            </if>
+            <if test="min_height != null">
+                AND height >= #{min_height}
+            </if>
+            <if test="max_height != null">
+                AND #{max_height} >= height
+            </if>
+            <if test="min_weight != null">
+                AND weight >= #{min_weight}
+            </if>
+            <if test="max_weight != null">
+                AND #{max_weight} >= weight
+            </if>
+            <if test="edu != null">
+                AND edu = #{edu}
+            </if>
+            <if test="min_salary != null">
+                AND salary >= #{min_salary}
+            </if>
+            <if test="max_salary != null">
+                AND #{max_salary} >= salary
+            </if>
+            <if test="telephone != null">
+                AND telephone = #{telephone}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.Dater">
+        <include refid="base_select"/>
+        <include refid="where_condition"/>
+    </select>
+
+</mapper>
