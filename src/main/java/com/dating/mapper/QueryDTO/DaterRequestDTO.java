@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class DaterRequestDTO {
+    private String userName;
     private String name;
     private Integer min_age;
     private Integer max_age;

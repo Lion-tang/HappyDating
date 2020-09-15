@@ -12,5 +12,4 @@ public interface UserMapper {
 
     public User findByUserName(String username);
 
-//    public User findByPassword(String username);
 }

@@ -17,14 +17,18 @@
         FROM daters
     </sql>
 
+<!--    <sql id="order_condition">-->
+<!--        order by update_time desc-->
+<!--    </sql>-->
+
     <!-- 查询条件 -->
     <sql id="where_condition">
         <where>
             <if test="id != null">
                 AND id = #{id}
             </if>
-            <if test="name != null">
-                AND name = #{name}
+            <if test="userName != null">
+                AND name = #{userName}
             </if>
             <if test="min_age != null">
                 AND age >= #{min_age}
@@ -66,5 +70,43 @@
         <include refid="base_select"/>
         <include refid="where_condition"/>
     </select>
+
+    <!-- 通过主键id更新 -->
+    <update id="updateByUserName" parameterType="com.dating.pojo.UserInfo">
+        UPDATE daters
+        <set>
+            <if test="userName != null">
+                user_name = #{userName},
+            </if>
+            <if test="passWord != null">
+                pass_word = #{passWord},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="height != null">
+                height = #{height},
+            </if>
+            <if test="weight != null">
+                weight = #{weight},
+            </if>
+            <if test="edu != null">
+                edu = #{edu},
+            </if>
+            <if test="salary != null">
+                salary = #{salary},
+            </if>
+            <if test="telephone != null">
+                telephone = #{telephone},
+            </if>
+        </set>
+        WHERE user_name = #{userName}
+    </update>
 
 </mapper>
