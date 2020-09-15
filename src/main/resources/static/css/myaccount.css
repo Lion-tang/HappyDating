@@ -1,0 +1,1597 @@
+@charset "UTF-8";
+
+.profile-mainbox .w{
+    position:relative;
+}
+
+.profile-mainbox{
+    padding-top:90px;
+    padding-bottom:55px;
+}
+
+.profile-female{
+    background-color: #E55B4E;
+}
+
+.profile-male{
+    background-color: #3190B0;
+}
+
+.user-avatar{
+    width:238px;
+    padding:6px;
+    background-color: #fff;
+    padding-bottom:0;
+    position: relative;
+    cursor: pointer;
+}
+
+.user-avatar .user-check {
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    text-align: center;
+}
+
+.user-avatar .user-check span {
+    width: 238px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.user-avatar .avatar-update{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 238px;
+    height: 238px;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 999;
+    cursor: pointer;
+}
+
+.user-avatar .avatar-update span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 17px;
+}
+
+.profile-basic-main{
+    width: 600px;
+    max-width: 600px;
+    position:absolute;
+    right:0;
+    bottom:0;
+}
+
+.user-status-bar{
+    font-family: "SimSun", "宋体";
+    line-height:100%;
+    color:#fff;
+}
+
+.user-status-bar .username{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.credit-level-female{
+    background-color: #fff;
+    border-radius: 11px;
+    font-size:11px;
+    color:#E55B4E;
+    padding:2px 5px;
+    vertical-align: bottom;
+}
+
+.credit-level-female:hover{
+    color:#E55B4E;
+    text-decoration: underline;
+}
+
+
+.user-status-bar .uid{
+    font-family: "Microsoft YaHei";
+    font-size:13px;
+}
+
+.icon-verified-mobile-female{
+    width:21px;
+    height: 21px;
+    background: url(../images/icon_v160825.png) -100px -102px no-repeat;
+    vertical-align: bottom;
+}
+
+.profile-basic-info{
+    font-size:0;
+    color:#fff;
+    font-family: "SimSun", "宋体";
+    margin-top:10px;
+}
+
+.profile-basic-info span{
+    font-size:15px;
+    padding-right:10px;
+}
+
+.profile-basic-info .info-percent{
+    padding-left:20px;
+}
+
+.profile-basic-tag-list{
+    font-size:0;
+    color:#fff;
+}
+
+.profile-basic-tag-list span{
+    font-family: "SimSun", "宋体";
+    font-size:13px;
+    float:left;
+    padding:2px 10px;
+    border-radius: 24px;
+    border:1px solid #fff;
+    line-height:100%;
+    margin-right:10px;
+    margin-top:10px;
+}
+
+.profile-basic-relation{
+    font-size:0;
+    margin-top:20px;
+}
+
+.profile-basic-relation a{
+    font-family: "SimSun", "宋体";
+    font-size:12px;
+    display:inline-block;
+    color:#fff;
+    line-height:100%;
+}
+
+.profile-basic-relation a em{
+    display:inline-block;
+    margin-right:3px;
+    vertical-align: bottom;
+}
+
+.profile-basic-relation a{
+    padding:6px 10px;
+    margin-right:5px;
+}
+
+.profile-basic-relation a:hover{
+    opacity: 0.8;
+}
+
+.profile-basic-relation .icon-mess{
+    background-color: #48C3F0;
+}
+
+.profile-basic-relation .icon-mess em{
+    width:13px;
+    height:11px;
+    background:url(../images/icon_v160825.png) -46px -331px no-repeat;
+}
+
+.profile-basic-relation .icon-fav{
+    background-color: #64C86C;
+}
+
+.profile-basic-relation .icon-fav em{
+    width:13px;
+    height:11px;
+    background:url(../images/icon_v160825.png) -146px -371px no-repeat;
+}
+
+.profile-basic-relation .sayhi{
+    background-color: #6FD4B1;
+}
+
+.profile-basic-relation .sayhi em{
+    width:17px;
+    height:14px;
+    background:url(../images/icon_v160825.png) -219px -281px no-repeat;
+}
+
+.profile-basic-relation .sendgift{
+    background-color: #5DBBDE;
+}
+
+.profile-basic-relation .sendgift em{
+    width:9px;
+    height:12px;
+    background:url(../images/icon_v160825.png) -275px -331px no-repeat;
+}
+
+.send-gift-msg-box {
+    font-family: "SimSun", "宋体";
+    font-size:11px;
+    position:absolute;
+    bottom:-26px;
+    right:243px;
+    color:#636363;
+    background-color: #FFFFE0;
+    border:1px solid #F7CB91;
+    line-height:100%;
+    padding:5px 20px 5px 10px;
+    border-radius: 3px;
+}
+
+.send-gift-msg-box .upper-arrows{
+    position:absolute;
+    top:-3px;
+    left:50%;
+    transform:translate(0,-50%);
+    width:9px;
+    height:6px;
+    background:url(../images/icon_v160825.png) -22px -698px no-repeat;
+}
+
+.send-gift-msg-box .close-icon-btn{
+    position:absolute;
+    top:3px;
+    right:3px;
+    width:9px;
+    height:9px;
+    background:url(../images/icon_v160825.png) -101px -229px no-repeat;
+    cursor:pointer;
+}
+
+.send-gift-msg-box .close-icon-btn:hover{
+    background:url(../images/icon_v160825.png) -130px -229px no-repeat;
+}
+
+.profile-sns{
+    position:absolute;
+    font-size:0;
+    right:0;
+    bottom:-30px;
+    color:#fff;
+}
+
+.profile-sns span{
+    font-family: "SimSun", "宋体";
+    font-size:12px;
+    margin-right:5px;
+    line-height: 100%;
+}
+
+.profile-sns em{
+    display: inline-block;
+    width:19px;
+    height:19px;
+    cursor: pointer;
+    margin-right:5px;
+    vertical-align: top;
+}
+
+.profile-sns em:hover{
+    transition: all 0.5s;
+    transform-origin:center;
+    transform:rotateZ(360deg);
+}
+
+.profile-sns .weibo-trigger{
+    background:url(../images/sns_21_v140312.png) -22px -170px no-repeat;
+}
+
+.profile-sns .qzone-trigger{
+    background:url(../images/sns_21_v140312.png) -22px -250px no-repeat;
+}
+
+.profile-sns .renren-trigger{
+    background:url(../images/sns_21_v140312.png) -22px -290px no-repeat;
+}
+
+.profile-sns .qq-trigger{
+    background:url(../images/sns_21_v140312.png) -22px -370px no-repeat;
+}
+
+.profile-sns .weixin-trigger{
+    background:url(../images/sns_21_v140312.png) -22px -410px no-repeat;
+}
+
+.profile-sns .yixin-trigger{
+    background:url(../images/sns_21_v140312.png) -22px -450px no-repeat;
+}
+
+.profile-header{
+    position:absolute;
+    left:0;
+    top: 28px;
+    width:inherit;
+    background-color: #fff;
+    padding:20px 0;
+}
+
+.monolog-box{
+    font-family: "SimSun", "宋体";
+    color:#5B5B5B;
+    margin-left:30px;
+    position: relative;
+}
+
+.monolog-upper-arrows{
+    position:absolute;
+    top:-10px;
+    left:115px;
+    background:url(../images/icon_v160825.png) -215px -673px no-repeat;
+    width:27px;
+    height:10px;
+}
+
+.icon-quote-up{
+    background:url(../images/icon_v160825.png) -206px -310px no-repeat;
+    width:16px;
+    height:14px;
+    vertical-align: super;
+}
+
+.icon-quote-down{
+    background:url(../images/icon_v160825.png) -227px -310px no-repeat;
+    width:16px;
+    height:14px;
+    vertical-align: bottom;
+}
+
+.profile-content-box{
+    background-color: #EDEFF5;
+    padding-top:60px;
+}
+
+.con-left{
+    width:610px;
+    padding-left:30px;
+    padding-right:30px;
+    background-color: #fff;
+}
+
+.con-left .profile-tabbar{
+    padding-top:30px;
+    border-bottom:1px solid #F7F7F7;
+}
+
+.con-left .profile-tabbar li{
+    float:left;
+    font-size:18px;
+    color:#333;
+    line-height: 100%;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-right:40px;
+    cursor:pointer;
+}
+
+.con-left .profile-tabbar li.current{
+    font-weight: bold;
+    border-bottom:3px solid #F73E3E;
+}
+
+.photo-info .photo-trigger{
+    display:inline-block;
+    width:16px;
+    height:12px;
+    background:url(../images/icon_v160825.png) -122px -310px no-repeat;
+    vertical-align: middle;
+}
+
+.photo-info{
+    font-family: "SimSun", "宋体";
+    color:#8A8F9C;
+    font-size:13px;
+}
+
+.photo-info a{
+    color:#8A8F9C;
+}
+
+.photo-info a:hover{
+    text-decoration: underline;
+}
+
+.photo-info strong{
+    color:#333;
+}
+
+.trend-js .photo-media{
+    font-size:0;
+    margin-top:10px;
+}
+
+.trend-js .photo-media a{
+    margin-right:8px;
+}
+
+.trend-js .trend-item-title{
+    font-family: "SimSun", "宋体";
+    font-size:14px;
+}
+
+.trend-js .trend-footer , .trend-js .media-info a{
+    color:#BABABA;
+    font-size:11px;
+}
+
+.trend-js .trend-footer{
+    margin-top:10px;
+}
+
+.trend-js li{
+    padding-bottom:20px;
+    border-bottom:1px solid #EEF1F9;
+    padding-left: 70px;
+    border-left: 3px solid #E9ECF3;
+    position: relative;
+}
+
+.trend-js .profile-trend-time-wrapper {
+    height: 34px;
+    left: -55px;
+    position: absolute;
+    top: 15px;
+    width: 88px;
+    z-index: 8;
+}
+
+.profile-time-arrowTop {
+    border-bottom: 4px solid #DFE3ED;
+    top: -5px;
+}
+
+.profile-time-arrowTop, .profile-time-arrowBottom {
+    border-left: 4px solid #FFF;
+    border-right: 4px solid #FFF;
+    font-size: 0;
+    height: 2px;
+    left: 50px;
+    position: absolute;
+    width: 0;
+    z-index: 1;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.profile-trend-time {
+    background: #FFF;
+    border: 1px solid #DFE3ED;
+    height: 32px;
+    position: relative;
+    width: 88px;
+    z-index: 2;
+}
+
+.profile-time-ym {
+    font: 11px/32px tahoma;
+    height: 32px;
+    left: 0;
+    padding-left: 6px;
+    position: absolute;
+    top: 0;
+    width: 46px;
+    white-space: nowrap;
+}
+
+.text-dark-gray {
+    color: #5B5B5B;
+}
+
+.profile-time-d {
+    float: right;
+    font: bold 24px/32px Arial;
+    height: 32px;
+    text-align: center;
+    width: 36px;
+}
+
+.text-red, a.link-red, a.link-red:hover, .link-red a, .link-red a:hover {
+    color: #FF3333;
+}
+
+.profile-time-arrowBottom {
+    border-top: 4px solid #DFE3ED;
+    bottom: -5px;
+}
+.profile-time-arrowTop, .profile-time-arrowBottom {
+    border-left: 4px solid #FFF;
+    border-right: 4px solid #FFF;
+    font-size: 0;
+    height: 2px;
+    left: 50px;
+    position: absolute;
+    width: 0;
+    z-index: 1;
+}
+
+.trend-js .media-info{
+    padding-top:8px;
+}
+
+.trend-js .media-info a:hover{
+    text-decoration: underline;
+}
+
+.trend-js .trend-publish-time{
+    width:9px;
+    height:9px;
+    background:url(../images/icon_v160825.png) -164px -331px no-repeat;
+}
+
+.right-contact-btn a{
+    position:relative;
+    display:inline-block;
+    border:1px solid #EBEBEB;
+    min-width: 60px;
+    /*padding:4px 0 4px 10px;*/
+    font-size:8px;
+    font-weight:700;
+    color:#999999;
+    vertical-align:middle;
+}
+
+.right-contact-btn a:hover{
+    /*color:#999999;*/
+}
+
+.right-contact-btn .likes{
+    padding-left:33px;
+}
+
+.right-contact-btn .icon-like{
+    position:absolute;
+    left:10px;
+    top:50%;
+    margin-top:-9px;
+    display:inline-block;
+    width:17px;
+    height:17px;
+    margin-right:5px;
+    /*vertical-align:middle;*/
+}
+
+.right-contact-btn .native{
+    background: url(../images/icon_v160825.png) -64px -371px no-repeat;
+}
+
+.right-contact-btn .invoke{
+    background: url(../images/icon_v160825.png) -42px -371px no-repeat;
+}
+
+.right-contact-btn .current{
+    border:1px solid #C3C3C3;
+}
+
+.right-contact-btn .icon-send-msg{
+    height:30px;
+}
+
+.right-contact-btn .icon-send-msg .native{
+    width:18px;
+    height:13px;
+    margin-top:-7px;
+    left:50%;
+    margin-left:-9px;
+    background: url(../images/icon_v160825.png) 0 -331px no-repeat;
+}
+
+.right-contact-btn .icon-send-msg .invoke{
+    background: url(../images/icon_v160825.png) -23px -331px no-repeat;
+}
+
+.dating-list-info{
+    font-family: "SimSun", "宋体";
+    font-size:12px;
+    color:#5B5B5B;
+    line-height:28px;
+}
+
+.dating-list-info em{
+    display:inline-block;
+    width:13px;
+    height: 13px;
+    vertical-align: sub;
+}
+
+.dating-cost{
+    background: url(../images/icon_v160825.png) -133px -84px no-repeat;
+}
+
+.dating-time{
+    background: url(../images/icon_v160825.png) -151px -84px no-repeat;
+}
+
+.dating-location{
+    width:12px;
+    height:14px;
+    background: url(../images/icon_v160825.png) -169px -84px no-repeat;
+}
+
+.dating-desc{
+    width:13px;
+    height:14px;
+    background: url(../images/icon_v160825.png) -186px -84px no-repeat;
+}
+
+.dating-publish-date em{
+    display:inline-block;
+    width:9px;
+    height: 9px;
+    vertical-align: initial;
+    background: url(../images/icon_v160825.png) -164px -331px no-repeat;
+}
+
+.dating-list-title{
+    font-size:15px;
+    color:#333;
+}
+
+.dating-publish-media{
+    margin-left:10px;
+}
+
+.footer-text{
+    color:#BABABA;
+}
+
+.dating-publish-media a{
+    color:#BABABA;
+}
+
+.dating-publish-media a:hover{
+    text-decoration: underline;
+}
+
+.dating-list-info{
+    padding-top:10px;
+}
+
+.profile-join-btn a{
+    font-weight: normal;
+    text-align: center;
+}
+
+.footer-text .media-info{
+    font-family:"Microsoft YaHei";
+    padding-top:8px;
+}
+
+.lover-desc-box,.summary-info-box{
+    font-size:14px;
+    font-family: "SimSun", "宋体";
+    color:#333;
+    padding-bottom:50px;
+}
+
+.label-text{
+    font-weight: bold;
+    font-size:16px;
+    color:#5B5B5B;
+    padding:10px 0;
+}
+
+.lover-desc-box {
+    position: relative;
+}
+
+.lover-desc-box span.keyword{
+    display:inline-block;
+    font-weight: bold;
+    color:#447BAF;
+}
+
+.text-gray{
+    color:#8A8F9C;
+}
+
+
+.summary-info-box p span{
+    display:inline-block;
+    width:275px;
+    text-align: right;
+}
+
+.con-right{
+    width:232px;
+    background-color: #fff;
+    padding:9px;
+}
+
+.gift-box{
+
+}
+
+.text-h2{
+    color:#5B5B5B;
+    font-size:12px;
+    font-weight: bold;
+}
+
+.gift-count{
+    font-size:13px;
+}
+
+.gift-count i{
+    color:#FF3333;
+}
+
+.gift-list-box{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.gift-list-box .icon-gift{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-25px;
+    transform:translateY(-50%);
+    width:48px;
+    height:55px;
+    background: url(../images/gift_sprites.png) 0 -78px no-repeat;
+}
+
+.gift-list-box li{
+    position:relative;
+    float:left;
+    width:70px;
+    height:70px;
+    overflow:hidden;
+    cursor:pointer;
+    background-color: #F7F7F7;
+}
+
+.gift-list-box .icon-left-arrows{
+    position:absolute;
+    bottom:20px;
+    left:-1px;
+    width:0;
+    height:0;
+    font-size:0;
+    border-width: 0 0 11px 11px;
+    border-style:none none solid dashed;
+    border-color:transparent transparent #3796B9;
+}
+
+.gift-list-box .icon-right-arrows{
+    position:absolute;
+    bottom:20px;
+    right:1px;
+    width:0;
+    height:0;
+    font-size:0;
+    border-width: 0 11px 11px 0;
+    border-style:none solid dashed none;
+    border-color:transparent transparent #3796B9;
+}
+
+.gift-list-box .send-gift-text{
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:inherit;
+    text-align:center;
+    color:#fff;
+    font-size:11px;
+    background-color: #5DBBDE;
+    line-height:20px;
+}
+
+.gift-list-box li.first-icon-bar{
+    background: none;
+}
+
+.gift-list-box .gift-item-desc-text{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:70px;
+    height:0;
+    background-color: #EEEEEE;
+    font-family: SimSun;
+    color:#333333;
+    font-size:12px;
+    line-height:20px;
+    text-align: center;
+    transition: all 0.25s;
+    overflow: hidden;
+}
+
+.gift-list-box .gift-item-desc-text.hovered{
+    height:70px;
+}
+
+.gift-list-pagination{
+    margin-top:10px;
+    margin-right:5px;
+}
+
+.gift-list-pagination a{
+    display:inline-block;
+    width:9px;
+    height:15px;
+}
+
+.gift-list-pagination .pages-prev{
+     background:url(../images/icon_v160825.png) -206px -653px no-repeat;
+ }
+
+.gift-list-pagination .pages-prev.disable{
+    background:url(../images/icon_v160825.png) -220px -653px no-repeat;
+}
+
+.gift-list-pagination .pages-next{
+    margin-left:15px;
+    background:url(../images/icon_v160825.png) -234px -653px no-repeat;
+}
+
+.gift-list-pagination .pages-next.disable{
+    background:url(../images/icon_v160825.png) -249px -653px no-repeat;
+}
+
+.contact-us{
+    width:230px;
+    position:relative;
+}
+
+.contact-us .top-text{
+    position:relative;
+    margin-top:30px;
+    color:#5B5B5B;
+}
+
+.contact-us .top-text span{
+    font-size:12px;
+    font-weight: bold;
+}
+
+.contact-us li{
+    font-size:12px;
+    font-family: "SimSun", "宋体";
+    color:#5B5B5B;
+}
+
+.contact-us li a{
+    color:#333;
+}
+
+.contact-us .wrap-font{
+    padding-left:60px;
+    display:inline-block;
+    color:#333;
+}
+
+.contact-us .main-info li a:hover{
+    text-decoration: underline;
+}
+
+.contact-us .serval-info a{
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:2px;
+}
+
+.contact-us .sina-icon{
+    width:18px;
+    height:18px;
+    background:url(../images/icon_v160825.png) -161px -584px no-repeat;
+}
+
+.contact-us .douban-icon{
+    width:17px;
+    height:17px;
+    background:url(../images/icon_v160825.png) -184px -584px no-repeat;
+}
+
+.contact-us .wx-icon{
+    width:18px;
+    height:18px;
+    background:url(../images/icon_v160825.png) -207px -584px no-repeat;
+}
+
+.market-cooperation{
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+.contact-info{
+    font-size:11px;
+    color:#333;
+    font-family: "SimSun", "宋体";
+}
+
+.contact-info span{
+    color:#5b5b5b;
+}
+
+.weixin-guide{
+    background-color: #FFF4DE;
+    text-align: center;
+    color:#777B82;
+    font-size:12px;
+    line-height:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.weixin-guide p i{
+    color:#FF3333;
+}
+
+.weixin-guide img{
+    width:180px;
+}
+
+.weixin-guide .qr-bg{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.system-ads{
+    text-align: center;
+}
+
+.profile-basic-tag-desc {
+    position: relative;
+    margin-top: 10px;
+    font-family: "SimSun", "宋体";
+    color:#fff;
+    font-size:13px;
+}
+
+.profile-basic-tag-desc a {
+    font-family: "SimSun", "宋体";
+    color:#fff;
+    font-size:13px;
+    text-decoration: underline;
+}
+
+.profile-basic-tag-desc .icon-edit-s {
+    cursor: pointer;
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    top: 6px;
+    left: 260px;
+    background: url(../images/icon_v160825.png) -113px -84px no-repeat;
+}
+
+.modal-layer .content {
+    margin-left: 123px;
+}
+
+.modal-layer .content .result-inner {
+    position: relative;
+    padding-left: 50px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.modal-layer .content .result-inner em {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 46px;
+    height: 52px;
+    background: url(../images/noresult.png);
+}
+
+.modal-layer .content .result-inner .js-tips {
+    font-family: "SimSun", "宋体";
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.modal-layer .content .result-inner .js-tips a {
+    color: #4D97EF;
+}
+
+.modal-layer .content .result-inner .js-tips a:hover {
+    text-decoration: underline;
+}
+
+/*通用编辑小图标开始*/
+.a-icon-edit {
+    display: inline-block;
+    width: 22px;
+    height: 23px;
+    background: url(../images/icon_v160825.png) 0 -24px no-repeat;
+    cursor: pointer;
+}
+
+.a-icon-edit:hover {
+    background: url(../images/icon_v160825.png) -28px -24px no-repeat;
+}
+
+.lover-desc-box .js-edit {
+    position: relative;
+}
+
+.js-edit-btn {
+    position: absolute;
+    top: 13px;
+    right: 0;
+}
+
+.lover-desc-box .js-tips .icon-close {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: url(../images/icon_v160825.png) -101px -229px no-repeat;
+}
+
+.lover-desc-box .js-tips .icon-close:hover {
+    background: url(../images/icon_v160825.png) -130px -229px no-repeat;
+}
+
+.lover-desc-box .js-tips {
+    background-color: #FFF1DF;
+    padding-left: 20px;
+}
+
+.js-edit-btn .a-cancel-edit-text {
+    font-size: 12px;
+    color: #7F97B4;
+}
+
+.lover-desc-box .js-edit-btn .a-cancel-edit-text:hover {
+    text-decoration: underline;
+}
+
+.lover-desc-box .js-tips span {
+    font-size: 10px;
+    color: #5B5B5B;
+}
+
+.js-edit .form-row .form-control {
+    margin-top: 0;
+    display: inline-block;
+}
+
+.form-row .form-control select {
+    font-size: 13px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.form-row label {
+    width: 100px;
+    display: inline-block;
+    color: #8A8F9C;
+    font-size: 14px;
+    text-align: right;
+}
+
+.js-education-select{
+    width: 168px !important;
+}
+
+.form-row {
+    margin-top: 2px !important;
+    padding-left: 125px;
+}
+
+.form-row .submit-btn {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.member-base-info {
+    position: relative;
+}
+
+.member-base-info .form-row .form-control input, .form-row .form-control .input-text {
+    border: 1px solid #AAAAAA;
+    font-size: 13px;
+    line-height: 0;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-family: Arial;
+}
+
+.input-text.single-column {
+    display: inline-block;
+    width: 202px !important;
+}
+
+.form-control select.single-column {
+    width: 224px !important;
+}
+
+.form-row .form-control .col-w-6 {
+    width: 108px !important;
+}
+
+.member-detail-box {
+    position: relative;
+}
+
+/*大学的模态框开始*/
+.modal-layer .modal-layer-main {
+    width: 710px;
+    background-color: #E8E8E8;
+}
+
+.select-university .main-box {
+    background-color: #E8E8E8;
+}
+
+.select-university .js-body {
+    background: #F3F3F3;
+}
+
+.select-university .js-body .poplayer-bd {
+    padding: 15px 20px 30px;
+    /*background-color: #F7F7F7;*/
+}
+
+.select-university .poplayer-schoolbox-select {
+    background-color: #F3F3F3;
+}
+
+.select-university .poplayer-schoolbox-select .select-label {
+    color: #636363;
+    font-size: 12px;
+}
+
+.poplayer-schoolbox-select .js-select-province {
+    width: 120px;
+}
+
+.poplayer-schoolbox-select .select-label .click-trigger {
+    color: #333;
+}
+
+.poplayer-schoolbox-select .select-label .click-trigger:hover {
+    text-decoration: underline;
+}
+
+.poplayer-schoolbox-select-form input {
+    border: 1px solid #A9A9A9;
+    height: 17px;
+    line-height: 30px;
+    font-size: 13px;
+}
+
+.poplayer-schoolbox-select span.select-label {
+    margin-left: 10px;
+}
+
+.select-university .poplayer-schoolbox-list {
+    width: 655px;
+    height: 405px;
+    background-color: #F7F7F7;
+    margin-top: 10px;
+}
+.select-university .poplayer-schoolbox-list .js-list {
+    padding-left: 10px;
+}
+
+.select-university .poplayer-schoolbox-list .js-list li {
+    font-size: 12px;
+    font-family: Arial;
+    float: left;
+    width: 166px;
+    color: #333;
+    cursor: pointer;
+    line-height: 22px;
+}
+
+.select-university .poplayer-schoolbox-list .js-list .square {
+    background-color: #333;
+    display: inline-block;
+    font-size: 0;
+    height: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 3px;
+}
+
+/*大学的模态框结束*/
+
+.profile-monolog-preview .js-edit-btn {
+    top: 3px;
+    right: 28px;
+}
+
+.profile-monolog-edit-hd {
+    position: relative;
+}
+
+.profile-monolog-edit-hd h3 {
+    font-weight: bold;
+    font-size: 17px;
+    color: #333;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+
+.profile-monolog-edit-hd .profile-monolog-tips {
+    font-size: 12px;
+    color: #ff0000;
+}
+
+.profile-monolog-edit-hd .js-edit-btn {
+    top: 3px;
+    right: 28px;
+}
+
+.profile-monolog-textarea {
+    border: 1px solid #D8D8D8;
+    padding: 10px 16px;
+    width: 845px;
+    margin-top: 10px;
+}
+
+.profile-monolog-textarea textarea {
+    border: none;
+    font-size: 14px;
+    color: #666;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    line-height: 21px;
+    height: 63px;
+    width: inherit;
+}
+
+.profile-monolog-edit-send {
+    margin-top: 10px;
+}
+
+.profile-monolog-edit-send .js-body {
+    float: right;
+    margin-right: 30px;
+}
+
+.profile-monolog-edit-send .js-body .red-button {
+    font-size: 13px;
+    padding: 5px 12px;
+}
+
+.profile-monolog-preview .icon-noresult-s {
+    width: 31px;
+    height: 35px;
+    display: inline-block;
+    background: url(../images/noresult_s.png) no-repeat;
+    vertical-align: bottom;
+}
+
+.modal-layer.private-mess-box .poplayer-bd {
+    padding: 15px 20px;
+}
+
+.modal-layer.private-mess-box .mess-tips-close {
+    background-color: #FFF1DF;
+    font-size: 12px;
+    color: #5B5B5B;
+    font-family: Arial;
+    padding-left: 5px;
+}
+
+.private-mess-box .poplayer-send-message-addressee {
+    font-size: 12px;
+    overflow: hidden;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.private-mess-box .poplayer-send-message-addressee .fl {
+    color: #999;
+}
+
+.private-mess-box .poplayer-send-message-addressee .fl i {
+    color: #333;
+}
+
+.private-mess-box .poplayer-send-message-addressee .fr a {
+    color: #7F97B4;
+}
+
+.private-mess-box .poplayer-send-message-addressee .fr a:hover {
+    text-decoration: underline;
+}
+
+.private-mess-box .publish-textarea {
+    padding: 5px;
+    border: 1px solid #C7C7C7;
+}
+
+.private-mess-box .publish-textarea textarea {
+    font-size: 14px;
+    line-height: 21px;
+    height: 58px;
+    padding: 0;
+    border: none;
+    width: 100%;
+    overflow-y: hidden;
+    outline: none;
+}
+
+.publish-operate .icon-face {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    vertical-align: text-top;
+    background: url(../images/icon_v170920.png) -56px -24px no-repeat;
+}
+
+.publish-operate {
+    margin-top: 2px;
+    color: #5B5B5B;
+    font-size: 12px;
+}
+
+.publish-operate .js-set-top {
+    vertical-align: text-bottom;
+}
+
+.publish-operate .text-red {
+    color: #FF3333;
+}
+
+.publish-operate .text-red:hover {
+    text-decoration: underline;
+}
+
+.emoji-layer {
+    width: inherit;
+    position: absolute;
+    left: 0;
+    top: 237px;
+    background-color: #F3F3F3;
+    border: 1px solid #666666;
+    box-shadow: 0 0 10px #666;
+}
+
+.emoji-layer .icon-winlayer-arrow-up {
+    position: absolute;
+    top: -8px;
+    left: 23px;
+    width: 14px;
+    height: 8px;
+    background: url(../images/icon_v170920.png) -109px -673px no-repeat;
+}
+
+.winlayer-emoji-list {
+    padding: 10px 20px;
+}
+
+.winlayer-emoji-list > ul > li {
+    float: left;
+    /*border-left: 1px solid #D9D9D9;*/
+    /*border-top: 1px solid #D9D9D9;*/
+    border: 1px solid #D9D9D9;
+    height: 33px;
+    width: 33px;
+    background-color: #fff;
+}
+
+.winlayer-emoji-list > ul > li a {
+    display: inherit;
+    background: #fff;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.winlayer-emoji-list > ul > li:hover {
+    border: 1px solid #4295F7;
+}
+
+.emoji-layer .emoji-select-tip {
+    font-size: 12px;
+    font-family: Arial;
+    margin-top: 10px;
+}
+
+/*送礼物模态框开始*/
+.modal-layer.send-gift .main-box {
+    width: 830px;
+}
+
+.modal-layer.send-gift .title-row {
+    color: #fff;
+    height: 53px;
+    background: url(../images/module/gift/bg.png) repeat-x;
+}
+
+.modal-layer.send-gift .title-row .icon-close {
+    top: 19px;
+    background: url(../images/icon_v160825.png) -116px -229px no-repeat;
+}
+
+.modal-layer.send-gift .foot-row {
+    background-color: #E2DFDD;
+}
+
+.modal-layer.send-gift .js-body {
+    background-color: #F2F2F2;
+}
+
+.modal-layer.send-gift .poplayer-bd {
+    background-color: #F2F2F2;
+    padding: 22px 16px 24px;
+}
+
+.modal-layer.send-gift .poplayer-bd .poplayer-gift-tips {
+    margin-bottom: 20px;
+}
+
+.modal-layer.send-gift .vip-text{
+    color:#ff0000 !important;
+}
+
+.modal-layer.send-gift .vip-text:hover {
+    text-decoration: underline;
+}
+
+.modal-layer.send-gift .vip-open-icon{
+    display:inline-block;
+    width:16px;
+    height:12px;
+    background: url(../images/icon_v160825.png) -206px -477px no-repeat;
+}
+
+.modal-layer.send-gift .poplayer-slider-content {
+    position: relative;
+    height: 410px;
+    margin: 0 auto;
+    width: 740px;
+    overflow: hidden;
+}
+
+.modal-layer.send-gift .arrow-area {
+    position: relative;
+}
+
+.modal-layer.send-gift .poplayer-slider-prev {
+    position: absolute;
+    top: 187px;
+    left: 0;
+    width: 18px;
+    height: 32px;
+    background: url(../images/icon_v170920.png) 0 -729px no-repeat;
+}
+
+.modal-layer.send-gift .poplayer-slider-prev.disabled {
+    cursor: default;
+    background: url(../images/icon_v170920.png) -46px -729px no-repeat;
+}
+
+.modal-layer.send-gift .poplayer-slider-next {
+    position: absolute;
+    top: 187px;
+    right: 0;
+    width: 18px;
+    height: 32px;
+    background: url(../images/icon_v170920.png) -23px -729px no-repeat;
+}
+
+.modal-layer.send-gift .poplayer-slider-next.disabled {
+    cursor: default;
+    background: url(../images/icon_v170920.png) -69px -729px no-repeat;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-list-ul > li {
+    width: 127px;
+    float: left;
+    background-color: #fff;
+    border: 4px solid #fff;
+    margin: 0 16px 16px 0;
+    position: relative;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-list-ul > li:hover {
+    border: 4px solid #50B61C;
+    overflow: hidden;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-list-ul {
+    width: 740px;
+    /*width: 2265px;*/
+    position: relative;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .poplayer-gift-list-box {
+    width: 2265px;
+    position: absolute;
+    left: 0;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-list-ul li.selected {
+    border: 4px solid #50B61C;
+    overflow: hidden;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-list-ul li:nth-child(5) {
+    margin-right: 0 !important;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-list-ul li:nth-child(10) {
+    margin-right: 0 !important;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-img-box {
+    height: 121px;
+    text-align: center;
+    /*overflow: hidden;*/
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-desc-box {
+    color: #FFF;
+    font-size: 12px;
+    position: relative;
+    left: -4px;
+    /*overflow: hidden;*/
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-desc-box > span {
+    height: 20px;
+    float: left;
+    background: #FF7979;
+    line-height: 20px;
+    padding-left: 5px;
+    display: block;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-desc-box > em {
+    border-style: dashed none dashed solid;
+    border-color: transparent #FF7979;
+    border-width: 10px 0 10px 10px;
+    display: block;
+    float: left;
+    font-size: 0;
+    height: 0;
+    width: 0;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-name {
+    font-size: 12px;
+    font-weight: bold;
+    color: #5B5B5B;
+    padding: 0 5px;
+    margin-bottom: 2px;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .gift-price {
+    color: #999;
+    font-size: 12px;
+    font-family: "SimSun", "宋体";
+    padding-left: 7px;
+    line-height: 13px;
+    padding-bottom: 3px;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .icon-vip-privilege {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 53px;
+    height: 53px;
+    background: url(../images/icon_v170920.png) -275px -943px no-repeat;
+}
+
+.modal-layer.send-gift .poplayer-slider-content .icon-gift-selected {
+    width: 15px;
+    height: 15px;
+    right: -4px;
+    bottom: -4px;
+    position: absolute;
+    background: url(../images/icon_v170920.png) -165px -349px no-repeat;
+}
+/*送礼物模态框结束*/

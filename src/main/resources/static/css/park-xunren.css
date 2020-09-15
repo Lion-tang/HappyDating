@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+.recomm-publish .comm-text{
+    display:inline-block;
+    background-color: #EDEDED;
+    padding:9px 35px;
+    padding-bottom:10px;
+    font-size:16px;
+    color:#5B5B5B;
+}
+
+.park-banner-inner a.park-banner-btn{
+    margin-left:0;
+}
+
+.recommand-filter{
+    font-size:0;
+    margin-top:45px;
+}
+
+.recommand-filter a{
+    display:inline-block;
+    width:126px;
+    height: 50px;
+    font-size:24px;
+    line-height: 50px;
+    text-align: center;
+    margin-right:5px;
+    color:#999999;
+
+}
+
+.recommand-filter a:hover{
+    background-color: #EDEDED;
+    text-decoration: underline;
+}
+
+.recommand-filter a.current{
+    color:#333333;
+    background-color: #EDEDED;
+    font-weight: bold;
+}
+
+.recommand-user li{
+    border-top:1px solid #F1F1F1;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.recommand-user li.hovered{
+    background-color: #F8F8F8;
+}
+
+.recommand-user li .a-box{
+    position:relative;
+    display:block;
+    overflow: hidden;
+    padding:20px 10px 0 10px;
+}
+
+.recommand-user ul li:last-child{
+    border-bottom:1px solid #F1F1F1;
+    padding-bottom:20px;
+}
+
+.recommand-user-desc-title{
+    font-size:18px;
+    color:#333;
+}
+
+.recommand-user-desc{
+    width:648px;
+    padding:0 20px;
+}
+
+.recommand-user-desc-content{
+    font-size:14px;
+    color:#999;
+    line-height:24px;
+    overflow: hidden;
+}
+
+.recommand-user-view{
+    position:relative;
+    text-align:center;
+    line-height:150%;
+    width:115px;
+    height:88px;
+    overflow: hidden;
+}
+
+.recommand-user-view .injection{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.recommand-user-view .view-count{
+    color:#535358;
+    font-size:15px;
+}
+
+.recommand-user-view .text-fo{
+    font-size:12px;
+    color:#999999;
+}
+
+.recommand-user .view-shadow{
+    display:none;
+    position:absolute;
+    top:0;
+    right:0;
+    width:138px;
+    height:121px;
+    background-color: #CC1B1B;
+}
+
+.recommand-user .text-tips{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#fff;
+    font-size:16px;
+    line-height:100%;
+}
+
+.recommand-user .text-tips:hover{
+    text-decoration: underline;
+}
+
+.recommand-list{
+    margin-bottom:20px;
+}
+
+.js-footer{
+    margin-bottom:20px;
+}
+

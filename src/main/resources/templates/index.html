@@ -3,19 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <link rel="stylesheet" href="../static/css/base.css"/>
+    <link rel="stylesheet" href="../static/css/login.css"/>
+    <!--type = text/javascript -->
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/login.js"></script>
 </head>
 <body>
-<h1>欢迎回来</h1>
-<a href="/main">欢迎界面</a>
-<span th:text="${msg}" style="color: red"></span>
 
-<form action="/login" method="post">
-    用户名：<input type="text" name="username" /><br/>
-    用户姓名：<input type="text" name="password" /><br/>
 
-    <input type="submit" value="登录"/>
-</form>
 
+<!--<form action="/login" method="post">-->
+<!--用户名：<input type="text" name="username" /><br/>-->
+<!--用户姓名：<input type="text" name="password" /><br/>-->
+
+<!--<input type="submit" value="登录"/>-->
+<!--</form>-->
+<section id="top-login">
+    <div class="w login-shadow">
+        <div class="certification">
+            <div class="login-logo"></div>
+            <div class="login-frame">
+                <ul class="line-bar clearfix">
+                    <li class="active">登录</li>
+                    <li>注册</li>
+
+                </ul>
+                <div class="content content-1">
+                    <div class="left-form fl">
+                        <span th:text="${msg}" style="color: red"></span>
+                        <form action="/login" method="post">
+
+                            <div class="login-input">
+                                <i class="user-icon"></i>
+                                <input type="text" name="username" placeholder="用户名"/>
+                                <i class="clear-text"></i>
+                            </div>
+                            <div class="login-input" style="margin-top:-1px;">
+                                <i class="pass-icon"></i>
+                                <input type="password" name="password" placeholder="6-20位密码，区分大小写"/>
+                            </div>
+                            <div class="err-dialog"><i></i><span>请输入密码</span></div>
+                            <div>
+                                <input type="submit" class="submit-btn enable" value="登&nbsp;&nbsp;录"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="middle">
+    <div class="w">
+        <div class="top-new">
+            <div class="top-ad">
+                <img src="../static/images/slogan_v140723.jpg" />
+                <p>已有 <b>50万</b> 位大学狗在缘来有你注册</p>
+                <h1>缘来有你是什么？</h1>
+                <p>
+                    缘来有你是中南大学商学院旗下的恋爱交友社区，在这里可以谈恋爱也可以交朋友。缘来有你沟通免费，私信随便发，招呼随便打
+                    注册缘来有你需要身份认证，在这里交友特安全。也许你一个人生活也不错，说不定两个人一起更快活。
+                </p>
+            </div>
+        </div>
+        <div class="banner1">
+            <img src="../static/images/mac.png" alt="">
+            <div class="left-iphone"></div>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    <div class="top">
+        <h4>上缘来有你，轻松找对象</h4>
+        <div class="down-btn clearfix"><a href="#">登录缘来有你</a></div>
+        <p class="p1">关注缘来有你：客服微信号：tt19991133</p>
+        <p class="p2">iPhone用户客服QQ：361092772</p>
+    </div>
+
+</footer>
 </body>
 </html>

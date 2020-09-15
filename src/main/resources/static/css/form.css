@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+.form-control input, .form-control select{
+    font-size: 15px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.form-control select:required:invalid {
+    color: gray;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
+.form-control .required-symbol {
+    padding-right: 5px;
+    color: #FF3346;
+}
+
+.form-control .text-icon-tips {
+    padding-left: 5px;
+}
+
+.text-icon-tips-correct {
+    display: none;
+}
+
+.text-icon-tips-correct .icon-correct-check {
+    display: inline-block;
+    vertical-align: sub;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icon_v160825.png) -32px -185px no-repeat;
+}
+
+.text-icon-tips-correct.on{
+    display: inline;
+}
+
+.form-control .text-icon-tips-incorrect {
+    display: none;
+    border: 1px solid #E39F9F;
+    padding: 5px;
+    border-radius: 3px;
+    color: #EC3636;
+    font-size: 11px;
+}
+
+.text-icon-tips-incorrect.on {
+    display: inline;
+}
+
+.text-icon-tips-incorrect .icon-incorrect-check {
+    display: inline-block;
+    vertical-align: sub;
+    width: 14px;
+    height: 14px;
+    background: url(../images/icon_v160825.png) -64px -210px no-repeat;
+}
+
+.form-control {
+    margin-top: 20px;
+}
+
+.form-control .col-12 {
+    width: 365px;
+}
+
+.form-control .col-6 {
+    width: 179px;
+}
+
+.form-control .input-radio {
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.form-control .form-inline {
+    margin-right: 10px;
+}
+
+.form-control .birth {
+    width: 114px;
+    height: 30px;
+}
+
+.form-control .select-row {
+    width: 375px;
+    height: 30px;
+}
+
+.form-control .col-6 {
+    height: 30px;
+}
+
+.verify-tips {
+    width: 375px;
+    height: 5px;
+    padding-top: 20px;
+}
+
+.verify-tips p {
+    position:relative;
+    height: 1px;
+    width:470px;
+    background-color: #E5E5E5;
+}
+
+.verify-tips p .tips-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #A9A9A9;
+    background-color: #fff;
+    font-size: 11px;
+}
+
+.form-control .height-common {
+    height: 30px;
+}
+
+.form-control .col-5 {
+    width: 143px;
+}
+
+.form-control .col-7 {
+    width: 205px;
+}
+
+.form-control .col-9 {
+    width: 265px;
+}
+
+.verify-code-btn {
+    background-color: #FF3333;
+    padding:5px 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.verify-code-btn.disabled {
+    background-color: #C7C7C7;
+    color: #A2A2A2;
+    cursor: default;
+}
+
+.verify-code-btn:hover {
+    opacity: 0.8;
+}
+
+.verify-code-btn.disabled {
+    opacity: 1;
+}
+
+.font-11 {
+    font-size: 11px;
+}
+
+.font-11 i {
+    color: #8A8F9C;
+}
+
+.red-btn {
+    background-color: #FF3333;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    font-family: Arial;
+}
+
+.red-btn:hover {
+    color: #fff;
+    background-color: #FF7D6C;
+}
+
+/*
+下面是一些最公共，但非常通用的样式
+*/
+
+.general-btn {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    outline: none;
+    text-align: center;
+}
+
+.red-button {
+    background-color: #FF3333;
+    color: #fff;
+}
+
+.red-button:hover {
+    color: #fff;
+    background-color: #FF7D6C;
+}
+
+.gray-button {
+    background: #9C9C9C;
+    color: #FFF !important;
+}
+
+.gray-button:hover {
+    background-color: #C6C8CB;
+}
+
+.submit-red-button.disabled {
+    background-color: #C7C7C7;
+    color: #A2A2A2;
+}
+
+
+/*弹出的模态框开始*/
+
+.modal-layer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9999;
+}
+
+.modal-layer .main-box {
+    border: 1px solid #0E2A33;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 1px;
+    padding-right: 1px;
+    box-shadow: 0 0 1px 0 #000;
+}
+
+.modal-layer-main-sm {
+    width: 555px;
+}
+
+.modal-layer .title-row {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #EDEDED;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.modal-layer .title-row > h3 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.modal-layer .title-row .icon-close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid transparent;
+    right: 15px;
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    background: url(../images/icon_v160825.png) -101px -229px no-repeat;
+}
+
+.modal-layer .title-row .icon-close:hover {
+    border: 2px solid #FF5555;
+    background: url(../images/icon_v160825.png) -116px -229px no-repeat;
+    background-color: #FF5555;
+}
+
+.modal-layer .foot-row {
+    position: relative;
+    background: #F0F0F0;
+    height: 40px;
+}
+
+.modal-layer .foot-row .red-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/*弹出的模态框结束*/
