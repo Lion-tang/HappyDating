@@ -3,6 +3,7 @@ package com.dating.service.serviceImpl;
 import com.dating.pojo.User;
 import com.dating.mapper.UserMapper;
 import com.dating.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,7 +16,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUserName(String username) {
+<<<<<<< Updated upstream
         User user = userMapper.findByUsername(username);
+=======
+        User user = userMapper.findByUserName(username);
+>>>>>>> Stashed changes
         return user;
     }
 
