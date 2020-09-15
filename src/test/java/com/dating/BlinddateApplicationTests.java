@@ -22,10 +22,17 @@ class BlinddateApplicationTests {
     @Test
     void getDatersTest(){
         DaterRequestDTO daterRequestDTO = new DaterRequestDTO();
-        daterRequestDTO.setName("zhangsan");
         daterRequestDTO.setEdu("中南大学");
         List<String> result = userService.getDaters(daterRequestDTO);
         System.out.println(result);
+    }
+
+    @Test
+    void updateUserTest(){
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUserName("yangyonzghi");
+        userInfo.setSalary(15);
+        System.out.println(userService.alterUserInfo(userInfo));
     }
 
 }

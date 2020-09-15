@@ -79,9 +79,6 @@
     <update id="updateByUserName" parameterType="com.dating.pojo.UserInfo">
         UPDATE daters
         <set>
-            <if test="userName != null">
-                user_name = #{userName},
-            </if>
             <if test="nick_name != null">
                 nick_name = #{nick_name},
             </if>
