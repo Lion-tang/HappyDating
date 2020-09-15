@@ -1,7 +1,6 @@
 package com.dating.Controller;
 
 import com.dating.mapper.QueryDTO.DaterRequestDTO;
-import com.dating.pojo.Dater;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -18,10 +17,10 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/getDaters", method = RequestMethod.GET)
-    public String getDaters(DaterRequestDTO daterRequestDTO) {
+    public List<String> getDaters(DaterRequestDTO daterRequestDTO) {
         //check
         //service(daterRequestDTO)
-        String response = userService.getDaters(daterRequestDTO);
+        List<String> response = userService.getDaters(daterRequestDTO);
         return response;
     }
 

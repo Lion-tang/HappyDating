@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class UserInfo {
+    private Long id;
     private String userName;
-    private String passWord;
-    private String name;
+    private String nick_name;
     private Integer age;
     private String sex;
     private Integer height;

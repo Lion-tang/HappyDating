@@ -7,7 +7,8 @@
     <sql id="base_select">
         SELECT
         id                  AS id,
-        name                AS name,
+        user_name           AS userName,
+        nick_name           AS name,
         age                 AS age,
         sex                 AS sex,
         height              AS height,
@@ -28,7 +29,10 @@
                 AND id = #{id}
             </if>
             <if test="userName != null">
-                AND name = #{userName}
+                AND user_name = #{userName}
+            </if>
+            <if test="nick_name != null">
+                AND nick_name = #{nick_name}
             </if>
             <if test="min_age != null">
                 AND age >= #{min_age}
@@ -66,7 +70,7 @@
         </where>
     </sql>
 
-    <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.Dater">
+    <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.UserInfo">
         <include refid="base_select"/>
         <include refid="where_condition"/>
     </select>
@@ -78,12 +82,12 @@
             <if test="userName != null">
                 user_name = #{userName},
             </if>
-            <if test="passWord != null">
-                pass_word = #{passWord},
+            <if test="nick_name != null">
+                nick_name = #{nick_name},
             </if>
-            <if test="name != null">
-                name = #{name},
-            </if>
+<!--            <if test="name != null">-->
+<!--                name = #{name},-->
+<!--            </if>-->
             <if test="age != null">
                 age = #{age},
             </if>

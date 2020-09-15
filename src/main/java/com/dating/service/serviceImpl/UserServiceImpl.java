@@ -3,15 +3,14 @@ package com.dating.service.serviceImpl;
 import com.dating.mapper.DatersMapper;
 import com.dating.mapper.QueryDTO.DaterRequestDTO;
 import com.dating.mapper.UserMapper;
-import com.dating.pojo.Dater;
 import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,16 +25,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUserName(String username) {
-        User user = userMapper.findByUserName(username);
-        return user;
+        return userMapper.findByUserName(username);
     }
 
-    public String getDaters(DaterRequestDTO daterRequestDTO) {
-        List<Dater> daters = datersMapper.getDaters(daterRequestDTO);
-        String result = "";
+    public List<String> getDaters(DaterRequestDTO daterRequestDTO) {
+        List<UserInfo> daters = datersMapper.getDaters(daterRequestDTO);
+        List<String> result = new ArrayList<String>();
         while (!daters.isEmpty()) {
-            Dater dater = daters.remove(0);
-            result = result + new Gson().toJson(dater);
+            UserInfo dater = daters.remove(0);
+            result.add(new Gson().toJson(dater));
         }
         return result;
     }

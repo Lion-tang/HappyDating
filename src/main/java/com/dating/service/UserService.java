@@ -4,11 +4,13 @@ import com.dating.mapper.QueryDTO.DaterRequestDTO;
 import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 
+import java.util.List;
+
 public interface UserService {
 
     public User findByUserName(String username);
 
-    public String getDaters(DaterRequestDTO daterRequestDTO);
+    public List<String> getDaters(DaterRequestDTO daterRequestDTO);
 
     public boolean alterUserInfo(UserInfo userInfo);
 
