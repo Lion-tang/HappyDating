@@ -7,10 +7,10 @@ spring:
     mode: HTML5
     encoding: UTF-8
   datasource:
-    url: jdbc:mysql://localhost:3306/date?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/date?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.dating.pojo

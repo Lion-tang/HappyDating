@@ -1,4 +1,4 @@
-package com.dating.Realm;
+package com.dating.realm;
 
 import com.dating.pojo.User;
 import com.dating.service.UserService;
@@ -8,14 +8,10 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Map;
-
-
 public class LoginRealm extends AuthorizingRealm {
+
     @Autowired
     private UserService userService;
-
-
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         return null;
@@ -24,11 +20,10 @@ public class LoginRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
-        User user = userService.findByusername(token.getUsername());
-        if (user != null) {
-            return new SimpleAuthenticationInfo(user, user.getPassword(), getName());
+        User user = userService.findByUserName(token.getUsername());
+        if(user != null){
+            return new SimpleAuthenticationInfo(user,user.getPassword(),getName());
         }
-
         return null;
     }
 }

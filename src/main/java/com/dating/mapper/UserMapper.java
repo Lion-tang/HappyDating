@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 public interface UserMapper {
     public User findByUsername(String username);
 
+//    public User findByPassword(String username);
 }

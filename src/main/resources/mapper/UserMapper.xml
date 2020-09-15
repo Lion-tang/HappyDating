@@ -2,7 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dating.mapper.UserMapper">
-    <select id="findById" parameterType="String" resultType="com.dating.pojo.User">
+    <select id="findByUsername" parameterType="String" resultType="com.dating.pojo.User">
         select * from user where username = #{username}
     </select>
+
 </mapper>
