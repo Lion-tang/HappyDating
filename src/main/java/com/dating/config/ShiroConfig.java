@@ -22,6 +22,7 @@ public class ShiroConfig {
         map.put("/admin", "perms[manage]");
         factoryBean.setFilterChainDefinitionMap(map);
         factoryBean.setLoginUrl("/index");
+        factoryBean.setUnauthorizedUrl("/unauthc");
         return factoryBean;
     }
 
