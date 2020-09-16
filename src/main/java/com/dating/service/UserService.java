@@ -12,7 +12,7 @@ public interface UserService {
 
     public List<String> getDaters(DaterRequestDTO daterRequestDTO);
 
-    public boolean alterUserInfo(UserInfo userInfo);
+    public boolean updateUserInfo(UserInfo userInfo);
 
     public boolean deleteUser(UserInfo userInfo);
 

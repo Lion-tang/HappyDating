@@ -26,7 +26,7 @@ public class UserController {
 
     @RequestMapping(value = "/updateInfo", method = RequestMethod.POST)
     public String updateUserInfo(UserInfo userInfo) {
-        if (userService.alterUserInfo(userInfo)) {
+        if (userService.updateUserInfo(userInfo)) {
             return "成功";
         }
         return "失败";

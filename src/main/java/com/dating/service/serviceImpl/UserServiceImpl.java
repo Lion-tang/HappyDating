@@ -7,8 +7,6 @@ import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -41,7 +39,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean alterUserInfo(UserInfo userInfo) {
+    public boolean updateUserInfo(UserInfo userInfo) {
         try {
             datersDAO.isExist(userInfo);
             datersDAO.updateByUserName(userInfo);

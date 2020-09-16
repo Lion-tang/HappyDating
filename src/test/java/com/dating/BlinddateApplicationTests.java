@@ -38,7 +38,7 @@ class BlinddateApplicationTests {
         userInfo.setWeight(69);
         userInfo.setTelephone(13978884549L);
         userInfo.setSalary(15);
-        System.out.println(userService.alterUserInfo(userInfo));
+        System.out.println(userService.updateUserInfo(userInfo));
     }
 
     @Test
