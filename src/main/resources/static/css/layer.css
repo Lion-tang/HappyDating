@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+#layer{
+    display:none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.8);
+    z-index:999;
+}
+
+#layer .layer-content .close-x{
+    position: absolute;
+    top:10px;
+    right:10px;
+    width:9px;
+    height:9px;
+    opacity: 0.5;
+    cursor: pointer;
+    background:url(../images/icon_v160825.png) -130px -229px no-repeat;
+}
+
+#layer .layer-content .close-x:hover{
+    opacity: 1;
+}
+
+#layer .layer-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:805px;
+    height:530px;
+    margin-top:-265px;
+    margin-left:-403px;
+    background-color: #fff;
+}
+
+#layer .layer-content .album-panel{
+    position:relative;
+    width:530px;
+    height:530px;
+    background-color: #000;
+    color:#434343;
+}
+
+#layer .layer-content .user-panel{
+    width:205px;
+    padding:25px 35px;
+}
+
+.layer-content .current-show .center-show{
+    display:block;
+    margin:0 auto;
+}
+
+#layer .active-img{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    padding:10px 0 10px 0;
+    z-index:9;
+    background-color: #000;
+}
+
+#layer .active-img .pagination{
+    position:relative;
+    width:40px;
+    height:40px;
+    padding-left:20px;
+    margin-top:5px;
+}
+
+#layer .active-img .pagination .current-pages{
+    display:inline-block;
+    position: absolute;
+    top:0;
+    left:40%;
+    font-weight:700;
+    color:#8C8C8C;
+}
+
+#layer .active-img .pagination .total-pages{
+    display:inline-block;
+    position: absolute;
+    bottom:0;
+    right:15%;
+    font-size:11px;
+    font-family: "SimSun", "宋体";
+}
+
+#layer .active-img .slash{
+    display:inline-block;
+    margin-left:5px;
+    width:30px;
+    height:1px;
+    background-color: #434343;
+    transform:rotate(-50deg);
+}
+
+#layer .small-image-list li{
+    float:left;
+    margin-right:5px;
+    cursor: pointer;
+    border:3px solid #000;
+}
+
+#layer .small-image-list .hover-border{
+    /*border:3px solid #5373FF;*/
+    border:3px solid #7182CD;
+}
+
+#layer .small-image-list .selected-border{
+    border:3px solid #5373FF;
+}
+
+#layer .active-img .l_arrows{
+    position:absolute;
+    cursor: pointer;
+    left:-20px;
+    top:50%;
+    margin-top:-9px;
+    width:11px;
+    height:18px;
+    background:url(../images/icon_v160825.png) -32px -770px no-repeat;
+    margin-right:10px;
+}
+
+#layer .active-img .r_arrows{
+    position:absolute;
+    cursor: pointer;
+    right:-12px;
+    top:50%;
+    margin-top:-9px;
+    width:11px;
+    height:18px;
+    background:url(../images/icon_v160825.png) -47px -770px no-repeat;
+}
+
+#layer .active-img .js-switch{
+    position:relative;
+    margin-left:25px;
+}
+
+#layer .right-contact-btn{
+    font-size:12px;
+    font-weight:100;
+}
+
+#layer .right-contact-btn .likes{
+    padding-left:30px;
+}
+
+#layer .user-panel .topic-title{
+    color:#333;
+    font-size:15px;
+    font-weight: 700;
+}
+
+#layer .user-panel .topic-title:hover{
+    text-decoration: underline;
+}
+
+#layer .user-panel .media-info{
+    color:#999;
+    font-size:12px;
+    font-family: "SimSun", "宋体";
+    text-align: right;
+    margin:10px 0 15px 0;
+}
