@@ -157,8 +157,7 @@
         </trim>
     </sql>
 
-    <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO"
-            resultType="com.dating.pojo.UserInfo">
+
 
     <select id="getDaters" parameterType="com.dating.DAO.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.UserInfo">
         <include refid="base_select"/>

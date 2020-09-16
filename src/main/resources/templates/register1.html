@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/register.css">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/common.js"></script>
+</head>
+<body>
+
+
+<!--系统注册页-->
+<header>
+    <div class="top-nav">
+        <div class="w">
+            <div class="left-area">
+                <div class="logo">
+                    <a href="#"></a>
+                </div>
+                <ul class="nav">
+                    <li class="current"><a href="/index">返回登陆</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<form action="/register1" method="post">
+<div class="content-box" >
+    <div class="w">
+        <div class="signup-titlebox">
+            <div class="sign-title">
+                <h2>欢迎来到中南大学旗下恋爱交友社区！</h2>
+                <h3>完成注册，开启寻爱之旅</h3>
+            </div>
+            <div class="sign-board">
+                <div class="sign-board-bar">
+                    <div class="internal-box"></div>
+                </div>
+                <div class="sign-board-content">
+                    <p><i>5,50,000</i> 位用户在缘来有你等你</p>
+                    <p><i>300,000</i> 位用户在缘来有你找到对象</p>
+                </div>
+            </div>
+        </div>
+        <div class="signup-menu clearfix">
+            <div class="s-tab1 visited fl"><span>创建个人账户</span></div>
+            <div class="s-tab2 fl"><span>完成个人信息</span></div>
+        </div>
+
+        <div class="signup-form-content">
+            <div class="form-control">
+                <span th:text="${msg}" style="color: red"></span>
+                <br/>
+                <span class="required-symbol">*</span>
+                <labal>用 户 名：</labal>
+                <span class="form-inline">
+                    <input  class="col-12" type="text" name="userName"  placeholder="用户名做登录使用">
+                </span>
+            </div>
+
+            <div class="form-control">
+                <span class="required-symbol">*</span>
+                <labal>密 &nbsp; 码：</labal>
+                <span class="form-inline">
+                    <input class="col-12" type="password" name="passWord"  placeholder="密码不超过20位">
+                </span>
+            </div>
+
+
+            <div class="form-control">
+                <input class="register-step1-btn" type="submit"  value="下一步" ></input>
+            </div>
+
+        </div>
+    </div>
+</div>
+</form>
+<div id="footer">
+    <div class="w">
+        <div class="bot">
+            增值电信业务经营许可证：<a href="#">湘B2-XXXXXXXXX</a><br/>
+            中南大学版权所有<br/>
+            <i>©2020</i>
+        </div>
+    </div>
+</div>
+</body>
+</html>
