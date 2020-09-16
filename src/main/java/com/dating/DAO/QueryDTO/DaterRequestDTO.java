@@ -23,4 +23,6 @@ public class DaterRequestDTO {
     private Integer minWeight;
     private Integer minSalary;
     private Integer maxSalary;
+    private String province;
+    private String city;
 }

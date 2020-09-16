@@ -3,11 +3,13 @@ package com.dating;
 
 import com.dating.DAO.QueryDTO.DaterRequestDTO;
 
+import com.dating.pojo.MsgInfo;
 import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -22,7 +24,7 @@ class BlinddateApplicationTests {
     }
 
     @Test
-    void getDatersTest(){
+    void getDatersTest() {
         DaterRequestDTO daterRequestDTO = new DaterRequestDTO();
         daterRequestDTO.setEdu("中南大学");
         List<String> result = userService.getDaters(daterRequestDTO);
@@ -30,7 +32,7 @@ class BlinddateApplicationTests {
     }
 
     @Test
-    void updateUserTest(){
+    void updateUserTest() {
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName("yangyongzhi");
         userInfo.setNickName("真爱已死");
@@ -46,7 +48,7 @@ class BlinddateApplicationTests {
     }
 
     @Test
-    void deleteUserTest(){
+    void deleteUserTest() {
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName("yangyonzghi");
         System.out.println(userService.deleteUserInfo(userInfo));
@@ -56,7 +58,7 @@ class BlinddateApplicationTests {
     void insertUserInfoTest() {
         UserInfo userInfo = new UserInfo();
         User user = new User();
-        String username = "wangwu";
+        String username = "yangyongzhi";
         user.setUserName(username);
         user.setPassWord("123456");
         userInfo.setUserName(username);
@@ -69,6 +71,20 @@ class BlinddateApplicationTests {
         userInfo.setSalary(20);
         userInfo.setCity("长沙");
         userInfo.setProvince("湖南");
-        System.out.println(userService.insertUserAndUserInfo(user,userInfo));
+        System.out.println(userService.insertUserAndUserInfo(user, userInfo));
+    }
+
+    @Test
+    void getMsg() {
+        String userName = "";
+    }
+
+    @Test
+    void leaveMsg(){
+        MsgInfo msgInfo = new MsgInfo();
+        msgInfo.setUserName("yangyongzhi");
+        msgInfo.setFromUserName("wangwu");
+        msgInfo.setInfo("你是傻子");
+        System.out.println(userService.leaveMessage(msgInfo));
     }
 }
