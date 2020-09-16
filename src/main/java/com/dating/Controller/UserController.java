@@ -47,4 +47,10 @@ public class UserController {
         ParameterCheckUtils.checkMsgInfo(msgInfo);
         return userService.leaveMessage(msgInfo);
     }
+
+    @RequestMapping(value = "/gettips", method = RequestMethod.GET)
+    public List<String> getTips(){
+        return userService.getTips();
+    }
+
 }

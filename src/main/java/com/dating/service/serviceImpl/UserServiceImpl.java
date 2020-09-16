@@ -3,8 +3,10 @@ package com.dating.service.serviceImpl;
 import com.dating.DAO.DatersDAO;
 import com.dating.DAO.MessageDAO;
 import com.dating.DAO.QueryDTO.DaterRequestDTO;
+import com.dating.DAO.TipsDAO;
 import com.dating.DAO.UserDAO;
 import com.dating.pojo.MsgInfo;
+import com.dating.pojo.Tips;
 import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
@@ -26,6 +28,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private MessageDAO messageDAO;
+
+    @Resource
+    private TipsDAO tipsDAO;
 
     @Override
     public List<String> leaveMessage(MsgInfo msgInfo) {
@@ -96,6 +101,18 @@ public class UserServiceImpl implements UserService {
         }
 
         return true;
+    }
+
+    @Override
+    public List<String> getTips() {
+        List<Tips> tipsList = tipsDAO.getTips();
+        List<String> result = new ArrayList<>();
+
+        while(!tipsList.isEmpty()){
+            Tips tips = tipsList.remove(0);
+            result.add(new Gson().toJson(tips));
+        }
+        return result;
     }
 
 }

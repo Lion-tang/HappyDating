@@ -21,5 +21,8 @@ public interface UserService {
 
     public boolean insertUserAndUserInfo(User user, UserInfo userInfo);
 
+    public List<String> getTips();
+
+
 }
 

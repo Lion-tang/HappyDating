@@ -4,8 +4,10 @@ package com.dating;
 import com.dating.DAO.QueryDTO.DaterRequestDTO;
 
 import com.dating.pojo.MsgInfo;
+import com.dating.pojo.Tips;
 import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
+import com.dating.service.AdminService;
 import com.dating.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,6 +20,9 @@ class BlinddateApplicationTests {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private AdminService adminService;
 
     @Test
     void contextLoads() {
@@ -86,5 +91,18 @@ class BlinddateApplicationTests {
         msgInfo.setFromUserName("wangwu");
         msgInfo.setInfo("你是傻子");
         System.out.println(userService.leaveMessage(msgInfo));
+    }
+
+    @Test
+    void getTips(){
+        System.out.println(userService.getTips());
+    }
+
+    @Test
+    void createTips(){
+        Tips tips = new Tips();
+        tips.setInfo("这又是一条通知");
+        tips.setUserName("yangyongzhi");
+        System.out.println(adminService.createTip(tips));
     }
 }
