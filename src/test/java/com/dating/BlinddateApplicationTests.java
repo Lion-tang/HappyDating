@@ -1,9 +1,10 @@
 package com.dating;
 
-import com.dating.mapper.QueryDTO.DaterRequestDTO;
+import com.dating.DAO.QueryDTO.DaterRequestDTO;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
@@ -12,7 +13,7 @@ import java.util.List;
 @SpringBootTest
 class BlinddateApplicationTests {
 
-    @Resource
+    @Autowired
     private UserService userService;
 
     @Test

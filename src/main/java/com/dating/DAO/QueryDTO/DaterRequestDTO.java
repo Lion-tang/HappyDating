@@ -1,4 +1,4 @@
-package com.dating.mapper.QueryDTO;
+package com.dating.DAO.QueryDTO;
 
 import lombok.Data;
 

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.dating.mapper")
+@MapperScan("com.dating.DAO")
 public class BlinddateApplication {
 
     public static void main(String[] args) {

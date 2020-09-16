@@ -1,6 +1,6 @@
 package com.dating.service;
 
-import com.dating.mapper.QueryDTO.DaterRequestDTO;
+import com.dating.DAO.QueryDTO.DaterRequestDTO;
 import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 
