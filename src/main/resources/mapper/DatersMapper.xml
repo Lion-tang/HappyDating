@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dating.mapper.DatersMapper">
+<mapper namespace="com.dating.DAO.DatersDAO">
 
     <!-- 通过字段名字映射 -->
     <sql id="base_select">
@@ -77,6 +77,7 @@
             </if>
         </where>
     </sql>
+
 
     <!--插入条件-->
     <sql id="key">
@@ -158,6 +159,8 @@
 
     <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO"
             resultType="com.dating.pojo.UserInfo">
+
+    <select id="getDaters" parameterType="com.dating.DAO.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.UserInfo">
         <include refid="base_select"/>
         <include refid="where_condition"/>
     </select>
@@ -211,7 +214,11 @@
 
     <delete id="deleteUser" parameterType="com.dating.pojo.UserInfo">
         DELETE FROM daters
-        <include refid="where_condition"/>
+        <where>
+            <if test="userName != null">
+                AND user_name = #{userName}
+            </if>
+        </where>
     </delete>
 
     <insert id="insertUserInfo" parameterType="UserInfo">

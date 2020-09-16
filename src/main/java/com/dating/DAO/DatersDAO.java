@@ -1,14 +1,14 @@
-package com.dating.mapper;
+package com.dating.DAO;
 
-import com.dating.mapper.QueryDTO.DaterRequestDTO;
-import com.dating.pojo.User;
+
+import com.dating.DAO.QueryDTO.DaterRequestDTO;
 import com.dating.pojo.UserInfo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface DatersMapper {
+public interface DatersDAO {
     /**
      * 根据条件筛选相亲对象
      * @return

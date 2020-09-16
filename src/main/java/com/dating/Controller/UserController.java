@@ -1,6 +1,6 @@
 package com.dating.Controller;
 
-import com.dating.mapper.QueryDTO.DaterRequestDTO;
+import com.dating.DAO.QueryDTO.DaterRequestDTO;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import org.springframework.stereotype.Controller;

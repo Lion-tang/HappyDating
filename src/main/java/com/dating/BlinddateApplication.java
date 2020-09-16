@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @SpringBootApplication
-@MapperScan("com.dating.mapper")
+@MapperScan("com.dating.DAO")
 public class BlinddateApplication {
 
     public static void main(String[] args) {

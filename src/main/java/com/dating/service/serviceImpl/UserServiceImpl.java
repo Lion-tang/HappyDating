@@ -1,12 +1,14 @@
 package com.dating.service.serviceImpl;
 
-import com.dating.mapper.DatersMapper;
-import com.dating.mapper.QueryDTO.DaterRequestDTO;
-import com.dating.mapper.UserMapper;
+import com.dating.DAO.DatersDAO;
+import com.dating.DAO.QueryDTO.DaterRequestDTO;
+import com.dating.DAO.UserDAO;
 import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,19 +19,19 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Resource
-    private UserMapper userMapper;
+    private UserDAO userDAO;
 
     @Resource
-    private DatersMapper datersMapper;
+    private DatersDAO datersDAO;
 
 
     @Override
     public User findByUserName(String username) {
-        return userMapper.findByUserName(username);
+        return userDAO.findByUserName(username);
     }
 
     public List<String> getDaters(DaterRequestDTO daterRequestDTO) {
-        List<UserInfo> daters = datersMapper.getDaters(daterRequestDTO);
+        List<UserInfo> daters = datersDAO.getDaters(daterRequestDTO);
         List<String> result = new ArrayList<String>();
         while (!daters.isEmpty()) {
             UserInfo dater = daters.remove(0);
@@ -41,8 +43,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean alterUserInfo(UserInfo userInfo) {
         try {
-            if (datersMapper.isExist(userInfo)!=null)
-            datersMapper.updateByUserName(userInfo);
+
+            if (datersDAO.isExist(userInfo)!=null)
+            datersDAO.updateByUserName(userInfo);
+
         } catch (Exception e) {
             return false;
         }
@@ -52,7 +56,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean deleteUserInfo(UserInfo userInfo) {
         try{
-            return datersMapper.deleteUser(userInfo);
+            return datersDAO.deleteUser(userInfo);
         }catch (Exception e){
             return false;
         }
@@ -64,8 +68,8 @@ public class UserServiceImpl implements UserService {
     public boolean insertUserAndUserInfo(User user, UserInfo userInfo) {
 
         try {
-            datersMapper.insertUserInfo(userInfo);
-            return userMapper.insertUser(user);
+            datersDAO.insertUserInfo(userInfo);
+            return userDAO.insertUser(user);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
