@@ -1,6 +1,8 @@
 package com.dating.Controller;
 
 import com.dating.DAO.QueryDTO.DaterRequestDTO;
+import com.dating.common.ParameterCheckUtils;
+import com.dating.pojo.MsgInfo;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Controller
+@Controller(value = "/user")
 public class UserController {
 
     @Resource
@@ -26,7 +28,7 @@ public class UserController {
 
     @RequestMapping(value = "/updateInfo", method = RequestMethod.POST)
     public String updateUserInfo(UserInfo userInfo) {
-        if (userService.alterUserInfo(userInfo)) {
+        if (userService.updateUserInfo(userInfo)) {
             return "成功";
         }
         return "失败";
@@ -39,4 +41,16 @@ public class UserController {
         }
         return "失败";
     }
+
+    @RequestMapping(value = "/leaveMsg", method = RequestMethod.POST)
+    public List<String> leaveMessage(MsgInfo msgInfo){
+        ParameterCheckUtils.checkMsgInfo(msgInfo);
+        return userService.leaveMessage(msgInfo);
+    }
+
+    @RequestMapping(value = "/gettips", method = RequestMethod.GET)
+    public List<String> getTips(){
+        return userService.getTips();
+    }
+
 }

@@ -158,7 +158,6 @@
     </sql>
 
 
-
     <select id="getDaters" parameterType="com.dating.DAO.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.UserInfo">
         <include refid="base_select"/>
         <include refid="where_condition"/>
