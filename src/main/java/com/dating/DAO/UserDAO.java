@@ -8,4 +8,6 @@ public interface UserDAO {
 
     public User findByUserName(String username);
 
+    public boolean insertUser(User user);
+
 }

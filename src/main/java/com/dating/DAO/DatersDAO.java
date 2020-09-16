@@ -1,5 +1,6 @@
 package com.dating.DAO;
 
+
 import com.dating.DAO.QueryDTO.DaterRequestDTO;
 import com.dating.pojo.UserInfo;
 import org.springframework.stereotype.Repository;
@@ -16,8 +17,10 @@ public interface DatersDAO {
 
     public boolean updateByUserName(UserInfo userInfo);
 
-    public boolean isExist(UserInfo userInfo);
+    public UserInfo isExist(UserInfo userInfo);
 
     public boolean deleteUser(UserInfo userInfo);
+
+    public boolean insertUserInfo(UserInfo userInfo);
 
 }
