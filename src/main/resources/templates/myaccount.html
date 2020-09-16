@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>个人中心</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/myaccount.css">
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/form.css">
+    <link rel="stylesheet" href="../static/css/myaccount.css">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/common.js"></script>
 </head>
 <body>
     <header>
@@ -17,11 +17,11 @@
             <div class="left-area">
                 <div class="logo"><a href="#"></a></div>
                 <ul class="nav">
-                    <li class="current"><a href="#">推荐</a></li>
+                    <li class="current"><a href="#">个人主页</a></li>
                     <li><a href="#">动态</a></li>
                     <li><a href="#">遇见</a></li>
                     <li><a href="#">搭讪广场</a></li>
-                    <li><a href="#">个人主页</a></li>
+                    <li><a href="/logout">退出</a></li>
                 </ul>
             </div>
             <div class="right-area">
@@ -29,10 +29,7 @@
                 <a href="#"><em></em></a>
                 <a href="#"><span class="sp1"></span></a>
                 <a href="#"><span class="sp1"></span></a>
-                <div class="today-base">
-                    <a href="#">今日推荐<em class="notice-num">1</em></a>
-                    <a href="#">暂不提示</a>
-                </div>
+
                 <div class="msg-box">
                     <ul>
                         <li><a href="#">查看私信</a></li>
@@ -70,7 +67,7 @@
                         <span>点击修改头像</span>
                     </div>
                     <div class="user-check"><span>非真人头像，请上传清晰美观个人照</span></div>
-                    <img src="images/myaccount/40476055953806.jpg" alt="">
+                    <img src="../static/images/myaccount/40476055953806.jpg" alt="">
                     <p>
                         <em class="icon-online-android"></em>
                         <span class="profile-online-text">她在线，赶紧跟她联系吧</span>
@@ -117,18 +114,9 @@
                     <div class="send-gift-msg-box">
                         <em class="upper-arrows"></em>
                         <em class="close-icon-btn"></em>
-                        <span>送个贴心的礼物会让你更受对方的青睐</span>
                     </div>
                 </p>
-                <p class="profile-sns">
-                    <span>分享到</span>
-                    <em class="weibo-trigger"></em>
-                    <em class="qzone-trigger"></em>
-                    <em class="renren-trigger"></em>
-                    <em class="qq-trigger"></em>
-                    <em class="weixin-trigger"></em>
-                    <em class="yixin-trigger"></em>
-                </p>
+
             </div>
         </div>
         <div class="w">
@@ -189,8 +177,8 @@
                                 </div>
                                 <div class="trend-item-title">上传了头像</div>
                                 <div class="photo-media">
-                                    <a href="javascript:;"><img src="images/myaccount/94540476055953806.jpg" alt=""></a>
-                                    <a href="javascript:;"><img src="images/myaccount/94540476055953806.jpg" alt=""></a>
+                                    <a href="javascript:;"><img src="../static/images/myaccount/94540476055953806.jpg" alt=""></a>
+                                    <a href="javascript:;"><img src="../static/images/myaccount/94540476055953806.jpg" alt=""></a>
                                 </div>
                                 <div class="trend-footer">
                                     <div class="media-info fl">
@@ -609,102 +597,28 @@
                 </div>
             </div>
             <div class="con-right fr">
-                <div class="gift-box">
-                    <h2><span class="text-h2">她收到的礼物</span><span class="gift-count">(<i>5</i>个)</span></h2>
-                    <div class="gift-list-box clearfix">
-                        <ul>
-                            <li class="first-icon-bar">
-                                <em class="icon-gift"></em>
-                                <i class="icon-left-arrows"></i>
-                                <i class="icon-right-arrows"></i>
-                                <span class="send-gift-text">送我礼物</span>
-                            </li>
-                            <li>
-                                <div class="gift-item-img">
-                                    <img src="images/gift/cake.png" alt="">
-                                </div>
-                                <div class="gift-item-desc-text">蛋糕<br>高级会员免费使用</div>
-                            </li>
-                            <li>
-                                <div class="gift-item-img">
-                                    <img src="images/gift/cat.png" alt="">
-                                </div>
-                                <div class="gift-item-desc-text">喵<br>高级会员免费使用</div>
-                            </li>
-                            <li>
-                                <div class="gift-item-img">
-                                    <img src="images/gift/kouhong.png" alt="">
-                                </div>
-                                <div class="gift-item-desc-text">口红<br>高级会员免费使用</div>
-                            </li>
-                            <li>
-                                <div class="gift-item-img">
-                                    <img src="images/gift/panda.png" alt="">
-                                </div>
-                                <div class="gift-item-desc-text">熊猫<br>高级会员免费使用</div>
-                            </li>
-                            <li>
-                                <div class="gift-item-img">
-                                    <img src="images/gift/puppy.png" alt="">
-                                </div>
-                                <div class="gift-item-desc-text">小狗<br>高级会员免费使用</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="gift-list-pagination fr">
-                        <a href="javascript:;" class="disable pages-prev"></a>
-                        <a href="javascript:;" class="pages-next"></a>
-                    </div>
-                </div>
+
                 <div class="contact-us">
-                    <p class="top-text"><span>花田相关</span></p>
+                    <p class="top-text"><span>缘来有你相关</span></p>
                     <ul class="main-info">
                         <li><span>新手上路：</span><a href="#">教你快速找到意中人</a></li>
                         <li><span>安全中心：</span><a href="#">网上交友如何防骗</a></li>
                         <li><span>花田帮助：</span><a href="#">常见反馈问题解答</a></li>
-                        <li><span>联系客服：</span><a href="#">咨询花田小红娘</a><br/><span class="wrap-font">电话咨询 020-85105681<br>( 工作日 10点 - 18点 )</span></li>
-                        <li class="serval-info">
-                            <span>关注花田：</span>
-                            <a href="#" class="sina-icon"></a>
-                            <a href="#" class="douban-icon"></a>
-                            <a href="#" class="wx-icon"></a>
-                        </li>
+                        <li><span>联系客服：</span><a href="#">咨询客服</a><br/><span class="wrap-font">电话咨询 020-XXXXXXXX<br>( 工作日 10点 - 18点 )</span></li>
+
                     </ul>
                 </div>
-                <h2 class="market-cooperation"><span class="text-h2">市场合作</span></h2>
-                <div class="contact-info">
-                    <p><span>联系人：</span>凌先生</p>
-                    <p><span>电话：</span>020-85105163 转 54459</p>
-                    <p><span>邮箱：</span>bd.love163@service.netease.com</p>
-                </div>
-                <div class="weixin-guide">
-                    <p>关注花田君</p>
-                    <p>免费领取花田<i>SVIP</i></p>
-                    <p class="qr-bg"><img src="images/weixin_attract.png" alt=""></p>
-                    <p>使用微信扫描即可关注</p>
-                </div>
-                <div class="system-ads">
-                    <ul>
-                        <li><a href="#"><img src="images/myaccount-ad1.png" alt=""></a></li>
-                    </ul>
-                </div>
+
             </div>
         </div>
     </div>
     <div id="footer">
         <div class="w">
             <div class="bot">
-                <a href="#">公司简介</a> -
-                <a href="#">联系方法</a> -
-                <a href="#">招聘信息</a> -
-                <a href="#">使用条款</a> -
-                <a href="#">花田动态</a> -
-                <a href="#">友情链接</a> -
-                <a href="#">网站地图</a> -
-                <a href="#">花田意见反馈</a> -
-                增值电信业务经营许可证：<a href="#">浙B2-20090185</a><br/>
-                网易公司版权所有<br/>
-                <i>©1997-2016</i>
+
+                增值电信业务经营许可证：<a href="#">湘B2-XXXXXXXXX</a><br/>
+                中南大学版权所有<br/>
+                <i>©2020</i>
             </div>
         </div>
     </div>

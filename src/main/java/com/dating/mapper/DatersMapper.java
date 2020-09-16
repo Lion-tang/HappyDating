@@ -1,6 +1,7 @@
 package com.dating.mapper;
 
 import com.dating.mapper.QueryDTO.DaterRequestDTO;
+import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 import org.springframework.stereotype.Repository;
 
@@ -16,8 +17,10 @@ public interface DatersMapper {
 
     public boolean updateByUserName(UserInfo userInfo);
 
-    public boolean isExist(UserInfo userInfo);
+    public UserInfo isExist(UserInfo userInfo);
 
     public boolean deleteUser(UserInfo userInfo);
+
+    public boolean insertUserInfo(UserInfo userInfo);
 
 }

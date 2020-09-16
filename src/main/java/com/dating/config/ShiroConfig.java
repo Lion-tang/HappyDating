@@ -18,7 +18,7 @@ public class ShiroConfig {
         ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
         factoryBean.setSecurityManager(securityManager);
         Map<String,String> map = new Hashtable<>();
-        map.put("/main", "authc");
+        map.put("/myaccount", "authc");
         map.put("/admin", "perms[manage]");
         factoryBean.setFilterChainDefinitionMap(map);
         factoryBean.setLoginUrl("/index");

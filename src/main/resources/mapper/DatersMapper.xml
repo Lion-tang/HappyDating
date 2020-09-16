@@ -10,6 +10,8 @@
         user_name           AS userName,
         nick_name           AS name,
         age                 AS age,
+        city                as city,
+        province            as province,
         sex                 AS sex,
         height              AS height,
         weight              AS weight,
@@ -31,37 +33,43 @@
             <if test="userName != null">
                 AND user_name = #{userName}
             </if>
-            <if test="nick_name != null">
-                AND nick_name = #{nick_name}
+            <if test="nickName != null">
+                AND nick_name = #{nickName}
             </if>
-            <if test="min_age != null">
+            <if test="minAge != null">
                 AND age >= #{min_age}
             </if>
-            <if test="max_age != null">
+            <if test="maxAge != null">
                 AND #{max_age} >= age
             </if>
             <if test="sex != null">
                 AND sex = #{sex}
             </if>
-            <if test="min_height != null">
+            <if test="city != null">
+                AND city = #{city}
+            </if>
+            <if test="province != null">
+                AND province = #{province}
+            </if>
+            <if test="minHeight != null">
                 AND height >= #{min_height}
             </if>
-            <if test="max_height != null">
+            <if test="maxHeight != null">
                 AND #{max_height} >= height
             </if>
-            <if test="min_weight != null">
+            <if test="minWeight != null">
                 AND weight >= #{min_weight}
             </if>
-            <if test="max_weight != null">
+            <if test="maxWeight != null">
                 AND #{max_weight} >= weight
             </if>
             <if test="edu != null">
                 AND edu = #{edu}
             </if>
-            <if test="min_salary != null">
+            <if test="minSalary != null">
                 AND salary >= #{min_salary}
             </if>
-            <if test="max_salary != null">
+            <if test="maxSalary != null">
                 AND #{max_salary} >= salary
             </if>
             <if test="telephone != null">
@@ -70,15 +78,94 @@
         </where>
     </sql>
 
-    <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.UserInfo">
+    <!--插入条件-->
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="userName!=null">
+                user_name,
+            </if>
+            <if test="nickName!=null">
+                nick_name,
+            </if>
+            <if test="age!=null ">
+                age,
+            </if>
+            <if test="sex!=null">
+                sex,
+            </if>
+            <if test="height!=null ">
+                height,
+            </if>
+            <if test="weight!=null ">
+                weight,
+            </if>
+            <if test="edu!=null ">
+                edu,
+            </if>
+            <if test="province!=null ">
+                province,
+            </if>
+            <if test="city!=null ">
+                city,
+            </if>
+            <if test="salary!=null ">
+                salary,
+            </if>
+            <if test="telephone!=null ">
+                telephone,
+            </if>
+        </trim>
+    </sql>
+
+    <!--插入值-->
+    <sql id="values">
+        <trim suffixOverrides=",">
+            <if test="userName!=null">
+                #{userName},
+            </if>
+            <if test="nickName!=null">
+                #{nickName},
+            </if>
+            <if test="age!=null ">
+                #{age},
+            </if>
+            <if test="sex!=null">
+                #{sex},
+            </if>
+            <if test="height!=null ">
+                #{height},
+            </if>
+            <if test="weight!=null ">
+                #{weight},
+            </if>
+            <if test="edu!=null ">
+                #{edu},
+            </if>
+            <if test="province!=null ">
+                #{province},
+            </if>
+            <if test="city!=null ">
+                #{city},
+            </if>
+            <if test="salary!=null ">
+                #{salary},
+            </if>
+            <if test="telephone!=null ">
+                #{telephone},
+            </if>
+        </trim>
+    </sql>
+
+    <select id="getDaters" parameterType="com.dating.mapper.QueryDTO.DaterRequestDTO"
+            resultType="com.dating.pojo.UserInfo">
         <include refid="base_select"/>
         <include refid="where_condition"/>
     </select>
 
-    <select id="isExist" parameterType="com.dating.pojo.UserInfo">
+    <select id="isExist" parameterType="com.dating.pojo.UserInfo" resultType="com.dating.pojo.UserInfo">
         <include refid="base_select"/>
         <where>
-            <if test = "userName != null">
+            <if test="userName != null">
                 AND user_name = #{userName}
             </if>
         </where>
@@ -88,14 +175,20 @@
     <update id="updateByUserName" parameterType="com.dating.pojo.UserInfo">
         UPDATE daters
         <set>
-            <if test="nick_name != null">
-                nick_name = #{nick_name},
+            <if test="nickName != null">
+                nick_name = #{nickName},
             </if>
             <if test="age != null">
                 age = #{age},
             </if>
             <if test="sex != null">
                 sex = #{sex},
+            </if>
+            <if test="city != null">
+                city = #{city},
+            </if>
+            <if test="province != null">
+                province = #{province},
             </if>
             <if test="height != null">
                 height = #{height},
@@ -120,5 +213,10 @@
         DELETE FROM daters
         <include refid="where_condition"/>
     </delete>
+
+    <insert id="insertUserInfo" parameterType="UserInfo">
+       INSERT INTO daters(<include refid="key"/>)
+       VALUE (<include refid="values"/>)
+    </insert>
 
 </mapper>

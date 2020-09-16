@@ -8,4 +8,6 @@ public interface UserMapper {
 
     public User findByUserName(String username);
 
+    public boolean insertUser(User user);
+
 }

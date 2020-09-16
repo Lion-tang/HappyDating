@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean alterUserInfo(UserInfo userInfo) {
         try {
-            datersMapper.isExist(userInfo);
+            if (datersMapper.isExist(userInfo)!=null)
             datersMapper.updateByUserName(userInfo);
         } catch (Exception e) {
             return false;
@@ -50,10 +50,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean deleteUser(UserInfo userInfo) {
+    public boolean deleteUserInfo(UserInfo userInfo) {
         try{
             return datersMapper.deleteUser(userInfo);
         }catch (Exception e){
+            return false;
+        }
+    }
+
+
+
+    @Override
+    public boolean insertUserAndUserInfo(User user, UserInfo userInfo) {
+
+        try {
+            datersMapper.insertUserInfo(userInfo);
+            return userMapper.insertUser(user);
+        } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
     }

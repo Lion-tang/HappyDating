@@ -45,7 +45,7 @@ public class LoginHandler {
             subject.login(token);
             User user = (User) subject.getPrincipal();
             subject.getSession().setAttribute("user",user);
-            return "main";
+            return "myaccount";
         } catch (UnknownAccountException e) {
             e.printStackTrace();
             model.addAttribute("msg", "用户名错误");
