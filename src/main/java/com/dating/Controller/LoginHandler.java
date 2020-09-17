@@ -123,7 +123,7 @@ public class LoginHandler {
         return "未验证用户，请登录";
     }
 
-    @GetMapping("/favicon.ico")
+    @GetMapping("/templates/favicon.ico")
     public String favicon() {
         return "favicon";
     }

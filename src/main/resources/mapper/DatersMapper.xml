@@ -76,6 +76,7 @@
             <if test="telephone != null">
                 AND telephone = #{telephone}
             </if>
+
         </where>
     </sql>
 
@@ -212,6 +213,9 @@
             </if>
             <if test="telephone != null">
                 telephone = #{telephone},
+            </if>
+            <if test="photo != null">
+                photo = #{photo},
             </if>
         </set>
         WHERE user_name = #{userName}
