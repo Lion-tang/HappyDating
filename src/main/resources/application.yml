@@ -13,6 +13,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   mvc:
     static-path-pattern: /static/**
+    throw-exception-if-no-handler-found: true
   resources:
     static-locations: classpath:/static/
 mybatis:

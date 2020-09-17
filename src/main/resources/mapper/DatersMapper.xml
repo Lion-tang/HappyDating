@@ -115,6 +115,9 @@
             <if test="telephone!=null ">
                 telephone,
             </if>
+            <if test="photo!=null ">
+                photo,
+            </if>
         </trim>
     </sql>
 
@@ -153,6 +156,9 @@
             </if>
             <if test="telephone!=null ">
                 #{telephone},
+            </if>
+            <if test="photo!=null ">
+                #{photo},
             </if>
         </trim>
     </sql>

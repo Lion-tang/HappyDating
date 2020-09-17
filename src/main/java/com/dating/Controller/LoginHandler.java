@@ -89,7 +89,7 @@ public class LoginHandler {
         if (check!=null) {
             if (nickName!=null && telephone!=null) {
                 User user= (User) httpSession.getAttribute("user");
-                UserInfo userInfo = new UserInfo(null,user.getUserName(),nickName,age,sex,city,province,height,weight,edu,salary,telephone);
+                UserInfo userInfo = new UserInfo(null,user.getUserName(),nickName,age,sex,city,province,height,weight,edu,salary,telephone,"anonymous.jpg");
                 userService.insertUserAndUserInfo(user, userInfo);
                 model.addAttribute("msg", "账户注册成功");
                 return "index";

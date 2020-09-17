@@ -19,62 +19,28 @@
                 <div class="logo"><a href="#"></a></div>
                 <ul class="nav">
                     <li class="current"><a href="/myaccount">个人主页</a></li>
-                    <li><a href="#">动态</a></li>
                     <li><a href="#">遇见</a></li>
-                    <li><a href="#">搭讪广场</a></li>
+                    <li><a href="#">通知</a></li>
                     <li><a href="/logout">退出</a></li>
                 </ul>
             </div>
-            <div class="right-area">
-                <a href="#"><span class="sp1"></span><span class="sp2">服务</span><span class="sp3"></span></a>
-                <a href="#"><em></em></a>
-                <a href="#"><span class="sp1"></span></a>
-                <a href="#"><span class="sp1"></span></a>
-                <div class="today-base">
-                    <a href="#">今日推荐<em class="notice-num">1</em></a>
-                    <a href="#">暂不提示</a>
-                </div>
-                <div class="msg-box">
-                    <ul>
-                        <li><a href="#">查看私信</a></li>
-                        <li><a href="#">新增"赞"</a></li>
-                        <li><a href="#">新增喜欢</a></li>
-                        <li><a href="#">最近访客</a></li>
-                        <li class="bot-border"><a href="#">收到礼物</a></li>
-                        <li><a href="#" class="hl">今日推荐<em class="notice-num1">1</em></a></li>
-                        <li><a href="#">系统通知</a></li>
-                        <li><a href="#">话题消息</a></li>
-                        <li><a href="#">约会消息</a></li>
-                    </ul>
-                    <p><a href="#">查看全部消息</a></p>
-                </div>
-                <div class="msg-box1">
-                    <ul>
-                        <li><a href="#" class="notice-new">邀好友赢会员<em></em></a></li>
-                        <li><a href="#">账号设置</a></li>
-                        <li><a href="#">会员服务中心</a></li>
-                        <li><a href="#">信用等级</a></li>
-                        <li><a href="#">认证</a></li>
-                        <li><a href="#">关闭资料</a></li>
-                    </ul>
-                    <p><a href="#">退出</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </header>
     <div class="profile-mainbox profile-female clearfix">
         <div class="w clearfix">
             <div class="profile-basic-avatar fl">
                 <div class="user-avatar">
-                    <div class="avatar-update hide">
-                        <span>点击修改头像</span>
-                    </div>
+
                     <div class="user-check"><span>非真人头像，请上传清晰美观个人照</span></div>
-                    <img src="../static/images/myaccount/40476055953806.jpg" alt="">
+                    <img th:src="@{../static/images/myaccount/{photo}(photo=${session.userInfo.photo})}" alt=""/>
                     <p>
-                        <em class="icon-online-android"></em>
-                        <span class="profile-online-text">她在线，赶紧跟她联系吧</span>
+
+
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <input type="file" name="file" accept="image/*">
+                        <br>
+                    <em class="icon-online-android"></em> <input type="submit" value="上传照片" class="btn btn-success">
+                    </form>
                     </p>
                 </div>
             </div>
@@ -114,10 +80,7 @@
                     <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
                     <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
                     <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
-                    <div class="send-gift-msg-box">
-                        <em class="upper-arrows"></em>
-                        <em class="close-icon-btn"></em>
-                    </div>
+
                 </p>
 
             </div>
@@ -157,7 +120,6 @@
                     <ul>
                         <li class="trigger-trend current">她的动态</li>
                         <li class="trigger-info">她的资料</li>
-                        <li>她的QA</li>
                     </ul>
                 </div>
                 <div class="profile-trend-box">

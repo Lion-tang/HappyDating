@@ -11,6 +11,6 @@ INSERT INTO user(user_name,password,role) VALUE (#{userName},#{passWord},#{role}
     </insert>
 
     <select id="getInfoByUserName" parameterType="String" resultType="UserInfo">
-        select id as id,user_name as userName,nick_name as nickName,age,sex,height,weight,edu,province,city,salary,telephone from daters where user_name=#{userName};
+        select id as id,user_name as userName,nick_name as nickName,age,sex,height,weight,edu,province,city,salary,telephone,photo from daters where user_name=#{userName};
     </select>
 </mapper>

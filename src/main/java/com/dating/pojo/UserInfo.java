@@ -20,4 +20,5 @@ public class UserInfo {
     private String edu;
     private Integer salary;
     private Long telephone;
+    private String photo;
 }
