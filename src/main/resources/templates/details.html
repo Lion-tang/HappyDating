@@ -18,9 +18,10 @@
             <div class="left-area">
                 <div class="logo"><a href="#"></a></div>
                 <ul class="nav">
-                    <li class="current"><a href="/myaccount">个人主页</a></li>
+                    <li><a href="/myaccount">个人主页</a></li>
                     <li><a href="/getDaters?sex=女">遇见</a></li>
                     <li><a href="#">通知</a></li>
+                    <li class="current"><a href="/myaccount">ta的主页</a></li>
                     <li><a href="/logout">退出</a></li>
                 </ul>
             </div>
@@ -35,7 +36,7 @@
                 <div class="user-avatar">
 
                     <div class="user-check"><span>非真人头像，请上传清晰美观个人照</span></div>
-                    <img th:src="@{../static/images/myaccount/{photo}(photo=${session.userInfo.photo})}" alt="" th:height="240px" th:width="240px"/>
+                    <img th:src="@{../static/images/myaccount/{photo}(photo=${session.vistUser.photo})}" alt="" th:height="240px" th:width="240px"/>
                     <p>
 
 
@@ -49,25 +50,25 @@
             </div>
             <div class="profile-basic-main fl">
                 <p class="user-status-bar">
-                    <span class="username" th:text="${session.userInfo.nickName}"></span>
+                    <span class="username" th:text="${session.vistUser.nickName}"></span>
                     <a class="in-block credit-level-female" href="javascript:;">中信用</a>
                     <a class="in-block icon-verified-mobile-female" href="javascript:;"></a>
-                    <span class="uid" th:text="|Id:${session.userInfo.id}|"></span>
+                    <span class="uid" th:text="|Id:${session.vistUser.id}|"></span>
                 </p>
                 <p class="profile-basic-info">
-                    <span class="sex" th:text="${session.userInfo.sex}" ></span>
-                    <span class="age" th:text="|${session.userInfo.age}岁|"></span>
-                    <span class="cm" th:text="|TEL:${session.userInfo.telephone}|"></span>
+                    <span class="sex" th:text="${session.vistUser.sex}" ></span>
+                    <span class="age" th:text="|${session.vistUser.age}岁|"></span>
+                    <span class="cm" th:text="|TEL:${session.vistUser.telephone}|"></span>
                     <span class="area" ></span>
                 </p>
                 <!-- 该用户有标签时显示 -->
                 <p class="profile-basic-tag-list clearfix">
-                    <span th:text="${session.userInfo.province}"></span>
-                    <span th:text="${session.userInfo.city}"></span>
-                    <span th:text="|${session.userInfo.weight}kg|"></span>
-                    <span th:text="|${session.userInfo.height}cm|"></span>
-                    <span th:text="${session.userInfo.edu}"></span>
-                    <span th:text="|月入${session.userInfo.salary}|"></span>
+                    <span th:text="${session.vistUser.province}"></span>
+                    <span th:text="${session.vistUser.city}"></span>
+                    <span th:text="|${session.vistUser.weight}kg|"></span>
+                    <span th:text="|${session.vistUser.height}cm|"></span>
+                    <span th:text="${session.vistUser.edu}"></span>
+                    <span th:text="|月入${session.vistUser.salary}|"></span>
                     <span>依赖心强</span>
                     <span>日剧迷</span>
                     <span>传统</span>

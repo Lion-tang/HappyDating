@@ -61,7 +61,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserInfo> getDaters(DaterRequestDTO daterRequestDTO) {
         List<UserInfo> daters = datersDAO.getDaters(daterRequestDTO);
-        System.out.println(new Gson().toJson(daters.get(0)));
         return daters;
     }
 

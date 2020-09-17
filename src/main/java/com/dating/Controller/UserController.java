@@ -25,8 +25,12 @@ public class UserController {
     public String getDaters(DaterRequestDTO daterRequestDTO) {
         //check
         //service(daterRequestDTO)
+        ParameterCheckUtils.checkDaterRequestDTO(daterRequestDTO);
         List<UserInfo> response = userService.getDaters(daterRequestDTO);
         Subject subject = SecurityUtils.getSubject();
+        if(response.size()>0){
+            daterRequestDTO.setSex(response.get(0).getSex());
+        }
         subject.getSession().setAttribute("daters", response);
         if (daterRequestDTO.getSex().equals("女")) {
             return "park-xunren";
@@ -63,11 +67,18 @@ public class UserController {
         return userService.getTips();
     }
 
-    @RequestMapping(value = "/detials", method = RequestMethod.GET)
-    public String detials(UserInfo userInfo) {
+    @RequestMapping(value = "/details", method = RequestMethod.GET)
+    public String details(UserInfo userInfo) {
         ParameterCheckUtils.checkUserName(userInfo);
-        userService.getInfoByUserName(userInfo.getUserName());
+        UserInfo user = userService.getInfoByUserName(userInfo.getUserName());
+        Subject subject = SecurityUtils.getSubject();
+        subject.getSession().setAttribute("vistUser",user);
         return "details";
+    }
+
+    @RequestMapping(value = "/filter", method = RequestMethod.GET)
+    public String filter(UserInfo userInfo) {
+        return "filter";
     }
 
 }
