@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>找对象</title>
+        <link rel="shortcut icon" href="../favicon.ico" th:href="@{/static/favicon.ico}"/>
+        <link rel="stylesheet" href="../static/css/base.css">
+        <link rel="stylesheet" href="../static/css/common.css">
+        <link rel="stylesheet" href="../static/css/park.css">
+        <link rel="stylesheet" href="../static/css/park-xunren.css">
+        <script type="text/javascript" src="../static/js/jquery.js"></script>
+        <script type="text/javascript" src="../static/js/common.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="top-nav">
+            <div class="w">
+                <div class="left-area">
+                    <div class="logo"><a href="#"></a></div>
+                    <ul class="nav">
+                        <li><a href="#">个人主页</a></li>
+                        <li class="current"><a href="/getDaters?sex=女">遇见</a></li>
+                        <li><a href="#">通知</a></li>
+                        <li><a href="/logout">退出</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <nav class="park-nav">
+        <div class="w">
+            <div class="park-nav-item current">
+                <em class="park-nav-icon park-nav-icon-xunren hovered"></em>
+                <span class="park-nav-label">找对象</span>
+                <i class="park-nav-marked"></i>
+                <em class="box-icon"></em>
+            </div>
+            <div class="park-nav-item">
+                <em class="park-nav-icon park-nav-icon-topic"></em>
+                <span class="park-nav-label">话题</span>
+                <i class="park-nav-marked hide"></i>
+                <em class="box-icon hide"></em>
+            </div>
+            <div class="park-nav-item">
+                <em class="park-nav-icon park-nav-icon-party"></em>
+                <span class="park-nav-label">线下活动</span>
+                <i class="park-nav-marked hide"></i>
+                <em class="box-icon hide"></em>
+            </div>
+        </div>
+    </nav>
+    <div class="park-banner">
+        <div class="w">
+            <h1 class="park-banner-title">寻人启事</h1>
+            <div class="park-banner-inner">
+                <span class="park-banner-slogan">总有一个好姑娘在等着你</span>
+                <div class="recomm-publish fr">
+                    <span class="comm-text">也想被推荐？</span>
+                    <a href="javascript:;" class="park-banner-btn fr">
+                        <em></em>
+                        <i>求发布</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="recommand-list clearfix">
+        <div class="w">
+            <div class="recommand-filter">
+                <a class="current" href="/getDaters?sex=女">姑娘</a>
+                <a href="/getDaters?sex=男">汉子</a>
+            </div>
+            <div class="recommand-user" th:each="dater,iterStat : ${daters}">
+                <ul>
+                    <li>
+                        <a class="a-box" href="javascript:;">
+                            <div class="recommand-avatar fl">
+                                <img src="images/park/196060055344.jpg" alt="">
+                            </div>
+                            <div class="recommand-user-desc fl">
+                                <h2 class="recommand-user-desc-title"><td th:text="${dater.userName}">Mark</td></h2>
+                                <p class="recommand-user-desc-content">Una ，22岁，身高168cm，原来是一枚医学生，后来转行做了策划。平时比较宅，所以练就了一身自娱自乐的本领。画画、写文章、摄影、跳舞样样在行，喜爱看电影、听后摇、看展、做美食、喜欢家居设计艺术，以及看书。空余时间会做录音、做直播，还有有自己的公众平台和播客。</p>
+                            </div>
+                            <div class="recommand-user-view fr">
+                                <div class="injection">
+                                </div>
+
+                            </div>
+                            <div class="view-shadow"><span class="text-tips">查看详情</span></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="js-footer clearfix">
+        <div class="w">
+            <div class="pagination">
+                <ul class="pages-big fr">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li class="pages-line"><a href="javascript:;">...</a></li><li><a href="#">827</a></li>
+                    <li><a href="#">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section id="footer">
+        <div class="w">
+            <div class="bot">
+                <a href="#">公司简介</a> -
+                <a href="#">联系方法</a> -
+                <a href="#">招聘信息</a> -
+                <a href="#">使用条款</a> -
+                <a href="#">花田动态</a> -
+                <a href="#">友情链接</a> -
+                <a href="#">网站地图</a> -
+                <a href="#">花田意见反馈</a> -
+                经营许可证：<a href="#">暂时没有</a><br/>
+                中南大学版权所有<br/>
+                <i>©2020</i>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

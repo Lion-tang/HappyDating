@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="shortcut icon" href="../favicon.ico" th:href="@{/static/favicon.ico}"/>
 <head>
     <meta charset="UTF-8">
     <title>个人中心</title>
@@ -18,9 +19,8 @@
                 <div class="logo"><a href="#"></a></div>
                 <ul class="nav">
                     <li class="current"><a href="#">个人主页</a></li>
-                    <li><a href="#">动态</a></li>
-                    <li><a href="#">遇见</a></li>
-                    <li><a href="#">搭讪广场</a></li>
+                    <li><a href="/user/getDaters?sex=女">遇见</a></li>
+                    <li><a href="#">通知</a></li>
                     <li><a href="/logout">退出</a></li>
                 </ul>
             </div>
@@ -89,22 +89,22 @@
                     <span class="info-percent">资料完整度：95%</span>
                 </p>
                 <!-- 该用户有标签时显示 -->
-                <p class="profile-basic-tag-list clearfix">
-                    <span>苗条</span>
-                    <span>无神论者</span>
-                    <span>读书</span>
-                    <span>占有欲</span>
-                    <span>爱情至上</span>
-                    <span>浪漫</span>
-                    <span>依赖心强</span>
-                    <span>日剧迷</span>
-                    <span>传统</span>
-                    <span>羽毛球</span>
-                </p>
+<!--                <p class="profile-basic-tag-list clearfix">-->
+<!--                    <span>苗条</span>-->
+<!--                    <span>无神论者</span>-->
+<!--                    <span>读书</span>-->
+<!--                    <span>占有欲</span>-->
+<!--                    <span>爱情至上</span>-->
+<!--                    <span>浪漫</span>-->
+<!--                    <span>依赖心强</span>-->
+<!--                    <span>日剧迷</span>-->
+<!--                    <span>传统</span>-->
+<!--                    <span>羽毛球</span>-->
+<!--                </p>-->
                 <!-- 没有标签记录时的文字提示 -->
-                <p class="profile-basic-tag-desc">
-                    暂无标签（<a href="#">回答QA</a>、<a href="#">完善资料</a>获得更多标签）<a class="icon-edit-s" href="javascript:;" title="编辑标签"></a>
-                </p>
+<!--                <p class="profile-basic-tag-desc">-->
+<!--                    暂无标签（<a href="#">回答QA</a>、<a href="#">完善资料</a>获得更多标签）<a class="icon-edit-s" href="javascript:;" title="编辑标签"></a>-->
+<!--                </p>-->
 
                 <p class="profile-basic-relation">
                     <a href="javascript:;" class="icon-mess"><em></em><i>私信</i></a>
@@ -460,24 +460,24 @@
                         </div>
 
                         <div class="member-detail-box">
-                            <h2 class="label-text">详细资料</h2>
-                            <span class="js-edit-btn"><a class="a-icon-edit" href="javascript:;"></a></span>
-                            <span class="js-edit-btn hide"><a class="a-cancel-edit-text" href="javascript:;">取消编辑</a></span>
-                            <div class="js-info-preview">
-                                <p><span class="text-gray">户口：</span>湖北黄石</p>
-                                <p><span class="text-gray">住房情况：</span>单位宿舍</p>
-                                <p><span class="text-gray">购车情况：</span>未购车</p>
-                                <p><span class="text-gray">民族：</span>汉族</p>
-                                <p><span class="text-gray">籍贯：</span>湖北黄石</p>
-                                <p><span class="text-gray">家中排行：</span>独生子女</p>
-                                <p><span class="text-gray">有无子女：</span>无小孩</p>
-                                <p><span class="text-gray">星座：</span>射手座</p>
-                                <p><span class="text-gray">血型：</span>A型</p>
-                                <p><span class="text-gray">属相：</span>猪</p>
-                                <p><span class="text-gray">宗教信仰：</span>无宗教信仰</p>
-                                <p><span class="text-gray">微博地址：</span>--</p>
-                                <p><span class="text-gray">豆瓣地址：</span>--</p>
-                            </div>
+<!--                            <h2 class="label-text">详细资料</h2>-->
+<!--                            <span class="js-edit-btn"><a class="a-icon-edit" href="javascript:;"></a></span>-->
+<!--                            <span class="js-edit-btn hide"><a class="a-cancel-edit-text" href="javascript:;">取消编辑</a></span>-->
+<!--                            <div class="js-info-preview">-->
+<!--                                <p><span class="text-gray">户口：</span>湖北黄石</p>-->
+<!--                                <p><span class="text-gray">住房情况：</span>单位宿舍</p>-->
+<!--                                <p><span class="text-gray">购车情况：</span>未购车</p>-->
+<!--                                <p><span class="text-gray">民族：</span>汉族</p>-->
+<!--                                <p><span class="text-gray">籍贯：</span>湖北黄石</p>-->
+<!--                                <p><span class="text-gray">家中排行：</span>独生子女</p>-->
+<!--                                <p><span class="text-gray">有无子女：</span>无小孩</p>-->
+<!--                                <p><span class="text-gray">星座：</span>射手座</p>-->
+<!--                                <p><span class="text-gray">血型：</span>A型</p>-->
+<!--                                <p><span class="text-gray">属相：</span>猪</p>-->
+<!--                                <p><span class="text-gray">宗教信仰：</span>无宗教信仰</p>-->
+<!--                                <p><span class="text-gray">微博地址：</span>&#45;&#45;</p>-->
+<!--                                <p><span class="text-gray">豆瓣地址：</span>&#45;&#45;</p>-->
+<!--                            </div>-->
                             <div class="js-edit hide">
                                 <div class="form-row">
                                     <label class="form-label">户口:</label>
@@ -490,101 +490,101 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <label class="form-label">住房情况:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">购车情况:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">民族:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">籍贯:</label>
-                                    <div class="form-control">
-                                        <select class="col-w-6">
-                                            <option value="">湖北</option>
-                                        </select>
-                                        <select class="col-w-6">
-                                            <option value="">武汉</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">家中排行:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">有无子女:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">星座:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">血型:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">属相:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">宗教信仰:</label>
-                                    <div class="form-control">
-                                        <select class="single-column">
-                                            <option class="input-text" value="">不限</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">微博地址:</label>
-                                    <div class="form-control">
-                                        <input class="input-text single-column" type="text" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label class="form-label">豆瓣地址:</label>
-                                    <div class="form-control">
-                                        <input class="input-text single-column" type="text" placeholder="">
-                                    </div>
-                                </div>
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">住房情况:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">购车情况:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">民族:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">籍贯:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="col-w-6">-->
+<!--                                            <option value="">湖北</option>-->
+<!--                                        </select>-->
+<!--                                        <select class="col-w-6">-->
+<!--                                            <option value="">武汉</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">家中排行:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">有无子女:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">星座:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">血型:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">属相:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">宗教信仰:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <select class="single-column">-->
+<!--                                            <option class="input-text" value="">不限</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">微博地址:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <input class="input-text single-column" type="text" placeholder="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-row">-->
+<!--                                    <label class="form-label">豆瓣地址:</label>-->
+<!--                                    <div class="form-control">-->
+<!--                                        <input class="input-text single-column" type="text" placeholder="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
                                 <!--保存-->
                                 <div class="form-row">
                                     <label class="form-label"></label>
