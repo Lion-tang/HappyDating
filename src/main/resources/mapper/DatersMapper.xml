@@ -8,7 +8,7 @@
         SELECT
         id                  AS id,
         user_name           AS userName,
-        nick_name           AS name,
+        nick_name           AS nickName,
         age                 AS age,
         city                as city,
         province            as province,
@@ -75,6 +75,7 @@
             <if test="telephone != null">
                 AND telephone = #{telephone}
             </if>
+
         </where>
     </sql>
 
@@ -211,6 +212,9 @@
             </if>
             <if test="telephone != null">
                 telephone = #{telephone},
+            </if>
+            <if test="photo != null">
+                photo = #{photo},
             </if>
         </set>
         WHERE user_name = #{userName}

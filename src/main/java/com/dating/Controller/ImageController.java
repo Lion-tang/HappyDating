@@ -29,21 +29,36 @@ public class ImageController {
         // 获取上传文件名
         Subject subject = SecurityUtils.getSubject();
         UserInfo userInfo = (UserInfo) subject.getSession().getAttribute("userInfo");
-        String photoname = userInfo.getUserName();
+        String photo = file.getOriginalFilename();
         File path = null;
         try {
              path = new File(ResourceUtils.getURL("classpath:").getPath());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
         if(path== null || !path.exists()) {
         path = new File("");
     }
 
     String pathStr = path.getAbsolutePath();
+        pathStr=pathStr.replace("target\\classes", "src\\main\\resources\\static\\images\\myaccount");
 
-        return pathStr;
+        try {
+            // 写入文件
+            file.transferTo(new File(pathStr + File.separator + photo));
+            // 更新数据库照片信息
+            userInfo.setPhoto(photo);
+//            当前会话更新
+            subject.getSession().setAttribute("userInfo", userInfo);
+//            更新数据库
+            userService.updateUserInfo(userInfo);
+            System.out.println("更新成功");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "myaccount";
+
+
 //        String filename = file.getOriginalFilename();
         // 定义上传文件保存路径
 //        String path = filePath+"rotPhoto/";
@@ -53,14 +68,6 @@ public class ImageController {
 //        if (!filepath.getParentFile().exists()) {
 //            filepath.getParentFile().mkdirs();
 //        }
-//        try {
-//            // 写入文件
-//            file.transferTo(new File(path + File.separator + filename));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        // 将src路径发送至html页面
-//        model.addAttribute("filename", "/images/rotPhoto/"+filename);
-//        return "Page";
+//
     }
 }
