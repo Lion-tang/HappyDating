@@ -18,7 +18,11 @@ target/
 *.iws
 *.iml
 *.ipr
+<<<<<<< HEAD
 *.yml
+=======
+*.application.yml
+>>>>>>> 92d1f8bbb986d2e1720f12880f87c272fb9c3c32
 
 ### NetBeans ###
 /nbproject/private/

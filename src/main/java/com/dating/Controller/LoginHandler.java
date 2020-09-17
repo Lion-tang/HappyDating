@@ -41,9 +41,18 @@ public class LoginHandler {
         try {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             subject.login(token);
+//            拿到登录用户密码信息
             User user = (User) subject.getPrincipal();
             subject.getSession().setAttribute("user",user);
-            return "myaccount";
+            if (user.getRole().equals("user")) {
+//               判断为普通用户后，拿到登录用户个人信息
+                UserInfo userInfo = userService.getInfoByUserName(username);
+                subject.getSession().setAttribute("userInfo",userInfo);
+                return "myaccount";
+            } else {
+//                判断为管理员，返回给管理员页面
+                return "admin";
+            }
         } catch (UnknownAccountException e) {
             e.printStackTrace();
             model.addAttribute("msg", "用户名错误");
@@ -56,8 +65,8 @@ public class LoginHandler {
         }
 
     @PostMapping("/register1")
-    public String register1Handler(User user, Model model,HttpSession httpSession) {
-
+    public String register1Handler(String userName,String passWord, Model model,HttpSession httpSession) {
+        User user = new User(userName, passWord, "user");
         if (userService.findByUserName(user.getUserName())==null) {
             httpSession.setAttribute("user",user);
             return "register2";
@@ -72,7 +81,7 @@ public class LoginHandler {
         if (check!=null) {
             if (nickName!=null && telephone!=null) {
                 User user= (User) httpSession.getAttribute("user");
-                UserInfo userInfo = new UserInfo(null,user.getUserName(),nickName,age,sex,city,province,height,weight,edu,salary,telephone);
+                UserInfo userInfo = new UserInfo(null,user.getUserName(),nickName,age,sex,city,province,height,weight,edu,salary,telephone,"anonymous.jpg");
                 userService.insertUserAndUserInfo(user, userInfo);
                 model.addAttribute("msg", "账户注册成功");
                 return "index";
@@ -95,11 +104,11 @@ public class LoginHandler {
         return "register1";
     }
 
-//    @GetMapping("/{url}")
-//    public String urlHandler(@PathVariable("url") String url)
-//    {
-//        return url;
-//    }
+    @GetMapping("/{url}")
+    public String urlHandler(@PathVariable("url") String url)
+    {
+        return url;
+    }
 
     @GetMapping("/logout")
     public String logoutHandler() {
@@ -112,6 +121,11 @@ public class LoginHandler {
     @ResponseBody
     public String unauthcHandler() {
         return "未验证用户，请登录";
+    }
+
+    @GetMapping("/favicon.ico")
+    public String favicon() {
+        return "favicon";
     }
 
 

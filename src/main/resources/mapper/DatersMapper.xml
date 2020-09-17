@@ -8,7 +8,7 @@
         SELECT
         id                  AS id,
         user_name           AS userName,
-        nick_name           AS name,
+        nick_name           AS nickName,
         age                 AS age,
         city                as city,
         province            as province,
@@ -16,6 +16,7 @@
         height              AS height,
         weight              AS weight,
         edu                 AS edu,
+        telephone           AS telephone,
         salary              AS salary
         FROM daters
     </sql>
@@ -115,6 +116,9 @@
             <if test="telephone!=null ">
                 telephone,
             </if>
+            <if test="photo!=null ">
+                photo,
+            </if>
         </trim>
     </sql>
 
@@ -153,6 +157,9 @@
             </if>
             <if test="telephone!=null ">
                 #{telephone},
+            </if>
+            <if test="photo!=null ">
+                #{photo},
             </if>
         </trim>
     </sql>

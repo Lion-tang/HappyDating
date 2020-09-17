@@ -10,11 +10,12 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
 
-@Controller(value = "/user")
+@Controller
 public class UserController {
 
     @Resource
@@ -24,10 +25,15 @@ public class UserController {
     public String getDaters(DaterRequestDTO daterRequestDTO) {
         //check
         //service(daterRequestDTO)
-        List<String> response = userService.getDaters(daterRequestDTO);
+        List<UserInfo> response = userService.getDaters(daterRequestDTO);
         Subject subject = SecurityUtils.getSubject();
         subject.getSession().setAttribute("daters", response);
-        return "park-xunren";
+        if (daterRequestDTO.getSex().equals("女")) {
+            return "park-xunren";
+        } else {
+            return "park-xunren-man";
+
+        }
     }
 
     @RequestMapping(value = "/updateInfo", method = RequestMethod.POST)
@@ -55,6 +61,13 @@ public class UserController {
     @RequestMapping(value = "/gettips", method = RequestMethod.GET)
     public List<String> getTips() {
         return userService.getTips();
+    }
+
+    @RequestMapping(value = "/detials", method = RequestMethod.GET)
+    public String detials(UserInfo userInfo) {
+        ParameterCheckUtils.checkUserName(userInfo);
+        userService.getInfoByUserName(userInfo.getUserName());
+        return "details";
     }
 
 }

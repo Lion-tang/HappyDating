@@ -32,7 +32,7 @@ class BlinddateApplicationTests {
     void getDatersTest() {
         DaterRequestDTO daterRequestDTO = new DaterRequestDTO();
         daterRequestDTO.setEdu("中南大学");
-        List<String> result = userService.getDaters(daterRequestDTO);
+        List<UserInfo> result = userService.getDaters(daterRequestDTO);
         System.out.println(result);
     }
 
