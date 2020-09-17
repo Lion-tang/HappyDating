@@ -54,6 +54,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserInfo getInfoByUserName(String username) {
+        return userDAO.getInfoByUserName(username);
+    }
+
+    @Override
     public List<String> getDaters(DaterRequestDTO daterRequestDTO) {
         List<UserInfo> daters = datersDAO.getDaters(daterRequestDTO);
         List<String> result = new ArrayList<String>();

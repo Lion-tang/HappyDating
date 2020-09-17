@@ -49,9 +49,18 @@ public class LoginHandler {
         try {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
             subject.login(token);
+//            拿到登录用户密码信息
             User user = (User) subject.getPrincipal();
             subject.getSession().setAttribute("user",user);
-            return "myaccount";
+            if (user.getRole().equals("user")) {
+//               判断为普通用户后，拿到登录用户个人信息
+                UserInfo userInfo = userService.getInfoByUserName(username);
+                subject.getSession().setAttribute("userInfo",userInfo);
+                return "myaccount";
+            } else {
+//                判断为管理员，返回给管理员页面
+                return "admin";
+            }
         } catch (UnknownAccountException e) {
             e.printStackTrace();
             model.addAttribute("msg", "用户名错误");
@@ -64,8 +73,8 @@ public class LoginHandler {
         }
 
     @PostMapping("/register1")
-    public String register1Handler(User user, Model model,HttpSession httpSession) {
-
+    public String register1Handler(String userName,String passWord, Model model,HttpSession httpSession) {
+        User user = new User(userName, passWord, "user");
         if (userService.findByUserName(user.getUserName())==null) {
             httpSession.setAttribute("user",user);
             return "register2";
@@ -75,7 +84,7 @@ public class LoginHandler {
         }
     }
 
-    @PostMapping("register2")
+    @PostMapping("/register2")
     public String register2Handler(HttpSession httpSession,Model model,String nickName, Integer age, String sex, String city, String province, Integer height, Integer weight, String edu, Integer salary, Long telephone,String check) {
         if (check!=null) {
             if (nickName!=null && telephone!=null) {
@@ -98,7 +107,7 @@ public class LoginHandler {
 
     }
 
-    @GetMapping("register")
+    @GetMapping("/register")
     public String reisgerStarter() {
         return "register1";
     }

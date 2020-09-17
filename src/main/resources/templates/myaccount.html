@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="shortcut icon" href="../favicon.ico" th:href="@{/static/favicon.ico}"/>
     <meta charset="UTF-8">
     <title>个人中心</title>
     <link rel="stylesheet" href="../static/css/base.css">
@@ -17,7 +18,7 @@
             <div class="left-area">
                 <div class="logo"><a href="#"></a></div>
                 <ul class="nav">
-                    <li class="current"><a href="#">个人主页</a></li>
+                    <li class="current"><a href="/myaccount">个人主页</a></li>
                     <li><a href="#">动态</a></li>
                     <li><a href="#">遇见</a></li>
                     <li><a href="#">搭讪广场</a></li>
@@ -29,7 +30,10 @@
                 <a href="#"><em></em></a>
                 <a href="#"><span class="sp1"></span></a>
                 <a href="#"><span class="sp1"></span></a>
-
+                <div class="today-base">
+                    <a href="#">今日推荐<em class="notice-num">1</em></a>
+                    <a href="#">暂不提示</a>
+                </div>
                 <div class="msg-box">
                     <ul>
                         <li><a href="#">查看私信</a></li>
@@ -76,26 +80,25 @@
             </div>
             <div class="profile-basic-main fl">
                 <p class="user-status-bar">
-                    <span class="username">韩梦</span>
+                    <span class="username" th:text="${session.userInfo.nickName}"></span>
                     <a class="in-block credit-level-female" href="javascript:;">中信用</a>
                     <a class="in-block icon-verified-mobile-female" href="javascript:;"></a>
-                    <span class="uid">ID：17266388</span>
+                    <span class="uid" th:text="|Id:${session.userInfo.id}|"></span>
                 </p>
                 <p class="profile-basic-info">
-                    <span class="sex">女</span>
-                    <span class="age">24岁</span>
-                    <span class="cm">164cm</span>
-                    <span class="area">湖北武汉</span>
-                    <span class="info-percent">资料完整度：95%</span>
+                    <span class="sex" th:text="${session.userInfo.sex}" ></span>
+                    <span class="age" th:text="|${session.userInfo.age}岁|"></span>
+                    <span class="cm" th:text="|TEL:${session.userInfo.telephone}|">/span>
+                    <span class="area" ></span>
                 </p>
                 <!-- 该用户有标签时显示 -->
                 <p class="profile-basic-tag-list clearfix">
-                    <span>苗条</span>
-                    <span>无神论者</span>
-                    <span>读书</span>
-                    <span>占有欲</span>
-                    <span>爱情至上</span>
-                    <span>浪漫</span>
+                    <span th:text="${session.userInfo.province}"></span>
+                    <span th:text="${session.userInfo.city}"></span>
+                    <span th:text="|${session.userInfo.weight}kg|"></span>
+                    <span th:text="|${session.userInfo.height}cm|"></span>
+                    <span th:text="${session.userInfo.edu}"></span>
+                    <span th:text="|月入${session.userInfo.salary}|"></span>
                     <span>依赖心强</span>
                     <span>日剧迷</span>
                     <span>传统</span>
@@ -684,616 +687,616 @@
     </div>
 <!-- 大学模态框结束 -->
 
-<!-- 私信模态框开始 -->
-<div class="modal-layer private-mess-box hide">
-    <div class="main-box modal-layer-main-sm">
-        <div class="title-row">
-            <h3>发送私信</h3>
-            <a class="icon-close" href="javascript:;"></a>
-        </div>
-        <div class="js-body">
-            <div class="poplayer-bd">
-                <p class="mess-tips-close">
-                    <span>提醒：请选择熟悉的环境见面，不要和任何人产生金钱往来，以防被骗。</span>
-                </p>
+<!--&lt;!&ndash; 私信模态框开始 &ndash;&gt;-->
+<!--<div class="modal-layer private-mess-box hide">-->
+    <!--<div class="main-box modal-layer-main-sm">-->
+        <!--<div class="title-row">-->
+            <!--<h3>发送私信</h3>-->
+            <!--<a class="icon-close" href="javascript:;"></a>-->
+        <!--</div>-->
+        <!--<div class="js-body">-->
+            <!--<div class="poplayer-bd">-->
+                <!--<p class="mess-tips-close">-->
+                    <!--<span>提醒：请选择熟悉的环境见面，不要和任何人产生金钱往来，以防被骗。</span>-->
+                <!--</p>-->
 
-                <div class="poplayer-send-message-addressee">
-                    <span class="fl">收件人：<i>心锁</i></span>
-                    <span class="fr"><a href="javascript:;">共2条对话</a></span>
-                </div>
+                <!--<div class="poplayer-send-message-addressee">-->
+                    <!--<span class="fl">收件人：<i>心锁</i></span>-->
+                    <!--<span class="fr"><a href="javascript:;">共2条对话</a></span>-->
+                <!--</div>-->
 
-                <div class="publish-textarea">
-                    <textarea></textarea>
-                </div>
+                <!--<div class="publish-textarea">-->
+                    <!--<textarea></textarea>-->
+                <!--</div>-->
 
-                <div class="publish-operate">
-                    <em class="icon-face emotion-trigger" title="表情"></em>
-                    <label class="label-tag">
-                        <input class="js-set-top" type="checkbox">
-                        在她消息中心置顶(<a class="text-red" href="javascript:;">开通高级VIP会员</a>免费使用)
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="foot-row">
-            <a class="general-btn red-button submit-red-button" href="javascript:;">发送</a>
-        </div>
+                <!--<div class="publish-operate">-->
+                    <!--<em class="icon-face emotion-trigger" title="表情"></em>-->
+                    <!--<label class="label-tag">-->
+                        <!--<input class="js-set-top" type="checkbox">-->
+                        <!--在她消息中心置顶(<a class="text-red" href="javascript:;">开通高级VIP会员</a>免费使用)-->
+                    <!--</label>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="foot-row">-->
+            <!--<a class="general-btn red-button submit-red-button" href="javascript:;">发送</a>-->
+        <!--</div>-->
 
-        <div class="emoji-layer">
-            <div class="icon-winlayer-arrow-up"></div>
-            <div class="title-row">
-                <a class="icon-close" href="javascript:;"></a>
-            </div>
-            <div class="winlayer-emoji-list clearfix">
-                <ul class="clearfix">
-                    <li><a data-code="[daizhi]" data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                    <li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>
-                </ul>
-                <p class="emoji-select-tip text-gray">提示：按Ctrl可以一次多选表情</p>
-            </div>
-        </div>
-    </div>
-</div>
+        <!--<div class="emoji-layer">-->
+            <!--<div class="icon-winlayer-arrow-up"></div>-->
+            <!--<div class="title-row">-->
+                <!--<a class="icon-close" href="javascript:;"></a>-->
+            <!--</div>-->
+            <!--<div class="winlayer-emoji-list clearfix">-->
+                <!--<ul class="clearfix">-->
+                    <!--<li><a data-code="[daizhi]" data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="../static/images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="../static/images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                    <!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+                <!--</ul>-->
+                <!--<p class="emoji-select-tip text-gray">提示：按Ctrl可以一次多选表情</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <!-- 私信模态框结束 -->
 
 <!-- 送礼模态框开始 -->
-    <div class="modal-layer send-gift hide">
-        <div class="main-box">
-            <div class="title-row">
-                <h3>给<span class="to-gift-user">韩梦</span>送礼物</h3>
-                <a class="icon-close" href="javascript:;"></a>
-            </div>
-            <div class="js-body">
-                <div class="poplayer-bd">
-                    <div class="poplayer-gift-tips text-dark-gray clearfix">
-                        <span class="text-dark text-block fr">
-                            <em class="vip-open-icon"></em>
-                            <a class="vip-text" href="#">开通高级vip会员</a>，礼物全场5折
-                        </span>
-                    </div>
-                    <div class="arrow-area">
-                        <a class="poplayer-slider-prev prev-trigger disabled" href="javascript:;">
-                            <em class="poplayer-gift-slider-prev"></em>
-                        </a>
-                        <a class="poplayer-slider-next next-trigger" href="javascript:;">
-                            <em class="poplayer-gift-slider-next"></em>
-                        </a>
-                    </div>
-                    <div class="poplayer-slider-content">
-                        <div class="poplayer-gift-list-box">
-                            <ul class="gift-list-ul current fl clearfix">
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/chocolate.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="gift-list-ul fl clearfix">
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/cat.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="gift-list-ul fl clearfix">
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="gift-img-box">
-                                            <img src="images/gift/yaodai.png" alt="篮球">
-                                        </div>
-                                        <div class="gift-desc-box clearfix">
-                                            <span>表达好感礼物</span>
-                                            <em></em>
-                                        </div>
-                                        <div class="gift-name">巧克力</div>
-                                        <div class="gift-price text-gray">免费</div>
-                                        <div class="icon-vip-privilege"></div>
-                                        <div class="icon-gift-selected hide"></div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="foot-row">
-                <a class="general-btn red-button" href="javascript:;">立即赠送</a>
-            </div>
-        </div>
-    </div>
+    <!--<div class="modal-layer send-gift hide">-->
+        <!--<div class="main-box">-->
+            <!--<div class="title-row">-->
+                <!--<h3>给<span class="to-gift-user">韩梦</span>送礼物</h3>-->
+                <!--<a class="icon-close" href="javascript:;"></a>-->
+            <!--</div>-->
+            <!--<div class="js-body">-->
+                <!--<div class="poplayer-bd">-->
+                    <!--<div class="poplayer-gift-tips text-dark-gray clearfix">-->
+                        <!--<span class="text-dark text-block fr">-->
+                            <!--<em class="vip-open-icon"></em>-->
+                            <!--<a class="vip-text" href="#">开通高级vip会员</a>，礼物全场5折-->
+                        <!--</span>-->
+                    <!--</div>-->
+                    <!--<div class="arrow-area">-->
+                        <!--<a class="poplayer-slider-prev prev-trigger disabled" href="javascript:;">-->
+                            <!--<em class="poplayer-gift-slider-prev"></em>-->
+                        <!--</a>-->
+                        <!--<a class="poplayer-slider-next next-trigger" href="javascript:;">-->
+                            <!--<em class="poplayer-gift-slider-next"></em>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="poplayer-slider-content">-->
+                        <!--<div class="poplayer-gift-list-box">-->
+                            <!--<ul class="gift-list-ul current fl clearfix">-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/chocolate.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            <!--<ul class="gift-list-ul fl clearfix">-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/cat.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            <!--<ul class="gift-list-ul fl clearfix">-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<div class="gift-img-box">-->
+                                            <!--<img src="images/gift/yaodai.png" alt="篮球">-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-desc-box clearfix">-->
+                                            <!--<span>表达好感礼物</span>-->
+                                            <!--<em></em>-->
+                                        <!--</div>-->
+                                        <!--<div class="gift-name">巧克力</div>-->
+                                        <!--<div class="gift-price text-gray">免费</div>-->
+                                        <!--<div class="icon-vip-privilege"></div>-->
+                                        <!--<div class="icon-gift-selected hide"></div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="foot-row">-->
+                <!--<a class="general-btn red-button" href="javascript:;">立即赠送</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 <!-- 送礼模态框结束 -->
 </body>
 </html>

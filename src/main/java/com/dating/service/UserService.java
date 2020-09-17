@@ -13,6 +13,8 @@ public interface UserService {
 
     public User findByUserName(String username);
 
+    public UserInfo getInfoByUserName(String username);
+
     public List<String> getDaters(DaterRequestDTO daterRequestDTO);
 
     public boolean updateUserInfo(UserInfo userInfo);
