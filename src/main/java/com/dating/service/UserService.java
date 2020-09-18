@@ -15,7 +15,7 @@ public interface UserService {
 
     public UserInfo getInfoByUserName(String username);
 
-    public List<String> getDaters(DaterRequestDTO daterRequestDTO);
+    public List<UserInfo> getDaters(DaterRequestDTO daterRequestDTO);
 
     public boolean updateUserInfo(UserInfo userInfo);
 

@@ -3,26 +3,18 @@ package com.dating.Controller;
 import com.dating.pojo.User;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
-import com.mysql.cj.xdevapi.Session;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
@@ -130,6 +122,11 @@ public class LoginHandler {
     @ResponseBody
     public String unauthcHandler() {
         return "未验证用户，请登录";
+    }
+
+    @GetMapping("/templates/favicon.ico")
+    public String favicon() {
+        return "favicon";
     }
 
 

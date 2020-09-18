@@ -16,6 +16,7 @@
         height              AS height,
         weight              AS weight,
         edu                 AS edu,
+        telephone           AS telephone,
         salary              AS salary
         FROM daters
     </sql>
@@ -37,10 +38,10 @@
                 AND nick_name = #{nickName}
             </if>
             <if test="minAge != null">
-                AND age >= #{min_age}
+                AND age >= #{minAge}
             </if>
             <if test="maxAge != null">
-                AND #{max_age} >= age
+                AND #{maxAge} >= age
             </if>
             <if test="sex != null">
                 AND sex = #{sex}
@@ -52,25 +53,25 @@
                 AND province = #{province}
             </if>
             <if test="minHeight != null">
-                AND height >= #{min_height}
+                AND height >= #{minHeight}
             </if>
             <if test="maxHeight != null">
-                AND #{max_height} >= height
+                AND #{maxHeight} >= height
             </if>
             <if test="minWeight != null">
-                AND weight >= #{min_weight}
+                AND weight >= #{minWeight}
             </if>
             <if test="maxWeight != null">
-                AND #{max_weight} >= weight
+                AND #{maxWeight} >= weight
             </if>
             <if test="edu != null">
                 AND edu = #{edu}
             </if>
             <if test="minSalary != null">
-                AND salary >= #{min_salary}
+                AND salary >= #{minSalary}
             </if>
             <if test="maxSalary != null">
-                AND #{max_salary} >= salary
+                AND #{maxSalary} >= salary
             </if>
             <if test="telephone != null">
                 AND telephone = #{telephone}

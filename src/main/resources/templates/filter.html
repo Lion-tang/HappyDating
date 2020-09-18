@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>找对象</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/park.css">
+    <link rel="stylesheet" href="../static/css/park-xunren.css">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/common.js"></script>
+</head>
+<body>
+<header>
+    <div class="top-nav">
+        <div class="w">
+            <div class="left-area">
+                <div class="logo"><a href="#"></a></div>
+                <ul class="nav">
+                    <li><a href="/myaccount">个人主页</a></li>
+                    <li class="current"><a href="/getDaters?sex=女">遇见</a></li>
+                    <li><a href="#">通知</a></li>
+                    <li><a href="/logout">退出</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</header>
+<nav class="park-nav">
+    <div class="w">
+        <div class="park-nav-item current">
+            <em class="park-nav-icon park-nav-icon-xunren hovered"></em>
+            <span class="park-nav-label">找对象</span>
+            <i class="park-nav-marked"></i>
+            <em class="box-icon"></em>
+        </div>
+        <div class="park-nav-item">
+            <em class="park-nav-icon park-nav-icon-topic"></em>
+            <span class="park-nav-label">话题</span>
+            <i class="park-nav-marked hide"></i>
+            <em class="box-icon hide"></em>
+        </div>
+        <div class="park-nav-item">
+            <em class="park-nav-icon park-nav-icon-party"></em>
+            <span class="park-nav-label">线下活动</span>
+            <i class="park-nav-marked hide"></i>
+            <em class="box-icon hide"></em>
+        </div>
+    </div>
+</nav>
+
+<div class="signup-form-content" with="300px">
+    <form action="/getDaters" method="get">
+        <div class="content-box" th:width="200px">
+            <div class="w">
+                <h>筛选条件</h>
+                <div class="signup-form-content">
+                    <br/>
+                    <div class="form-control">
+                        <labal>昵 &nbsp; 称：</labal>
+                        <input class="col-12" type="text" name="nickName" maxlength="32">
+                    </div>
+                    <div class="form-control">
+                        <labal>性 &nbsp; 别：</labal>
+                        <span class="form-inline">
+                            <input class="input-radio" type="radio" name="sex" value="男">男
+                        </span>
+                        <span class="form-inline">
+                             <input class="input-radio" type="radio" name="sex" value="女">女
+                         </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>最低年龄：</labal>
+                        <input class="col-12" type="text" name="minAge" maxlength="3">
+                    </div>
+                    <div class="form-control">
+
+                        <labal>最低年龄：</labal>
+                        <input class="col-12" type="text" name="maxAge" maxlength="3">
+                    </div>
+                    <div class="form-control">
+
+                        <labal>最低身高：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="minHeight" maxlength="3">
+                        </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>最高身高：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="maxHeight" maxlength="3">
+                        </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>最低体重：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="minWeight" maxlength="3">
+                        </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>最高体重：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="maxWeight" maxlength="3">
+                        </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>学 &nbsp; 历：</labal>
+                        <span class="form-inline">
+                         <input class="col-12" type="text" name="edu">
+                        </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>省 &nbsp; 市：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="province">
+                        </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>城 &nbsp; 市：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="city">
+                        </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>最低月均收入：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="minSalary">
+                        </span>
+                    </div>
+                    <div class="form-control">
+
+                        <labal>最高月均收入：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="maxSalary">
+                        </span>
+                    </div>
+                    <div class="form-control">
+                        <labal>电话号码：</labal>
+                        <span class="form-inline">
+                            <input class="col-12" type="text" name="telephone" minlength="11" maxlength="11">
+                        </span>
+                    </div>
+                    <button class="form-control">
+                        <input class="register-step1-btn" type="submit" value="筛选"></input>
+                    </button>
+                </div>
+                </div>
+            </div>
+    </form>
+</div>
+<section id="footer">
+    <div class="w">
+        <div class="bot">
+            <a href="#">公司简介</a> -
+            <a href="#">联系方法</a> -
+            <a href="#">招聘信息</a> -
+            <a href="#">使用条款</a> -
+            <a href="#">花田动态</a> -
+            <a href="#">友情链接</a> -
+            <a href="#">网站地图</a> -
+            <a href="#">花田意见反馈</a> -
+            经营许可证：<a href="#">暂时没有</a><br/>
+            中南大学版权所有<br/>
+            <i>©2020</i>
+        </div>
+    </div>
+</section>
+</body>
+</html>
