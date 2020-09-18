@@ -19,7 +19,8 @@ public class ShiroConfig {
         factoryBean.setSecurityManager(securityManager);
         Map<String,String> map = new Hashtable<>();
         map.put("/myaccount", "authc");
-        map.put("/admin", "perms[manage]");
+        map.put("/admin", "authc");
+//        map.put("/admin", "perms[manage]");
         factoryBean.setFilterChainDefinitionMap(map);
         factoryBean.setLoginUrl("/index");
         factoryBean.setUnauthorizedUrl("/unauthc");

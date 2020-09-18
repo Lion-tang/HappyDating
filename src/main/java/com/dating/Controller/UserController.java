@@ -1,10 +1,12 @@
 package com.dating.Controller;
 
 import com.dating.DAO.QueryDTO.DaterRequestDTO;
+import com.dating.common.CheckBasicException;
 import com.dating.common.ParameterCheckUtils;
 import com.dating.pojo.MsgInfo;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
+import com.google.common.base.Strings;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
@@ -66,7 +68,16 @@ public class UserController {
         List result = userService.leaveMessage(msgInfo);
         Subject subject = SecurityUtils.getSubject();
         subject.getSession().setAttribute("msgInfoList", result);
-        return "leaveMsg";
+        return "getMsg";
+    }
+
+    @RequestMapping(value = "/leaveMsg1", method = RequestMethod.POST)
+    public String leaveMessage1(MsgInfo msgInfo) {
+        ParameterCheckUtils.checkMsgInfo(msgInfo);
+        List result = userService.leaveMessage(msgInfo);
+        Subject subject = SecurityUtils.getSubject();
+        subject.getSession().setAttribute("msgInfoList", result);
+        return "myMsg";
     }
 
     @RequestMapping(value = "/getMsg", method = RequestMethod.GET)
@@ -76,6 +87,18 @@ public class UserController {
         Subject subject = SecurityUtils.getSubject();
         subject.getSession().setAttribute("msgInfoList", result);
         return "getMsg";
+    }
+
+    @RequestMapping(value = "/myMsg", method = RequestMethod.GET)
+    public String myMsg(MsgInfo msgInfo) {
+        ParameterCheckUtils.checkNotNull(msgInfo);
+        if (Strings.isNullOrEmpty(msgInfo.getUserName())){
+         throw new CheckBasicException("用户名不能为空");
+        }
+        List<MsgInfo> result = userService.getMessage(msgInfo);
+        Subject subject = SecurityUtils.getSubject();
+        subject.getSession().setAttribute("msgInfoList", result);
+        return "myMsg";
     }
 
     @RequestMapping(value = "/gettips", method = RequestMethod.GET)

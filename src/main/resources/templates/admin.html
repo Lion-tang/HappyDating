@@ -1,10 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>管理员页面</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/park.css">
+    <link rel="stylesheet" href="../static/css/park-xunren.css">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/common.js"></script>
 </head>
 <body>
-管理员页面
+<header>
+    <div class="top-nav">
+        <div class="w">
+            <div class="left-area">
+                <div class="logo"><a href="#"></a></div>
+                <ul class="nav">
+                    <li><a href="/admin">管理页面</a></li>
+                    <li><a href="/logout">退出</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</header>
+<nav class="park-nav">
+
+</nav>
+<div class="park-banner">
+    <div class="w">
+        <h1 class="park-banner-title">管理网站会员</h1>
+        <div class="park-banner-inner">
+            <div class="recomm-publish fr">
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="recommand-list clearfix">
+    <div class="w">
+        <div class="recommand-filter">
+            <a class="current" href="/manage">会员列表</a>
+        </div>
+        <div class="recommand-user">
+            <ul>
+                <li th:each="userInfo,iterStat : ${session.userInfos}">
+                    <a class="a-box" >
+                        <div class="recommand-user-desc fl">
+                            <h2 class="recommand-user-desc-title"><p th:text="|${userInfo.nickName}|"/></h2>
+                            <p class="recommand-user-desc-content" th:text="|${userInfo.nickName}, ${userInfo.height}cm, ${userInfo.weight}kg, 电话：${userInfo.telephone}|"></p>
+                        </div>
+                        <div class="recommand-user-view fr">
+                            <div class="injection">
+                            </div>
+                        </div>
+                        <div class="view-shadow"><span class="text-tips" >删除用户</span></div>
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<section id="footer">
+    <div class="w">
+        <div class="bot">
+            <a href="#">公司简介</a> -
+            <a href="#">联系方法</a> -
+            <a href="#">招聘信息</a> -
+            <a href="#">使用条款</a> -
+            <a href="#">花田动态</a> -
+            <a href="#">友情链接</a> -
+            <a href="#">网站地图</a> -
+            <a href="#">花田意见反馈</a> -
+            经营许可证：<a href="#">暂时没有</a><br/>
+            中南大学版权所有<br/>
+            <i>©2020</i>
+        </div>
+    </div>
+</section>
 </body>
 </html>

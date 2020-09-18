@@ -51,5 +51,8 @@
         <include refid="order_condition"/>
     </select>
 
+    <select id="getAllUserInfo" resultType="com.dating.pojo.UserInfo">
+        SELECT id as id,user_name as userName,nick_name as nickName,age,sex,height,weight,edu,province,city,salary,telephone,photo FROM daters
+    </select>
 
 </mapper>
