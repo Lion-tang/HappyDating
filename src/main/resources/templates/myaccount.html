@@ -29,10 +29,12 @@
 </header>
 
 </header>
-    <div class="profile-mainbox profile-female clearfix">
-        <div class="w clearfix">
-            <div class="profile-basic-avatar fl">
-                <div class="user-avatar">
+<div class="profile-mainbox profile-female clearfix">
+    <div class="w clearfix">
+        <div class="profile-basic-avatar fl">
+            <div class="user-avatar">
+
+
 
                     <div class="user-check"><span>非真人头像，请上传清晰美观个人照</span></div>
                     <img th:src="@{../static/images/myaccount/{photo}(photo=${session.userInfo.photo})}" alt="" th:height="240px" th:width="240px"/>
@@ -73,21 +75,26 @@
                     <span>传统</span>
                     <span>羽毛球</span>
                 </p>
+
                 <!-- 没有标签记录时的文字提示 -->
                 <p class="profile-basic-tag-desc">
                     暂无标签（<a href="#">回答QA</a>、<a href="#">完善资料</a>获得更多标签）<a class="icon-edit-s" href="javascript:;" title="编辑标签"></a>
                 </p>
+                <br/>
+                <div class="profile-basic-main fl">
 
+                    <p class="profile-basic-relation">
+                        <a href="javascript:;" class="icon-mess"><em></em><i>私信</i></a>
+                        <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
+                        <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
+                        <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
 
-            <p class="profile-basic-relation">
-                <a href="javascript:;" class="icon-mess"><em></em><i>私信</i></a>
-                <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
-                <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
-                <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
+                    </p>
+                </div>
 
-            </p>
-
+            </div>
         </div>
+
     </div>
     <div class="w">
         <div class="profile-header">
@@ -145,6 +152,12 @@
                                 <em class="profile-time-arrowBottom"></em>
                             </div>
                             <div class="trend-item-title">上传了头像</div>
+
+                            <div class="photo-media">
+                                <a href="javascript:;"><img src="../static/images/myaccount/anonymous.jpg" alt=""></a>
+                                <a href="javascript:;"><img src="../static/images/myaccount/anonymous.jpg" alt=""></a>
+                            </div>
+
                             <div class="trend-footer">
                                 <div class="media-info fl">
                                     <em class="in-block trend-publish-time"></em>
@@ -200,246 +213,206 @@
                                     <div class="right-contact-btn profile-join-btn fr">
                                         <a class="" href="#">报名参加</a>
                                     </div>
+
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-<!--            <div class="profile-info-box hide">-->
-<!--                <div class="lover-desc-box">-->
-<!--                    <h2 class="label-text">交友要求</h2>-->
-<!--                    <span class="js-edit-btn"><a class="a-icon-edit" href="javascript:;"></a></span>-->
-<!--                    <span class="js-edit-btn hide"><a class="a-cancel-edit-text" href="javascript:;">取消编辑</a></span>-->
-<!--                    <div class="js-edit hide">-->
-<!--                        <div class="form-row">-->
-<!--                            <label class="form-label">身高:</label>-->
-<!--                            <div class="form-control">-->
-<!--                                <select>-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                                <span>到</span>-->
-<!--                                <select>-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="form-row">-->
-<!--                            <label class="form-label">年龄:</label>-->
-<!--                            <div class="form-control">-->
-<!--                                <select>-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                                <span>到</span>-->
-<!--                                <select>-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="form-row">-->
-<!--                            <label class="form-label">学历:</label>-->
-<!--                            <div class="form-control">-->
-<!--                                <select class="js-education-select">-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="form-row">-->
-<!--                            <label class="form-label">月收入:</label>-->
-<!--                            <div class="form-control">-->
-<!--                                <select>-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                                <span>到</span>-->
-<!--                                <select>-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="form-row">-->
-<!--                            <label class="form-label">居住在:</label>-->
-<!--                            <div class="form-control">-->
-<!--                                <select>-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                                <span>到</span>-->
-<!--                                <select>-->
-<!--                                    <option value="">不限</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="form-row">-->
-<!--                            <label class="form-label"></label>-->
-<!--                            <a class="general-btn red-button submit-btn" href="javascript:;">保存</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+            <div class="profile-info-box hide">
+                <div class="lover-desc-box">
+                    <h2 class="label-text">交友要求</h2>
+                    <!--<span class="js-edit-btn"><a class="a-icon-edit" href="javascript:;"></a></span>-->
+                    <!--<span class="js-edit-btn hide"><a class="a-cancel-edit-text" href="javascript:;">取消编辑</a></span>-->
+                    <div class="js-info-preview">我希望你在 <span class="keyword"
+                                                             th:text="|${session.userInfo.province}${session.userInfo.city}|"></span>
+                        ，年龄<span class="keyword" th:text="|${session.userInfo.age-1}-${session.userInfo.age+3}|"></span>之间
+                        。以上并不是硬性要求，快来和我联系吧。
+                    </div>
+                    <div class="js-edit hide">
+                        <p class="js-tips">
+                            <span>修改交友要求将同步修改首页的搜索条件</span>
+                            <em class="icon-close"></em>
+                        </p>
+                        <div class="form-row">
+                            <label class="form-label">身高:</label>
+                            <div class="form-control">
+                                <select>
+                                    <option value="">不限</option>
+                                </select>
+                                <span>到</span>
+                                <select>
+                                    <option value="">不限</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-label">年龄:</label>
+                            <div class="form-control">
+                                <select>
+                                    <option value="">不限</option>
+                                </select>
+                                <span>到</span>
+                                <select>
+                                    <option value="">不限</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-label">学历:</label>
+                            <div class="form-control">
+                                <select class="js-education-select">
+                                    <option value="">不限</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-label">月收入:</label>
+                            <div class="form-control">
+                                <select>
+                                    <option value="">不限</option>
+                                </select>
+                                <span>到</span>
+                                <select>
+                                    <option value="">不限</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-label">居住在:</label>
+                            <div class="form-control">
+                                <select>
+                                    <option value="">不限</option>
+                                </select>
+                                <span>到</span>
+                                <select>
+                                    <option value="">不限</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label class="form-label"></label>
+                            <a class="general-btn red-button submit-btn" href="javascript:;">保存</a>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="summary-info-box">
                     <div class="member-base-info">
                         <h2 class="label-text">基本资料</h2>
                         <span class="js-edit-btn"><a class="a-icon-edit" href="javascript:;"></a></span>
                         <span class="js-edit-btn hide"><a class="a-cancel-edit-text" href="javascript:;">取消编辑</a></span>
                         <div class="js-info-preview">
-                            <p><span class="text-gray">昵称：</span>韩梦</p>
-                            <p><span class="text-gray">婚姻状态：</span>未婚</p>
-                            <p><span class="text-gray">我在寻找：</span>恋人</p>
-                            <p><span class="text-gray">性别：</span>女</p>
-                            <p><span class="text-gray">年龄：</span>21岁</p>
-                            <p><span class="text-gray">身高：</span>164cm</p>
-                            <p><span class="text-gray">体重：</span>44kg</p>
-                            <p><span class="text-gray">居住在：</span>湖北武汉</p>
-                            <p><span class="text-gray">学历：</span>大专以下</p>
-                            <p><span class="text-gray">毕业院校：</span>你的心</p>
-                            <p><span class="text-gray">行业：</span>商业/服务业/个体经营</p>
-                            <p><span class="text-gray">工作单位：</span>美颜美甲</p>
-                            <p><span class="text-gray">目前职位：</span>普通职员</p>
-                            <p><span class="text-gray">月收入：</span>2000-4000元</p>
+                            <p><span class="text-gray" th:text="|昵称:${session.userInfo.nickName}|"></span></p>
+                            <p><span class="text-gray" th:text="我在寻找：恋人"></span></p>
+                            <p><span class="text-gray" th:text="|性别：${session.userInfo.sex}|"></span></p>
+                            <p><span class="text-gray" th:text="|年龄：${session.userInfo.age}|"></span></p>
+                            <p><span class="text-gray" th:text="|身高：${session.userInfo.height}|"></span></p>
+                            <p><span class="text-gray" th:text="|体重：${session.userInfo.weight}kg|"></span></p>
+                            <p><span class="text-gray"
+                                     th:text="|居住在：${session.userInfo.province}${session.userInfo.city}|"></span></p>
+                            <p><span class="text-gray" th:text="|学历：${session.userInfo.edu}|"></span></p>
+                            <p><span class="text-gray" th:text="目前职位：员工"></span></p>
+                            <p><span class="text-gray" th:text="|月收入：${session.userInfo.salary}元|"></span></p>
                         </div>
-                        <div class="js-edit hide">
-                            <div class="form-row">
-                                <label class="form-label">昵称:</label>
-                                <div class="form-control">
-                                    <input class="input-text single-column" type="text" placeholder="输入您的昵称">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">婚姻状态:</label>
-                                <div class="form-control">
-                                    <select class="single-column">
-                                        <option class="input-text" value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">我在寻找:</label>
-                                <div class="form-control">
-                                    <select class="single-column">
-                                        <option class="input-text" value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">性别:</label>
-                                <div class="form-control">
-                                    <select class="single-column">
-                                        <option class="input-text" value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">生日:</label>
-                                <div class="form-control">
-                                    <select>
-                                        <option value="">不限</option>
-                                    </select>
-                                    <select>
-                                        <option value="">不限</option>
-                                    </select>
-                                    <select>
-                                        <option value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">身高:</label>
-                                <div class="form-control">
-                                    <select class="single-column">
-                                        <option class="input-text" value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">体重:</label>
-                                <div class="form-control">
-                                    <input class="input-text single-column" type="text" placeholder="">
-                                </div>
-                                <span>公斤</span>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">居住在:</label>
-                                <div class="form-control">
-                                    <select class="col-w-6">
-                                        <option value="">不限</option>
-                                    </select>
-                                    <select class="col-w-6">
-                                        <option value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">学历:</label>
-                                <div class="form-control">
-                                    <select class="single-column">
-                                        <option class="input-text" value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">毕业院校:</label>
-                                <div class="form-control">
-                                    <input class="input-text single-column graduate-university" type="text"
-                                           placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">行业:</label>
-                                <div class="form-control">
-                                    <select class="single-column">
-                                        <option class="input-text" value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">工作单位:</label>
-                                <div class="form-control">
-                                    <input class="input-text single-column" type="text" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">目前职位:</label>
-                                <div class="form-control">
-                                    <select class="single-column">
-                                        <option class="input-text" value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label class="form-label">月收入:</label>
-                                <div class="form-control">
-                                    <select class="single-column">
-                                        <option class="input-text" value="">不限</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!--保存-->
-                            <div class="form-row">
-                                <label class="form-label"></label>
-                                <a class="general-btn red-button submit-btn" href="javascript:;">保存</a>
-                            </div>
 
-                        </div>
-                    </div>
+                        <form action="/updateInfo" method="post">
+                            <div class="js-edit hide">
+                                <div class="form-row">
+                                    <label class="form-label">用户名:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="userName"
+                                               th:value="${session.userInfo.userName}" readonly="true">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">昵称:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="nickName"
+                                               th:value="${session.userInfo.nickName}">
+                                    </div>
+                                </div>
 
-                    <div class="member-detail-box">
+                                <div class="form-row">
+                                    <label class="form-label">年龄:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="age"
+                                               th:value="${session.userInfo.age}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">性别:</label>
+                                        <div class="form-control">
+                                            <input class="input-text single-column" type="text" name="sex"
+                                                   th:value="${session.userInfo.sex}" maxlength="1">
+                                        </div>
 
-                        <div class="js-edit hide">
-                            <div class="form-row">
-                                <label class="form-label">户口:</label>
-                                <div class="form-control">
-                                    <select class="col-w-6">
-                                        <option value="">湖北</option>
-                                    </select>
-                                    <select class="col-w-6">
-                                        <option value="">武汉</option>
-                                    </select>
+                                </div>
+
+                                <div class="form-row">
+                                    <label class="form-label">居住城市:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="city"
+                                               th:value="${session.userInfo.city}">
+                                    </div></div>
+                                    <div class="form-row">
+                                        <label class="form-label">居住省份:</label>
+                                        <div class="form-control">
+                                            <input class="input-text single-column" type="text" name="province"
+                                                   th:value="${session.userInfo.province}">
+                                        </div>
+                                    </div>
+
+
+                                <div class="form-row">
+                                    <label class="form-label">身高:</label>
+                                        <div class="form-control">
+                                            <input class="input-text single-column" type="text" name="height"
+                                                   th:value="${session.userInfo.height}">
+                                        </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">体重:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="weight"
+                                               th:value="${session.userInfo.weight}">
+                                    </div>
+                                    <span>kg</span>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">学历:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="edu"
+                                               th:value="${session.userInfo.edu}">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label class="form-label">月收入:</label>
+                                    <div class="form-control">
+                                        <div class="form-control">
+                                            <input class="input-text single-column" type="text" name="salary"
+                                                   th:value="${session.userInfo.salary}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">电话号码:</label>
+                                    <div class="form-control">
+                                        <div class="form-control">
+                                            <input class="input-text single-column" type="text" name="telephone"
+                                                   th:value="${session.userInfo.telephone}" maxlength="11">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label"></label>
+                                    <input class="general-btn red-button submit-btn" type="submit" value="保存"/>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <label class="form-label"></label>
-                                <a class="general-btn red-button submit-btn" href="javascript:;">保存</a>
-                            </div>
+                        </form>
 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -532,5 +505,620 @@
         </div>
     </div>
 </div>
+
+<!-- 大学模态框结束 -->
+
+<!--&lt;!&ndash; 私信模态框开始 &ndash;&gt;-->
+<!--<div class="modal-layer private-mess-box hide">-->
+<!--<div class="main-box modal-layer-main-sm">-->
+<!--<div class="title-row">-->
+<!--<h3>发送私信</h3>-->
+<!--<a class="icon-close" href="javascript:;"></a>-->
+<!--</div>-->
+<!--<div class="js-body">-->
+<!--<div class="poplayer-bd">-->
+<!--<p class="mess-tips-close">-->
+<!--<span>提醒：请选择熟悉的环境见面，不要和任何人产生金钱往来，以防被骗。</span>-->
+<!--</p>-->
+
+<!--<div class="poplayer-send-message-addressee">-->
+<!--<span class="fl">收件人：<i>心锁</i></span>-->
+<!--<span class="fr"><a href="javascript:;">共2条对话</a></span>-->
+<!--</div>-->
+
+<!--<div class="publish-textarea">-->
+<!--<textarea></textarea>-->
+<!--</div>-->
+
+<!--<div class="publish-operate">-->
+<!--<em class="icon-face emotion-trigger" title="表情"></em>-->
+<!--<label class="label-tag">-->
+<!--<input class="js-set-top" type="checkbox">-->
+<!--在她消息中心置顶(<a class="text-red" href="javascript:;">开通高级VIP会员</a>免费使用)-->
+<!--</label>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="foot-row">-->
+<!--<a class="general-btn red-button submit-red-button" href="javascript:;">发送</a>-->
+<!--</div>-->
+
+<!--<div class="emoji-layer">-->
+<!--<div class="icon-winlayer-arrow-up"></div>-->
+<!--<div class="title-row">-->
+<!--<a class="icon-close" href="javascript:;"></a>-->
+<!--</div>-->
+<!--<div class="winlayer-emoji-list clearfix">-->
+<!--<ul class="clearfix">-->
+<!--<li><a data-code="[daizhi]" data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="../static/images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="../static/images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/peach/daizhi.png" alt="呆滞"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--<li><a data-code="[daizhi]" href="javascript:;" title="呆滞"><img src="images/emotion/emoji/Smiling_Face_With_Smiling_Eyes.png" alt="微笑"></a></li>-->
+<!--</ul>-->
+<!--<p class="emoji-select-tip text-gray">提示：按Ctrl可以一次多选表情</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!-- 私信模态框结束 -->
+
+<!-- 送礼模态框开始 -->
+<!--<div class="modal-layer send-gift hide">-->
+<!--<div class="main-box">-->
+<!--<div class="title-row">-->
+<!--<h3>给<span class="to-gift-user">韩梦</span>送礼物</h3>-->
+<!--<a class="icon-close" href="javascript:;"></a>-->
+<!--</div>-->
+<!--<div class="js-body">-->
+<!--<div class="poplayer-bd">-->
+<!--<div class="poplayer-gift-tips text-dark-gray clearfix">-->
+<!--<span class="text-dark text-block fr">-->
+<!--<em class="vip-open-icon"></em>-->
+<!--<a class="vip-text" href="#">开通高级vip会员</a>，礼物全场5折-->
+<!--</span>-->
+<!--</div>-->
+<!--<div class="arrow-area">-->
+<!--<a class="poplayer-slider-prev prev-trigger disabled" href="javascript:;">-->
+<!--<em class="poplayer-gift-slider-prev"></em>-->
+<!--</a>-->
+<!--<a class="poplayer-slider-next next-trigger" href="javascript:;">-->
+<!--<em class="poplayer-gift-slider-next"></em>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="poplayer-slider-content">-->
+<!--<div class="poplayer-gift-list-box">-->
+<!--<ul class="gift-list-ul current fl clearfix">-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/chocolate.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<ul class="gift-list-ul fl clearfix">-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/cat.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<ul class="gift-list-ul fl clearfix">-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--<li>-->
+<!--<a href="javascript:;">-->
+<!--<div class="gift-img-box">-->
+<!--<img src="images/gift/yaodai.png" alt="篮球">-->
+<!--</div>-->
+<!--<div class="gift-desc-box clearfix">-->
+<!--<span>表达好感礼物</span>-->
+<!--<em></em>-->
+<!--</div>-->
+<!--<div class="gift-name">巧克力</div>-->
+<!--<div class="gift-price text-gray">免费</div>-->
+<!--<div class="icon-vip-privilege"></div>-->
+<!--<div class="icon-gift-selected hide"></div>-->
+<!--</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="foot-row">-->
+<!--<a class="general-btn red-button" href="javascript:;">立即赠送</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!-- 送礼模态框结束 -->
+
 </body>
 </html>

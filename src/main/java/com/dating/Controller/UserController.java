@@ -43,9 +43,13 @@ public class UserController {
     @RequestMapping(value = "/updateInfo", method = RequestMethod.POST)
     public String updateUserInfo(UserInfo userInfo) {
         if (userService.updateUserInfo(userInfo)) {
-            return "成功";
+            Subject subject = SecurityUtils.getSubject();
+            userInfo = userService.getInfoByUserName(userInfo.getUserName());
+            subject.getSession().setAttribute("userInfo",userInfo);
+            System.out.println("更新成功");
+            return "myaccount";
         }
-        return "失败";
+        return "myaccount";
     }
 
     @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)

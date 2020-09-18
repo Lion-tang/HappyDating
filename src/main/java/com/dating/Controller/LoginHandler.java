@@ -77,25 +77,26 @@ public class LoginHandler {
     }
 
     @PostMapping("/register2")
-    public String register2Handler(HttpSession httpSession,Model model,String nickName, Integer age, String sex, String city, String province, Integer height, Integer weight, String edu, Integer salary, Long telephone,String check) {
+    public String register2Handler(HttpSession httpSession,Model model,UserInfo userInfo,String check) {
         if (check!=null) {
-            if (nickName!=null && telephone!=null) {
+            if (userInfo.getNickName()!=null && userInfo.getTelephone()!=null) {
                 User user= (User) httpSession.getAttribute("user");
-                UserInfo userInfo = new UserInfo(null,user.getUserName(),nickName,age,sex,city,province,height,weight,edu,salary,telephone,"anonymous.jpg");
+                userInfo.setUserName(user.getUserName());
+//                UserInfo userInfo = new UserInfo(null,user.getUserName(),nickName,age,sex,city,province,height,weight,edu,salary,telephone,"anonymous.jpg");
                 userService.insertUserAndUserInfo(user, userInfo);
                 model.addAttribute("msg", "账户注册成功");
                 return "index";
-            } else if (nickName == null) {
+            } else if (userInfo.getNickName() == null) {
                 model.addAttribute("msg", "昵称为空，请重新输入");
                 return "register2";
             } else {
                 model.addAttribute("msg", "电话号码为空，请重新输入");
                 return "register2";
             }
-        } else {
+        }
             model.addAttribute("msg", "需要同意协议才能注册用户");
             return "register2";
-        }
+
 
     }
 
