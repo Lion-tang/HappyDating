@@ -1,0 +1,1108 @@
+@charset "UTF-8";
+
+.w{
+    width:938px;
+    margin:0 auto;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+}
+
+header > .top-nav{
+    position: relative;
+    height:50px;
+    background-color: #42474E;
+}
+
+header > .top-nav .left-area{
+    position: relative;
+}
+
+header > .top-nav .left-area .logo a{
+    position:absolute;
+    left:0;
+    top:7px;
+    width:112px;
+    height:36px;
+    background:url(../images/logo_v140801.png) 0 -2px no-repeat;
+}
+
+header > .top-nav .left-area .nav{
+    position:absolute;
+    left:151px;
+    top:0;
+}
+
+.top-nav  .nav li{
+    float:left;
+    padding:0 15px;
+    font-size:16px;
+    height:47px;
+    line-height:50px;
+}
+
+.top-nav  .nav li:hover{
+    background:url(../images/user_info_bg.png);
+}
+
+.top-nav  .nav .current{
+    border-bottom:3px solid #F63E3E;
+}
+
+.top-nav  .nav li a{
+    display:block;
+    height:48px;
+    font-family: SimSun;
+    color:#fff;
+}
+
+.top-nav .right-area{
+    position:absolute;
+    right:33px;
+    top:0;
+}
+
+.top-nav .w{
+    position:relative;
+}
+
+.top-nav .right-area > a{
+    position:relative;
+    float:left;
+    display:block;
+    width:53px;
+    height:50px;
+    color:#fff;
+    font:700 12px/12px Arial,sans-serif;
+}
+
+.top-nav .right-area a > .icon-white-vip{
+    position:absolute;
+    width:27px;
+    height: 13px;
+    top:21px;
+    left:-28px;
+    background:url(../images/icon_v160825.png) -247px -477px no-repeat;
+}
+
+.top-nav .right-area a > .header-vip-service{
+    position:absolute;
+    top:21px;
+    left:0;
+}
+
+.top-nav .right-area a > .icon-hot{
+    position:absolute;
+    top:8px;
+    left:22px;
+    width:21px;
+    height:14px;
+    background:url(../images/icon_v160825.png) -152px -451px no-repeat;
+}
+
+.top-nav .right-area > a:nth-child(1){
+    width:40px;
+}
+
+.top-nav .right-area > a:nth-child(2):hover{
+    background:url(../images/user_info_bg.png);
+}
+
+.top-nav .right-area a:nth-child(2) em{
+    position:absolute;
+    width:12px;
+    height: 18px;
+    left:21px;
+    top:17px;
+    background:url(../images/icon_v160825.png) -152px -259px no-repeat;
+}
+
+.top-nav .right-area a:nth-child(2).hover {
+    background-color: #fff;
+}
+
+.top-nav .right-area a > .icon-header-mess{
+    position:absolute;
+    width:33px;
+    height: 15px;
+    right:4px;
+    top:20px;
+    background:url(../images/icon_v160825.png) -72px -259px no-repeat;
+}
+
+.top-nav .right-area a > .icon-header-mess.hover {
+    background: url(../images/icon_v150709.png) -112px -259px no-repeat;
+}
+
+.top-nav .right-area a > .icon-header-info{
+    position:absolute;
+    width:30px;
+    height: 18px;
+    right:0;
+    top:17px;
+    background:url(../images/icon_v160825.png) 0 -259px no-repeat;
+}
+
+.top-nav .right-area a > .icon-header-info.hover {
+    background: url(../images/icon_v150709.png) -36px -259px no-repeat;
+}
+
+.top-nav .right-area .today-base{
+    /*display:none;*/
+    position:absolute;
+    left:92px;
+    top:49px;
+}
+
+.top-nav .right-area .today-base > a{
+    display:block;
+    font-family: "SimSun";
+}
+
+.top-nav .right-area .today-base {
+    border:1px solid #888C94;
+    width:122px;
+    height:66px;
+    background-color: #fff;
+}
+
+.top-nav .right-area .today-base > a:nth-child(1){
+    height:38px;
+    line-height: 38px;
+    font-size:12px;
+    color:#333333;
+    padding-left:13px;
+}
+
+.top-nav .today-base .notice-num{
+    position:absolute;
+    top:12px;
+    right:10px;
+    width:22px;
+    height:13px;
+    text-align:center;
+    line-height: 13px;
+    background-color: #ff0000;
+    color:#fff;
+    border-radius:5px;
+}
+
+.top-nav .right-area .today-base > a:nth-child(1):hover{
+    text-decoration: underline;
+}
+
+.top-nav .right-area .today-base > a:nth-child(2){
+    height:28px;
+    line-height: 28px;
+    background-color: #F3F3F3;
+    font-size:13px;
+    color:#8A8F9C;
+    text-align:center;
+}
+
+.top-nav .right-area .msg-box{
+    display:none;
+    position:absolute;
+    top:49px;
+    left:92px;
+    width:122px;
+    padding-top:6px;
+    border:1px solid #888C94;
+    border-top:none;
+    background-color: #fff;
+}
+
+.top-nav .msg-box li{
+    font-family: "SimSun", "宋体";
+    padding-left:10px;
+    height:25px;
+}
+
+.top-nav .msg-box ul > .bot-border{
+    border-bottom:1px solid #E4E4E4;
+    padding-bottom:10px;
+}
+
+.top-nav .msg-box ul > .bot-border + li{
+    padding-top:10px;
+}
+
+.top-nav .msg-box li > a{
+    font-size:13px;
+    color:#333333;
+}
+
+.top-nav .msg-box li > a:hover{
+    text-decoration: underline;
+}
+
+.top-nav .msg-box p{
+    margin-top:10px;
+    background-color: #F2F2F2;
+    padding-left:10px;
+}
+
+.top-nav .msg-box p > a{
+    font: 13px/34px SimSun;
+    color:#333;
+}
+
+.top-nav .msg-box p > a:hover{
+    text-decoration: underline;
+}
+
+.top-nav .msg-box li em{
+    display:inline-block;
+    margin-left:28px;
+    width:22px;
+    height:13px;
+    text-align:center;
+    line-height: 13px;
+    background-color: #ff0000;
+    color:#fff;
+    border-radius:5px;
+}
+
+.top-nav .msg-box li .hl{
+    color:#ff0000;
+}
+
+
+
+
+
+.top-nav .right-area .msg-box1{
+    display:none;
+    position:absolute;
+    top:49px;
+    left:145px;
+    width:122px;
+    padding-top:6px;
+    border:1px solid #888C94;
+    border-top:none;
+    z-index:999;
+    background-color: #fff;
+}
+
+.top-nav .msg-box1 li{
+    font-family: "SimSun", "宋体";
+    padding-left:10px;
+    height:25px;
+}
+
+.top-nav .msg-box1 ul > .bot-border{
+    border-bottom:1px solid #E4E4E4;
+    padding-bottom:10px;
+}
+
+.top-nav .msg-box1 ul > .bot-border + li{
+    padding-top:10px;
+}
+
+.top-nav .msg-box1 li > a{
+    font-size:13px;
+    color:#333333;
+}
+
+.top-nav .msg-box1 li > a:hover{
+    text-decoration: underline;
+}
+
+.top-nav .msg-box1 p{
+    margin-top:10px;
+    background-color: #F2F2F2;
+    padding-left:10px;
+}
+
+.top-nav .msg-box1 p > a{
+    font: 13px/34px SimSun;
+    color:#333;
+}
+
+.top-nav .msg-box1 p > a:hover{
+    text-decoration: underline;
+}
+
+.top-nav .msg-box1 .notice-new{
+    position:relative;
+}
+
+.top-nav .msg-box1 .notice-new em{
+    position:absolute;
+    top:-11px;
+    right:-17px;
+    width:21px;
+    height:13px;
+    background:url(../images/icon_v160825.png) -126px -451px no-repeat;
+}
+
+#middle{
+    /*margin-top:50px;*/
+    overflow: hidden;
+    padding-top:40px;
+    background-color: #EDEFF5;
+}
+
+#middle .left-area{
+    float:left;
+    width:670px;
+}
+
+#middle > .w .right-area{
+    float:right;
+    width:250px;
+    /*border:1px solid red;*/
+}
+
+#middle > .w .right-area .top-info{
+    width:230px;
+    padding:10px;
+    background-color: #fff;
+    overflow: hidden;
+    border-bottom:1px solid #E9E9E9;
+}
+
+#middle > .w .right-area .portrait{
+    position:relative;
+    float:left;
+}
+
+#middle > .w .right-area  .portrait-truth{
+    float:left;
+    position: absolute;
+    top:0;
+    left:0;
+    font-size:12px;
+    line-height:20px;
+    color:#fff;
+    padding:0 5px;
+    font-family: Arial,sans-serif;
+    background-color: rgba(0,0,0,0.3);
+}
+
+#middle > .w .right-area .fans{
+    float:right;
+}
+
+#middle > .w .right-area .fans .user-name{
+    font-size:16px;
+    font-weight:700;
+    color:#333;
+    padding-right: 5px;
+}
+
+#middle > .w .right-area .fans .user-name:hover{
+    text-decoration: underline;
+}
+
+#middle > .w .right-area .fans .member-unsvip{
+    display:inline-block;
+    width:35px;
+    height:12px;
+    background:url(../images/icon_v160825.png) -72px -498px no-repeat;
+}
+
+#middle > .w .right-area .fans .member-svip{
+    display:inline-block;
+    width:35px;
+    height:12px;
+    background:url(../images/icon_v160825.png) -135px -477px no-repeat;
+}
+
+#middle > .w .right-area .fans a{
+    display:inline-block;
+    vertical-align:middle;
+}
+
+#middle > .w .right-area .fans .icon-sm-credit{
+    font: 12px/20px SimSun;
+    background-color: #93ACCA;
+    border-radius: 10px;
+    color:#fff;
+    padding:0 3px;
+}
+
+#middle > .w .right-area .fans .icon-unverified-card{
+    width:20px;
+    height:20px;
+    background:url(../images/icon_v160825.png) 0 -128px no-repeat;
+}
+
+#middle > .w .right-area .fans .icon-verified-card{
+    width:20px;
+    height:20px;
+    background:url(../images/icon_v160825.png) 0 -103px no-repeat;
+}
+
+#middle > .w .right-area .fans .icon-unverified-mobile{
+    width:20px;
+    height:20px;
+    background:url(../images/icon_v160825.png) -25px -128px no-repeat;
+}
+
+#middle > .w .right-area .fans .icon-verified-mobile{
+    width:20px;
+    height:20px;
+    background:url(../images/icon_v160825.png) -25px -103px no-repeat;
+}
+
+#middle > .w .right-area .fans .icon-unverified-company{
+    width:20px;
+    height:20px;
+    background:url(../images/icon_v160825.png) -50px -128px no-repeat;
+}
+
+#middle > .w .right-area .fans .icon-verified-company{
+    width:20px;
+    height:20px;
+    background:url(../images/icon_v160825.png) -50px -103px no-repeat;
+}
+
+#middle > .w .right-area .fans .icon-unverified-zmxy{
+    width:21px;
+    height:20px;
+    background:url(../images/icon_v160825.png) -146px -128px no-repeat;
+}
+
+#middle > .w .right-area .fans .icon-verified-zmxy{
+    width:21px;
+    height:20px;
+    background:url(../images/icon_v160825.png) -146px -103px no-repeat;
+}
+
+#middle > .w .right-area .top-info .counter{
+    float:left;
+    margin-top:10px;
+}
+
+#middle > .w .right-area .counter a{
+    display:inline-block;
+    width:70px;
+    padding-left:20px;
+    font-size:13px;
+    font-family: 宋体;
+    color:#333;
+}
+
+#middle > .w .right-area .counter a > em{
+    padding-left:10px;
+    font-family: "Microsoft YaHei";
+    font-weight: 700;
+    font-size:15px;
+}
+
+#middle > .w .right-area .top-info .counter i{
+    display:inline-block;
+    width:1px;
+    height:15px;
+    margin:0 10px -5px 10px;
+    background-color: #E9E9E9;
+}
+#middle > .w .right-area .top-info .bottom-line{
+    float:left;
+    width:230px;
+    height:1px;
+    background-color: #E9E9E9;
+    margin-bottom: 10px;
+}
+
+#middle > .w .right-area .top-info .open-vip-btn{
+    float:left;
+    width:230px;
+    margin-top:10px;
+}
+
+#middle > .w .right-area .top-info .open-vip-btn a{
+    display:block;
+    background-color: #EB5441;
+    height:30px;
+    color:#fff;
+    font:700 12px/30px 宋体;
+    text-align:center;
+}
+
+#middle > .w .right-area .top-info .open-vip-btn a:hover{
+    display:block;
+    background-color: #FF7D6C;
+}
+
+#middle > .w .right-area .top-info .upload-bar{
+    float:left;
+}
+
+#middle > .w .top-info .upload-bar{
+    overflow: hidden;
+    border-bottom:1px solid #E9E9E9;
+    padding: 20px 0 10px 0;
+    width:230px;
+}
+
+#middle > .w .top-info .upload-bar a {
+    display:inline-block;
+    position:relative;
+    padding-top:40px;
+    margin-left:20px;
+    font-size:12px;
+    font-family: SimSun;
+}
+
+#middle > .w .top-info .upload-bar a:hover {
+    color: #EE5D51;
+}
+
+#middle > .w  .top-info .upload-bar a em{
+    position:absolute;
+    height:33px;
+    top:0;
+    left:50%;
+}
+
+#middle > .w .top-info .upload-img{
+    width:42px;
+    margin-left:-21px;
+    background: url(../images/publish_v141024.png) 0 0 no-repeat;
+}
+
+#middle > .w .top-info .text-emoji{
+    width:36px;
+    height:33px;
+    margin-left:-18px;
+    background: url(../images/publish_v141024.png) -47px 0 no-repeat;
+}
+
+#middle > .w .top-info .push-date{
+    width:42px;
+    height:37px;
+    margin-left:-21px;
+    background: url(../images/publish_v141024.png) -87px 0 no-repeat;
+}
+
+#middle > .w .top-info .get-cb{
+    float:left;
+    font-size:12px;
+    color:#999999;
+    font-family: SimSun;
+    width:230px;
+}
+
+#middle > .w .top-info .get-cb p:nth-child(1){
+    position:relative;
+}
+
+#middle > .w .top-info .get-cb p:nth-child(1) a{
+    position:absolute;
+    top:0;
+    right:0;
+    color:#333;
+}
+
+#middle > .w .top-info .get-cb p:nth-child(1) a:hover{
+    text-decoration: underline;
+}
+
+#middle > .w .top-info .get-cb p:nth-child(2){
+    background-color: #F2F2F2;
+    margin:10px 0;
+}
+
+#middle > .w .top-info .get-cb p:nth-child(2):hover{
+    background-color: #E7E7E7;
+}
+
+#middle > .w .top-info .get-cb p:nth-child(2) .plus-text{
+    font-size:20px;
+    font-family: "Microsoft YaHei";
+    font-weight:700;
+    margin-right:3px;
+}
+
+#middle > .w .top-info .get-cb p:nth-child(2) a{
+    display:block;
+    text-align: center;
+    color:#ff0000
+}
+
+#middle > .w .top-info .invite-member{
+    float:left;
+    width:230px;
+    display:none;
+}
+
+#middle > .w .top-info .invite-member .top-text{
+    position:relative;
+    margin-top:30px;
+}
+
+#middle .invite-member .top-text span{
+    font-size:13px;
+    font-weight: 700;
+}
+
+#middle .invite-member .top-text em{
+    position:absolute;
+    width:21px;
+    height:12px;
+    background: url(../images/icon_v160825.png) -126px -451px no-repeat;
+}
+
+#middle .invite-member .top-text a{
+    float:right;
+    font-size:12px;
+    font-family: SimSun;
+    color:#333;
+}
+
+#middle .invite-member .top-text a:hover{
+    text-decoration: underline;
+}
+
+#middle > .w .top-info .up-focus{
+    float:left;
+    width:230px;
+}
+
+#middle > .w .top-info .up-focus .top-text{
+    position:relative;
+    margin-top:30px;
+}
+
+#middle .up-focus .top-text span{
+    font-size:13px;
+    font-weight: 700;
+}
+
+#middle .up-focus .top-text a{
+    float:right;
+    font-size:12px;
+    font-family: SimSun;
+    color:#333;
+}
+
+#middle .up-focus .top-text a:hover{
+    text-decoration: underline;
+}
+
+#middle .up-focus .recommand-user{
+    margin-left:-10px;
+}
+
+#middle .up-focus .recommand-user li{
+    float:left;
+    margin:10px 0 0 10px;
+}
+
+#middle .up-focus .recommand-user li a{
+    position:relative;
+    display:block;
+}
+
+#middle .recommand-user li a span{
+    position:absolute;
+    left:0;
+    bottom: 0;
+    width: 70px;
+    text-align: center;
+    color:#fff;
+    font-size:12px;
+}
+
+#middle > .w .top-info .happy-event{
+    float:left;
+    width:230px;
+    position:relative;
+}
+
+#middle > .w .top-info .happy-event .top-text{
+    position:relative;
+    margin-top:30px;
+}
+
+#middle .happy-event .top-text span{
+    font-size:13px;
+    font-weight: 700;
+}
+
+#middle .happy-event .top-text em{
+    position:absolute;
+    width:21px;
+    height:12px;
+    background: url(../images/icon_v160825.png) -126px -451px no-repeat;
+}
+
+#middle .happy-event .top-text a{
+    float:right;
+    font-size:12px;
+    font-family: SimSun;
+    color:#333;
+}
+
+#middle .happy-event .top-text a:hover{
+    text-decoration: underline;
+}
+
+#middle .happy-event .couple-photo{
+    /*padding-left:5px;*/
+    border:1px solid #DCD8D8;
+    width:221px;
+    margin:0 auto;
+}
+
+#middle .happy-event .couple-photo a{
+    position:relative;
+    display:block;
+
+}
+
+#middle .happy-event .couple-photo a > p{
+    position: absolute;
+    left:0;
+    bottom:0;
+    height:48px;
+    padding-top:15px;
+    line-height:64px;
+    opacity:0.9;
+    /*兼容处理，如果上方属性不支持，则用下方属性进行相同的效果处理，针对IE浏览器*/
+    filter:alpha(opacity=90);
+    /*box-shadow:0 -5px 15px #fff;*/
+    background-color: #fff;
+    color:#000;
+    font-family: "SimSun", "宋体";
+    font-size:12px;
+    background:url(../images/fff-shadow.png) repeat-x;
+}
+
+#middle .happy-event .couple-photo .love{
+    position:absolute;
+    top:40px;
+    left:50%;
+    margin-left:-6px;
+    width: 11px;
+    height:10px;
+    background: url(../images/icon_v160825.png) -207px -24px no-repeat;
+}
+
+#middle .happy-event .couple-photo .from-user{
+    display:inline-block;
+    width:95px;
+    text-align:right;
+    overflow: hidden;
+    vertical-align: baseline;
+    line-height:12px;
+}
+
+#middle .happy-event .couple-photo .to-user{
+    display:inline-block;
+    width:100px;
+    text-align:left;
+    padding-left:20px;
+    overflow: hidden;
+    line-height:12px;
+}
+
+#middle > .w .top-info .goodnews-list{
+    float:left;
+    width:200px;
+    margin-top:20px;
+    height:84px;
+    overflow:hidden;
+    position:relative;
+}
+
+#middle > .w .top-info .nest-news{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#middle > .w .top-info .goodnews-list li{
+    font-size:12px;
+    color:#606060;
+    font-family: "SimSun", "宋体";
+    cursor:pointer;
+}
+
+#middle > .w .top-info .love-icon{
+    display:inline-block;
+    width:11px;
+    height:10px;
+    margin:0 5px;
+    background: url(../images/icon_v160825.png) -207px -24px no-repeat;
+}
+
+#middle > .w .top-info .contact-us{
+    float:left;
+    width:230px;
+    position:relative;
+}
+
+#middle > .w .top-info .contact-us .top-text{
+    position:relative;
+    margin-top:30px;
+}
+
+#middle .contact-us .top-text span{
+    font-size:13px;
+    font-weight: 700;
+}
+
+#middle .contact-us li{
+    font-size:12px;
+    font-family: "SimSun", "宋体";
+    color:#5B5B5B;
+}
+
+#middle .contact-us li a{
+    color:#333;
+}
+
+#middle .contact-us .wrap-font{
+    padding-left:60px;
+    display:inline-block;
+    color:#333;
+}
+
+#middle .contact-us .main-info li a:hover{
+    text-decoration: underline;
+}
+
+#middle .contact-us .serval-info a{
+    display:inline-block;
+    vertical-align: middle;
+    margin-right:2px;
+}
+
+#middle .contact-us .sina-icon{
+    width:18px;
+    height:18px;
+    background:url(../images/icon_v160825.png) -161px -584px no-repeat;
+}
+
+#middle .contact-us .douban-icon{
+    width:17px;
+    height:17px;
+    background:url(../images/icon_v160825.png) -184px -584px no-repeat;
+}
+
+#middle .contact-us .wx-icon{
+    width:18px;
+    height:18px;
+    background:url(../images/icon_v160825.png) -207px -584px no-repeat;
+}
+
+#middle > .w .top-info .hot-activity{
+    float:left;
+    width:230px;
+    position:relative;
+}
+
+#middle > .w .top-info .hot-activity .top-text{
+    position:relative;
+    margin-top:30px;
+}
+
+#middle .hot-activity .top-text span{
+    font-size:13px;
+    font-weight: 700;
+}
+
+#middle .hot-activity .ad-banner{
+    display:block;
+    position:relative;
+    margin-top:20px;
+}
+
+#middle .hot-activity .ad-link{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:230px;
+    color:#fff;
+    text-align: center;
+    font-size:12px;
+    font-family: "SimSun", "宋体";
+}
+
+#middle .hot-activity .ad-link:hover{
+    text-decoration: underline;
+}
+
+#middle > .w .top-info .hot-ad{
+    float:left;
+    width:230px;
+    position:relative;
+    margin-top:30px;
+}
+
+#float-bar{
+    position:fixed;
+    right:100px;
+    bottom:50px;
+    width:66px;
+
+}
+
+#float-bar .to-top{
+    position:absolute;
+    display:block;
+    width:29px;
+    height:16px;
+    top:50%;
+    left:50%;
+    margin-top:-8px;
+    margin-left:-15px;
+}
+
+#float-bar .a-to-top .hl{
+    background:url(../images/icon_v160825.png) 0 -653px no-repeat;
+}
+
+#float-bar .a-to-top .nohl{
+    background:url(../images/icon_v160825.png) -34px -653px no-repeat;
+}
+
+#float-bar .a-to-top{
+    position:relative;
+    display:block;
+    height:55px;
+    background-color: #fff;
+}
+
+#float-bar .feedback-us{
+    margin-top:5px;
+    height:30px;
+    line-height:30px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#float-bar .feedback-us a{
+    font-family: "SimSun", "宋体";
+    font-size:11px;
+    color:#757575;
+}
+
+#float-bar .feedback-us a:hover{
+    color:#A2A1A1;
+}
+
+/*页脚开始*/
+#footer{
+    overflow: hidden;
+    padding-top: 40px;
+    background-color: #E3E6EE;
+}
+
+#footer .bot{
+    color:#999;
+    font-size:12px;
+    background-color: #E3E6EE;
+    text-align:center;
+    padding-top:10px;
+}
+
+#footer .bot a{
+    color:#999;
+}
+
+#footer .bot a:hover{
+    text-decoration: underline;
+}
+
+#footer .bot i{
+    color:#C85C36;
+}
+/*页脚结束*/
+
+.icon-online-android{
+    display:inline-block;
+    width:11px;
+    height:16px;
+    background:url(../images/icon_v160825.png) -38px -349px no-repeat;
+    vertical-align: sub;
+}
+
+.profile-online-text{
+    padding-left:2px;
+    font-size:11px;
+    font-family: "SimSun", "宋体";
+    color:#5b5b5b;
+}
+
+.text-gray {
+    color: #999;
+}
+
+.credit-level {
+    display: inline-block;
+    border-radius: 14px;
+    font-size: 12px !important;
+    line-height: 12px;
+    color: #fff !important;
+    padding: 5px;
+}
+
+.credit-level:hover {
+    text-decoration: underline !important;
+}
+
+.credit-level.high-credit {
+    background-color: #f57e56;
+}
+
+.credit-level.middle-credit {
+    background-color: #fec049;
+}
+
+.credit-level.low-credit {
+    background-color: #93acca;
+}
+
+/*用户在线状态图标*/
+.user-status.icon-offline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    background: url(../images/icon_v170920.png) -71px -349px no-repeat;
+}
+
+.user-status.icon-android {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 11px;
+    height: 16px;
+    background: url(../images/icon_v170920.png) -38px -349px no-repeat;
+}
+
+.user-status.icon-iphone {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 11px;
+    height: 17px;
+    background: url(../images/icon_v170920.png) -22px -349px no-repeat;
+}
+
+.user-status.icon-online {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    background: url(../images/icon_v170920.png) -54px -349px no-repeat;
+}
+
+a.user-vip-icon {
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    background:url(../images/icon_v160825.png) -206px -477px no-repeat;
+    margin-right: 5px;
+}

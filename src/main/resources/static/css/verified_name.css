@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+.form-box input{
+    border: 1px solid #C7C7C7;
+}
+
+.contentbox-inner {
+    background-color: #fff;
+    width: 938px;
+    padding: 45px 35px 45px 35px;
+}
+
+.contentbox-inner .tabbar {
+    font-size: 18px;
+    color: #333;
+}
+
+.contentbox-inner .tabbar > li {
+    display: inline-block;
+    margin-right: 30px;
+    padding-bottom: 5px;
+}
+
+.contentbox-inner .tabbar > li > a {
+    color: #333;
+}
+
+.contentbox-inner .tabbar > li.current {
+    border-bottom: 4px solid #F73E3E;
+}
+
+.setting-box {
+    margin-top: 20px;
+}
+
+.setting-box .verify-mess {
+    padding: 18px;
+    background-color: #F0F0F0;
+}
+
+.mess-tips {
+    line-height: normal;
+    position: relative;
+}
+
+.mess-tips .verify-avatar {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 41px;
+    height: 27px;
+    background: url(../images/icon_v170920.png) -27px -803px no-repeat;
+}
+
+.mess-content-tab {
+    padding-left: 50px;
+}
+
+.mess-tips h3 {
+    font-size: 15px;
+}
+
+.mess-tips p {
+    color: #999;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+/*表单*/
+.verify-name-box {
+    padding-left: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.identify-card, .card-demo {
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    margin-left: 89px;
+}
+
+.identify-card .front, .identify-card .backend {
+    float: left;
+    width: 180px;
+    border: 1px dashed #B7B8B4;
+    height: 114px;
+    position: relative;
+    color: #B7B8B4;
+}
+
+.identify-card .front {
+    margin-right: 20px;
+}
+
+.identify-card .front > h3, .identify-card .backend > h3 {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+}
+
+.identify-card .backend > h3 {
+    width: 112px;
+}
+
+.none-label-control {
+    position: relative;
+}
+
+.none-label-control .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 86px;
+    display: inline-block;
+}
+
+.identify-card .front > em, .identify-card .backend > em {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin-top: -12px;
+    margin-left: -12px;
+    background: url(../images/icon_v170920.png) -305px -803px no-repeat;
+}
+
+.card-demo .front, .card-demo .backend {
+    float: left;
+    width: 180px;
+    height: 114px;
+    position: relative;
+    color: #B7B8B4;
+    text-align: center;
+}
+
+.card-demo .front {
+    margin-right: 20px;
+}
+
+.none-label-control .red-btn {
+    width: 55px;
+    margin-left: 89px;
+    margin-top: 30px;
+}
+
+.none-label-control .red-btn.disabled {
+    background-color: #C7C7C7;
+    color: #A2A2A2;
+}
+
+.tail-verify-tips {
+    border: 1px solid #EBEBEB;
+    padding: 15px 70px;
+    position: relative;
+}
+
+dd.text-gray p {
+    display: list-item;
+    margin-left: 18px;
+}
+
+.tail-verify-tips .icon-tips {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    top: 16px;
+    left: 33px;
+    background: url(../images/icon_v170920.png) 0 -52px no-repeat;
+}
+
+#middle {
+    padding-bottom: 40px;
+}

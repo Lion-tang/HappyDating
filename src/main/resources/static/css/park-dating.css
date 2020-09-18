@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+.party-banner{
+    width:100%;
+    padding-top:60px;
+    height:124px;
+    border-top:1px solid #EAEAEA;
+    border-bottom:5px solid #EAEAEA;
+    background:url(../images/top_dating_banner.jpg) center bottom no-repeat;
+}
+
+.park-banner-inner a.park-banner-btn em {
+    display: inline-block;
+    vertical-align: sub;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icon_v160825.png) -210px 0 no-repeat;
+}
+
+.park-dating-list li{
+    overflow: hidden;
+    border:1px solid #fff;
+    margin-top:20px;
+}
+
+.park-dating-list li:last-child{
+    margin-bottom:20px;
+}
+
+.park-dating-list li.hovered{
+    border:1px solid #E8E8E8;
+}
+
+
+.dating-type-shopping{
+    position: relative;
+    width:141px;
+    height:152px;
+}
+
+.dating-type-shopping em{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:85px;
+    height:73px;
+    background:url(../images/datingPark-sprites.png) 0 -293px no-repeat;
+}
+
+.dating-list-avatar{
+    display:block;
+}
+
+.dating-list-info{
+    font-family: "SimSun", "宋体";
+    font-size:12px;
+    color:#5B5B5B;
+    line-height:28px;
+}
+
+.dating-list-info em{
+    display:inline-block;
+    width:13px;
+    height: 13px;
+    vertical-align: sub;
+}
+
+.dating-cost{
+    background: url(../images/icon_v160825.png) -133px -84px no-repeat;
+}
+
+.dating-time{
+    margin-left:20px;
+    background: url(../images/icon_v160825.png) -151px -84px no-repeat;
+}
+
+.dating-location{
+    width:12px;
+    height:14px;
+    background: url(../images/icon_v160825.png) -169px -84px no-repeat;
+}
+
+.dating-desc{
+    width:13px;
+    height:14px;
+    background: url(../images/icon_v160825.png) -186px -84px no-repeat;
+}
+
+.dating-publish-date em{
+    display:inline-block;
+    width:9px;
+    height: 9px;
+    vertical-align: initial;
+    background: url(../images/icon_v160825.png) -164px -331px no-repeat;
+}
+
+.dating-list-title{
+    font-size:15px;
+    color:#333;
+}
+
+.dating-publish-media{
+    margin-left:20px;
+}
+
+.footer-text{
+    color:#BABABA;
+}
+
+.dating-publish-media a{
+    color:#BABABA;
+}
+
+.dating-publish-media a:hover{
+    text-decoration: underline;
+}
+
+.dating-list-info{
+    margin-left:30px;
+    padding-top:10px;
+}
+
+.dating-list-response{
+    position: relative;
+    width:126px;
+    height:150px;
+}
+
+.dating-list-response.hovered{
+    background-color: #E14949;
+}
+
+.icon-response{
+    position:relative;
+    display:block;
+    width:126px;
+    height:150px;
+    font-size:14px;
+    color:#EA5B5B;
+    z-index:999;
+}
+
+.icon-response div{
+    position:absolute;
+    width:auto;
+    height:auto;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+
+.icon-response:hover{
+    color:#EA5B5B;
+}
+
+.icon-response em{
+    margin-left:5px;
+    display:block;
+    width:41px;
+    height:41px;
+    background:url(../images/datingPark-cross-sprites.png) 0 0 no-repeat;
+}
+
+.icon-response em.hovered{
+    display:block;
+    width:41px;
+    height:41px;
+    background:url(../images/datingPark-cross-sprites.png) 0 -47px no-repeat;
+}
+
+.icon-response.hovered{
+    background-color: #CF3333 !important;
+    color:#fff;
+}
+
+.icon-response.visit{
+    opacity: 0.8;
+}

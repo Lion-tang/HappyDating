@@ -1,0 +1,429 @@
+
+
+.topic-list{
+    margin-top:25px;
+    width:640px;
+}
+
+.topic-list-submenu{
+    line-height:100%;
+    font-family: "SimSun", "宋体";
+}
+
+.topic-list-submenu ul{
+    font-size: 0;
+}
+
+.topic-list-submenu li{
+    display:inline-block;
+    font-size:10px;
+    padding:2px 8px;
+    color:#333;
+    cursor: pointer;
+}
+
+.topic-list-submenu li:hover , .topic-list-submenu li.active{
+    background-color: #AAB0C6;
+    color:#fff;
+    margin-right:2px;
+}
+
+.topiclist-myjoin a{
+     color:#5B5B5B
+ }
+
+.topiclist-myjoin a:hover{
+    text-decoration: underline;
+}
+
+.topic-list-main{
+    margin-top:20px;
+}
+
+.topic-list-main li{
+    margin-bottom:20px;
+    border-bottom:1px dashed #F1F1F1;
+    overflow: hidden;
+    padding-bottom:20px;
+}
+.topic-item-left{
+    position: relative;
+    width:50px;
+    line-height:100%;
+}
+
+.topic-item-left span{
+    display:block;
+    font-size:11px;
+    line-height:25px;
+    text-align: center;
+    background-color: #e0e0e0;
+}
+
+.topic-item-left em{
+    position: absolute;
+    bottom:-6px;
+    right:0;
+    border-color:transparent #e0e0e0 transparent transparent;
+    border-style:none solid solid none;
+    border-width: 0 6px 6px 0;
+}
+
+.topic-item-right{
+    width:580px;
+}
+
+.topic-item-right .topic-item-link{
+    font-weight: bold;
+    font-size:16px;
+    color:#333;
+}
+
+.topic-item-right h1 .essence , .topic-item-right h1 .top{
+    position:relative;
+    top:-2px;
+    left:0;
+    padding:2px 5px;
+    color:#fff;
+    font-size:10px;
+    font-family: "SimSun", "宋体";
+}
+
+.topic-item-right .essence{
+    background-color: #FF3300;
+    margin-right:3px;
+}
+
+.topic-item-right .top{
+    background-color: #1C9CE2;
+}
+
+.topic-item-right .topic-item-desc{
+    color:#666;
+    line-height:150%;
+}
+
+.topic-item-right .topic-item-media{
+    position:relative;
+    max-height: 127px;
+    overflow: hidden;
+    margin:15px 0;
+}
+
+.topic-item-right .topic-item-preview{
+    display:inline-block;
+    margin-right:5px;
+}
+
+.topic-item-right .img-num{
+    position: absolute;
+    left:0;
+    bottom:0;
+    font-size:13px;
+    font-family: "SimSun", "宋体";
+    color: #ffffff;
+    line-height:100%;
+    padding:4px 6px;
+    background-color: #171419;
+}
+
+.topic-item-right .topic-item-avatar img{
+    border-radius: 12px;
+    margin-right:4px;
+}
+
+.topic-item-release-time , .topic-item-section{
+    color:#999;
+    font-size:11px;
+}
+
+.topic-item-nickname{
+    margin-right:10px;
+}
+
+.topic-item-section:hover{
+    color:#999;
+    text-decoration: underline;
+}
+
+.topic-item-visit em{
+    display:inline-block;
+    width:16px;
+    height:12px;
+    background:url(../images/icon_v160825.png) -254px -371px no-repeat;
+    margin-right:10px;
+    vertical-align: middle;
+}
+
+.topic-item-visit i{
+    font-size:12px;
+    color:#999;
+}
+
+.topic-module-forum{
+    width:215px;
+    margin-top:25px;
+}
+
+.text-gray{
+    color:#5B5B5B;
+    font-size:13px;
+    font-weight: bold;
+    line-height:100%;
+}
+
+.topic-category{
+    margin-top:20px;
+}
+
+.topic-category li{
+    font-size:12px;
+    font-family: "SimSun", "宋体";
+    background-color: #F7F7F7;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+
+.topic-category li span{
+    display:inline-block;
+    height:18px;
+    vertical-align: middle;
+}
+
+.topic-category li a{
+    line-height: 18px;
+    display:inline-block;
+    width:190px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.topic-category a:hover{
+    color:#666666;
+}
+
+.topic-category .sub-topic-count{
+    font-family: "Microsoft YaHei";
+    float:right;
+}
+
+.topic-category i.active{
+    color:#fff !important;
+}
+
+.bg-F5948B{
+    background-color: #F5948B !important;
+}
+
+.border-F5948B{
+    border:2px solid #F5948B;
+}
+
+.bg-F2C977{
+    background-color: #F2C977 !important;
+}
+
+.border-F2C977{
+    border:2px solid #F2C977;
+}
+
+.bg-7BC7D4{
+    background-color: #7BC7D4 !important;
+}
+
+.border-7BC7D4{
+    border:2px solid #7BC7D4;
+}
+
+.topic-module-hot{
+    margin-top:30px;
+}
+
+.topic-module-hot-list{
+    margin-top:10px;
+}
+
+.topic-module-hot-list a{
+    color:#606060;
+}
+
+.topic-module-hot-list a:hover{
+    text-decoration: underline;
+}
+
+.content-box .topic-ad{
+    margin-top:25px;
+}
+
+.js-footer{
+    padding-bottom:30px;
+}
+
+.js-footer .pagination{
+    width:640px;
+}
+
+.topic-list-publish{
+    background-color: #F4F5F9;
+}
+
+.topic-publish-title{
+    font-size:14px;
+    font-weight: bold !important;
+    padding:30px 0;
+    color:#333333;
+}
+
+.js-public-select,.js-publish-title input{
+    border:1px solid #DADADA;
+    padding:10px 25px 10px 10px;
+    font-size:14px;
+}
+
+.js-publish-title{
+    font-size:0;
+}
+
+.js-publish-title input{
+    display:block;
+    width:720px;
+}
+
+.topic-title-input{
+    display:inline-block;
+    width:720px;
+    margin-left:10px;
+}
+
+select:required:invalid {
+    color: gray;
+
+}
+option[value=""][disabled] {
+    display: none;
+}
+option {
+    color: black;
+}
+
+.topic-list-publish .editor{
+    border:1px solid #E1E1E1;
+    margin-top:10px;
+}
+
+.topic-list-publish .editor-toolbar-icon{
+    display:inline-block;
+    margin-right:10px;
+    cursor: pointer;
+}
+
+.topic-list-publish .face-icon{
+    width:20px;
+    height:20px;
+    background:url(../images/icon_v160825.png) -56px -24px no-repeat;
+}
+
+.topic-list-publish .pic-icon{
+    width:23px;
+    height:19px;
+    background: url(../images/icon_v160825.png) -42px -393px no-repeat;
+}
+
+.editor-toolbar-limit-tips{
+    color:#CDCDCD;
+    vertical-align: super;
+}
+
+.topic-list-publish .editor-toolbar{
+    background-color: #EEEEEE;
+    padding:0 10px;
+    line-height:35px;
+}
+
+.editor-wrap textarea{
+    border:none;
+    width:904px;
+    height:210px;
+    outline:none;
+    padding:8px;
+    font-size:15px;
+    color:#333333;
+}
+
+.topic-list-publish-footer{
+    font-family: "SimSun", "宋体";
+    margin-top:20px;
+    padding-bottom:80px;
+}
+
+.topic-list-publish-footer .label-tag{
+    font-size:12px;
+    color:#999;
+    line-height:25px;
+}
+
+.topic-list-publish-footer .label-tag input{
+    vertical-align: middle;
+}
+
+.js-publish-verify{
+    line-height:100%;
+}
+
+.js-publish-verify .type-verify-code{
+    border:1px solid #C7C7C7;
+    width:148px;
+    padding:5px 5px;
+}
+
+.js-publish-verify .img-code{
+    width:50px;
+    height:25px;
+}
+
+.js-publish-verify .flush-img-code{
+    font-size:12px;
+    color:#333;
+}
+
+.js-publish-verify .flush-img-code:hover{
+    color:#333;
+}
+
+.js-publish-verify .commit-btn{
+    display:inline-block;
+    background-color: #FF3333;
+    color:#fff;
+    padding:7px 20px;
+    margin-left:10px;
+}
+
+.js-publish-verify .commit-btn:hover{
+    opacity: 0.8;
+}
+
+#footer{
+    overflow: hidden;
+    padding-top: 40px;
+    background-color: #E3E6EE;
+}
+
+#footer .bot{
+    color:#999;
+    font-size:12px;
+    background-color: #E3E6EE;
+    text-align:center;
+    padding-top:10px;
+}
+
+#footer .bot a{
+    color:#999;
+}
+
+#footer .bot a:hover{
+    text-decoration: underline;
+}
+
+#footer .bot i{
+    color:#C85C36;
+}

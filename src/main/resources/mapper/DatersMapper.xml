@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dating.DAO.DatersDAO">
+
+    <!-- 通过字段名字映射 -->
+    <sql id="base_select">
+        SELECT
+        id                  AS id,
+        user_name           AS userName,
+        nick_name           AS nickName,
+        age                 AS age,
+        city                as city,
+        province            as province,
+        sex                 AS sex,
+        height              AS height,
+        weight              AS weight,
+        edu                 AS edu,
+        telephone           AS telephone,
+        salary              AS salary
+        FROM daters
+    </sql>
+
+    <sql id="order_condition">
+        order by update_time desc
+    </sql>
+
+    <!-- 查询条件 -->
+    <sql id="where_condition">
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="userName != null">
+                AND user_name = #{userName}
+            </if>
+            <if test="nickName != null">
+                AND nick_name = #{nickName}
+            </if>
+            <if test="minAge != null">
+                AND age >= #{minAge}
+            </if>
+            <if test="maxAge != null">
+                AND #{maxAge} >= age
+            </if>
+            <if test="sex != null">
+                AND sex = #{sex}
+            </if>
+            <if test="city != null">
+                AND city = #{city}
+            </if>
+            <if test="province != null">
+                AND province = #{province}
+            </if>
+            <if test="minHeight != null">
+                AND height >= #{minHeight}
+            </if>
+            <if test="maxHeight != null">
+                AND #{maxHeight} >= height
+            </if>
+            <if test="minWeight != null">
+                AND weight >= #{minWeight}
+            </if>
+            <if test="maxWeight != null">
+                AND #{maxWeight} >= weight
+            </if>
+            <if test="edu != null">
+                AND edu = #{edu}
+            </if>
+            <if test="minSalary != null">
+                AND salary >= #{minSalary}
+            </if>
+            <if test="maxSalary != null">
+                AND #{maxSalary} >= salary
+            </if>
+            <if test="telephone != null">
+                AND telephone = #{telephone}
+            </if>
+
+        </where>
+    </sql>
+
+
+    <!--插入条件-->
+    <sql id="key">
+        <trim suffixOverrides=",">
+            <if test="userName!=null">
+                user_name,
+            </if>
+            <if test="nickName!=null">
+                nick_name,
+            </if>
+            <if test="age!=null ">
+                age,
+            </if>
+            <if test="sex!=null">
+                sex,
+            </if>
+            <if test="height!=null ">
+                height,
+            </if>
+            <if test="weight!=null ">
+                weight,
+            </if>
+            <if test="edu!=null ">
+                edu,
+            </if>
+            <if test="province!=null ">
+                province,
+            </if>
+            <if test="city!=null ">
+                city,
+            </if>
+            <if test="salary!=null ">
+                salary,
+            </if>
+            <if test="telephone!=null ">
+                telephone,
+            </if>
+            <if test="photo!=null ">
+                photo,
+            </if>
+        </trim>
+    </sql>
+
+    <!--插入值-->
+    <sql id="values">
+        <trim suffixOverrides=",">
+            <if test="userName!=null">
+                #{userName},
+            </if>
+            <if test="nickName!=null">
+                #{nickName},
+            </if>
+            <if test="age!=null ">
+                #{age},
+            </if>
+            <if test="sex!=null">
+                #{sex},
+            </if>
+            <if test="height!=null ">
+                #{height},
+            </if>
+            <if test="weight!=null ">
+                #{weight},
+            </if>
+            <if test="edu!=null ">
+                #{edu},
+            </if>
+            <if test="province!=null ">
+                #{province},
+            </if>
+            <if test="city!=null ">
+                #{city},
+            </if>
+            <if test="salary!=null ">
+                #{salary},
+            </if>
+            <if test="telephone!=null ">
+                #{telephone},
+            </if>
+            <if test="photo!=null ">
+                #{photo},
+            </if>
+        </trim>
+    </sql>
+
+
+    <select id="getDaters" parameterType="com.dating.DAO.QueryDTO.DaterRequestDTO" resultType="com.dating.pojo.UserInfo">
+        <include refid="base_select"/>
+        <include refid="where_condition"/>
+    </select>
+
+    <select id="isExist" parameterType="com.dating.pojo.UserInfo" resultType="com.dating.pojo.UserInfo">
+        <include refid="base_select"/>
+        <where>
+            <if test="userName != null">
+                AND user_name = #{userName}
+            </if>
+        </where>
+    </select>
+
+    <!-- 通过主键id更新 -->
+    <update id="updateByUserName" parameterType="com.dating.pojo.UserInfo">
+        UPDATE daters
+        <set>
+            <if test="nickName != null">
+                nick_name = #{nickName},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="city != null">
+                city = #{city},
+            </if>
+            <if test="province != null">
+                province = #{province},
+            </if>
+            <if test="height != null">
+                height = #{height},
+            </if>
+            <if test="weight != null">
+                weight = #{weight},
+            </if>
+            <if test="edu != null">
+                edu = #{edu},
+            </if>
+            <if test="salary != null">
+                salary = #{salary},
+            </if>
+            <if test="telephone != null">
+                telephone = #{telephone},
+            </if>
+            <if test="photo != null">
+                photo = #{photo},
+            </if>
+        </set>
+        WHERE user_name = #{userName}
+    </update>
+
+    <delete id="deleteUser" parameterType="com.dating.pojo.UserInfo">
+        DELETE FROM daters
+        <where>
+            <if test="userName != null">
+                AND user_name = #{userName}
+            </if>
+        </where>
+    </delete>
+
+    <insert id="insertUserInfo" parameterType="UserInfo">
+       INSERT INTO daters(<include refid="key"/>)
+       VALUE (<include refid="values"/>)
+    </insert>
+
+</mapper>

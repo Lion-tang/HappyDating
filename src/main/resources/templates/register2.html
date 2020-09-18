@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/register.css">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/common.js"></script>
+</head>
+<body>
+<header>
+    <div class="top-nav">
+        <div class="w">
+            <div class="left-area">
+                <div class="logo">
+                    <a href="#"></a>
+                </div>
+                <ul class="nav">
+                    <li class="current"><a href="/index">返回登陆</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<form action="/register2" method="post">
+    <div class="content-box" >
+        <div class="w">
+            <div class="signup-titlebox">
+                <div class="sign-title">
+                    <h2>欢迎来到中南大学旗下恋爱交友社区！</h2>
+                    <h3>完成注册，开启寻爱之旅</h3>
+                </div>
+                <div class="sign-board">
+                    <div class="sign-board-bar">
+                        <div class="internal-box"></div>
+                    </div>
+                    <div class="sign-board-content">
+                        <p><i>5,50,000</i> 位用户在缘来有你等你</p>
+                        <p><i>300,000</i> 位用户在缘来有你找到对象</p>
+                    </div>
+                </div>
+            </div>
+            <div class="signup-menu clearfix">
+                <div class="s-tab1  fl"><span>创建个人账户</span></div>
+                <div class="s-tab2 visited fl"><span>完成个人信息</span></div>
+            </div>
+
+            <div class="signup-form-content">
+                <span th:text="${msg}" style="color: red"></span>
+                <br/>
+
+                <div class="form-control">
+                <span class="required-symbol">*</span>该符号提示：该栏必须输入
+                </div>
+                <div class="form-control">
+                    <span class="required-symbol">*</span>
+                    <labal>昵 &nbsp; 称：</labal>
+                    <input class="col-12" type="text" name="nickName" maxlength="32" placeholder="不超过32位字符">
+                </div>
+                <div class="form-control">
+                    <span class="required-symbol">*</span>
+                    <labal>性 &nbsp; 别：</labal>
+                    <span class="form-inline">
+                    <input class="input-radio" type="radio" name="sex" value="男">男
+                </span>
+                    <span class="form-inline">
+                    <input class="input-radio" type="radio" name="sex" value="女">女
+                </span>
+                </div>
+                <div class="form-control">
+
+                    <labal>年 &nbsp; 龄：</labal>
+                    <input class="col-12" type="text" name="age" maxlength="3" placeholder="不超过3位数字">
+                </div>
+                <div class="form-control">
+
+                    <labal>身 &nbsp; 高：</labal>
+                    <span class="form-inline">
+                            <input class="col-12" type="text" name="height" maxlength="3" placeholder="不超过3位数字">
+                </span>
+                </div>
+                <div class="form-control">
+
+                    <labal>体 &nbsp; 重：</labal>
+                    <span class="form-inline">
+                            <input class="col-12" type="text" name="weight" maxlength="3" placeholder="不超过3位数字">
+                </span>
+                </div>
+                <div class="form-control">
+
+                    <labal>学 &nbsp; 历：</labal>
+                    <span class="form-inline">
+                    <input class="col-12" type="text" name="edu" placeholder="实例：小学、初中、高中、本科、硕士、博士">
+                </span>
+                </div>
+                <div class="form-control">
+
+                    <labal>省 &nbsp; 市：</labal>
+                    <span class="form-inline">
+                    <input class="col-12" type="text" name="province" placeholder="请输入">
+                </span>
+                </div>
+                <div class="form-control">
+
+                    <labal>城 &nbsp; 市：</labal>
+                    <span class="form-inline">
+                    <input class="col-12" type="text" name="city" placeholder="请输入">
+                </span>
+                </div>
+                <div class="form-control">
+
+                    <labal>月均收入：</labal>
+                    <span class="form-inline">
+                    <input class="col-12" type="text" name="salary" placeholder="请输入">
+                </span>
+                </div>
+                <div class="form-control">
+                    <span class="required-symbol">*</span>
+                    <labal>电话号码：</labal>
+                    <span class="form-inline">
+                    <input class="col-12" type="text" name="telephone" minlength="11" maxlength="11" placeholder="请输入11位电话号码">
+                </span>
+                </div>
+
+
+                <div class="form-control">
+                <span class="form-inline font-11">
+                    <input class="agree-checkbox" name="check" type="checkbox" value="true"><i>我同意缘来有你交友服务条款</i>
+                </span>
+                </div>
+
+                <div class="form-control">
+                    <input class="register-step1-btn" type="submit"  value="注册" ></input>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+<div id="footer">
+    <div class="w">
+        <div class="bot">
+            增值电信业务经营许可证：<a href="#">湘B2-XXXXXXXXX</a><br/>
+            中南大学版权所有<br/>
+            <i>©2020</i>
+        </div>
+    </div>
+</div>
+</body>
+</html>

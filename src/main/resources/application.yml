@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+  datasource:
+    url: jdbc:mysql://localhost:3306/date?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    static-path-pattern: /static/**
+    throw-exception-if-no-handler-found: true
+  resources:
+    static-locations: classpath:/static/
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.dating.pojo
