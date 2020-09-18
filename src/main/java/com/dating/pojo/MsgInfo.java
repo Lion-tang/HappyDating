@@ -13,4 +13,6 @@ public class MsgInfo {
     private Long parentId;
     private String parentInfo;
     private Timestamp createTime;
+    private String nickName;
+    private String fromNickName;
 }

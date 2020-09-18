@@ -16,6 +16,11 @@ public class ParameterCheckUtils {
         } catch (Exception e) {
             throw new CheckBasicException(e.getMessage());
         }
+        try{
+            Preconditions.checkArgument(!msgInfo.getUserName().equals(msgInfo.getFromUserName()), "不能发送空消息");
+        }catch (Exception e){
+
+        }
     }
 
     public static void getCheckMsgInfo(MsgInfo msgInfo) {
@@ -27,7 +32,8 @@ public class ParameterCheckUtils {
             throw new CheckBasicException(e.getMessage());
         }
     }
-    public static void checkUserName(UserInfo userInfo){
+
+    public static void checkUserName(UserInfo userInfo) {
         try {
             Preconditions.checkNotNull(userInfo);
             Preconditions.checkArgument(!Strings.isNullOrEmpty(userInfo.getUserName()), "该用户不存在");
@@ -36,52 +42,56 @@ public class ParameterCheckUtils {
         }
     }
 
-    public static void checkDaterRequestDTO(DaterRequestDTO daterRequestDTO){
+    public static void checkDaterRequestDTO(DaterRequestDTO daterRequestDTO) {
 
-        if ("".equals(daterRequestDTO.getId())){
+        if ("".equals(daterRequestDTO.getId())) {
             daterRequestDTO.setId(null);
         }
-        if ("".equals(daterRequestDTO.getUserName())){
+        if ("".equals(daterRequestDTO.getUserName())) {
             daterRequestDTO.setUserName(null);
         }
-        if ("".equals(daterRequestDTO.getNickName())){
+        if ("".equals(daterRequestDTO.getNickName())) {
             daterRequestDTO.setNickName(null);
         }
-        if ("".equals(daterRequestDTO.getMaxHeight())){
+        if ("".equals(daterRequestDTO.getMaxHeight())) {
             daterRequestDTO.setMaxHeight(null);
         }
-        if ("".equals(daterRequestDTO.getMinHeight())){
+        if ("".equals(daterRequestDTO.getMinHeight())) {
             daterRequestDTO.setMinHeight(null);
         }
-        if ("".equals(daterRequestDTO.getSex())){
+        if ("".equals(daterRequestDTO.getSex())) {
             daterRequestDTO.setSex(null);
         }
-        if ("".equals(daterRequestDTO.getCity())){
+        if ("".equals(daterRequestDTO.getCity())) {
             daterRequestDTO.setCity(null);
         }
-        if ("".equals(daterRequestDTO.getProvince())){
+        if ("".equals(daterRequestDTO.getProvince())) {
             daterRequestDTO.setProvince(null);
         }
-        if ("".equals(daterRequestDTO.getEdu())){
+        if ("".equals(daterRequestDTO.getEdu())) {
             daterRequestDTO.setEdu(null);
         }
-        if ("".equals(daterRequestDTO.getMaxAge())){
+        if ("".equals(daterRequestDTO.getMaxAge())) {
             daterRequestDTO.setMaxAge(null);
         }
-        if ("".equals(daterRequestDTO.getMinAge())){
+        if ("".equals(daterRequestDTO.getMinAge())) {
             daterRequestDTO.setMinAge(null);
         }
-        if ("".equals(daterRequestDTO.getMaxWeight())){
+        if ("".equals(daterRequestDTO.getMaxWeight())) {
             daterRequestDTO.setMaxWeight(null);
         }
-        if ("".equals(daterRequestDTO.getMinWeight())){
+        if ("".equals(daterRequestDTO.getMinWeight())) {
             daterRequestDTO.setMinWeight(null);
         }
-        if ("".equals(daterRequestDTO.getMaxSalary())){
+        if ("".equals(daterRequestDTO.getMaxSalary())) {
             daterRequestDTO.setMaxSalary(null);
         }
-        if ("".equals(daterRequestDTO.getMinSalary())){
+        if ("".equals(daterRequestDTO.getMinSalary())) {
             daterRequestDTO.setMinSalary(null);
         }
+    }
+
+    public static void checkNotNull(Object o) {
+        Preconditions.checkArgument(o != null, "参数不能为空");
     }
 }

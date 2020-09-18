@@ -34,31 +34,31 @@
     <div class="w clearfix">
         <div class="profile-basic-avatar fl">
             <div class="user-avatar">
-                <img th:src="@{../static/images/myaccount/{photo}(photo=${session.visitUser.photo})}" alt=""
+                <img th:src="@{../static/images/myaccount/{photo}(photo=${session.userInfo.photo})}" alt=""
                      th:height="240px" th:width="240px"/>
             </div>
         </div>
         <div class="profile-basic-main fl">
             <p class="user-status-bar">
-                <span class="username" th:text="${session.visitUser.nickName}"></span>
+                <span class="username" th:text="${session.userInfo.nickName}"></span>
                 <a class="in-block credit-level-female" href="javascript:;">中信用</a>
                 <a class="in-block icon-verified-mobile-female" href="javascript:;"></a>
-                <span class="uid" th:text="|Id:${session.visitUser.id}|"></span>
+                <span class="uid" th:text="|Id:${session.userInfo.id}|"></span>
             </p>
             <p class="profile-basic-info">
-                <span class="sex" th:text="${session.visitUser.sex}"></span>
-                <span class="age" th:text="|${session.visitUser.age}岁|"></span>
-                <span class="cm" th:text="|TEL:${session.visitUser.telephone}|"></span>
+                <span class="sex" th:text="${session.userInfo.sex}"></span>
+                <span class="age" th:text="|${session.userInfo.age}岁|"></span>
+                <span class="cm" th:text="|TEL:${session.userInfo.telephone}|"></span>
                 <span class="area"></span>
             </p>
             <!-- 该用户有标签时显示 -->
             <p class="profile-basic-tag-list clearfix">
-                <span th:text="${session.visitUser.province}"></span>
-                <span th:text="${session.visitUser.city}"></span>
-                <span th:text="|${session.visitUser.weight}kg|"></span>
-                <span th:text="|${session.visitUser.height}cm|"></span>
-                <span th:text="${session.visitUser.edu}"></span>
-                <span th:text="|月入${session.visitUser.salary}|"></span>
+                <span th:text="${session.userInfo.province}"></span>
+                <span th:text="${session.userInfo.city}"></span>
+                <span th:text="|${session.userInfo.weight}kg|"></span>
+                <span th:text="|${session.userInfo.height}cm|"></span>
+                <span th:text="${session.userInfo.edu}"></span>
+                <span th:text="|月入${session.userInfo.salary}|"></span>
                 <span>依赖心强</span>
                 <span>日剧迷</span>
                 <span>传统</span>
@@ -71,13 +71,17 @@
             </p>
 
 
-            <p class="profile-basic-relation">
-                <a href="/leaveMsg" class="icon-mess"><em></em><i>私信</i></a>
-                <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
-                <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
-                <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
+            <form action="/myMsg" method="get" id="sendmsg">
+                <input hidden="hidden" type="text" name="userName"
+                       th:value="${session.userInfo.userName}"></input>
+                <p class="profile-basic-relation">
+                    <a class="icon-mess" onclick="document.getElementById('sendmsg').submit();"><em></em><i>我的私信</i></a>
+                    <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
+                    <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
+                    <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
 
-            </p>
+                </p>
+            </form>
 
         </div>
     </div>
@@ -113,39 +117,45 @@
                     <ul>
                         <li class="clearfix">
                             <div class="trend-footer">
-                                <form action="/leaveMsg" method="post" id="sendmsg">
-                                    <div class="right-contact-btn fr">
-                                        <input placeholder="在这里留言" type="text" name="info"
-                                               style="width: 460px; height: 50px"/>
-                                        <input hidden="hidden" type="text" name="fromUserName"
-                                               th:value="${session.userInfo.userName}"></input>
-                                        <input hidden="hidden" type="text" name="userName"
-                                               th:value="${session.visitUser.userName}"></input>
-                                        <a class="icon-send-msg" onclick="document.getElementById('sendmsg').submit();"><em
-                                                class="icon-like native"></em></a>
-                                    </div>
-                                </form>
                             </div>
                         </li>
                         <li class="clearfix">
                             <div class="profile-trend-time-wrapper">
                                 <em class="profile-time-arrowTop"></em>
                                 <div class="profile-trend-time">
-                                    <span class="profile-time-ym text-dark-gray">我的留言</span>
+                                    <span class="profile-time-ym text-dark-gray">我的私信</span>
                                     <span class="profile-time-d text-red" th:text="${session.msgInfoList.size()}"></span>
                                 </div>
                                 <em class="profile-time-arrowBottom"></em>
                             </div>
                             <div class="dating-list-info" th:each="msginfo,iterStat : ${session.msgInfoList}">
-                                <p class="dating-list-title" th:text="|${session.visitUser.nickName}：${msginfo.info}|"></p>
+                                <p class="dating-list-title" th:text="|${msginfo.fromNickName}：${msginfo.Info}|"></p>
                                 <p class="dating-detail">
                                     <em class="dating-desc"></em>
-                                    <span th:text="${msginfo.parentInfo}"></span>
+                                    <span th:text="|${msginfo.nickName}:${msginfo.parentInfo}|"></span>
                                 </p>
                                 <div class="footer-text clearfix">
+                                    <form action="/leaveMsg1" method="post" id="postmsg1">
+
                                     <div class="right-contact-btn profile-join-btn fr">
-                                        <a class="" href="#">回复</a>
+                                        <input placeholder="在这里回复" type="text" name="info"
+                                               style="width: 150px; height: 20px;"/>
+                                        <input hidden="hidden" type="text" name="fromUserName"
+                                               th:value="${session.userInfo.userName}"/>
+                                        <input hidden="hidden" type="text" name="userName"
+                                               th:value="${msginfo.userName}"/>
+                                        <input hidden="hidden" type="text" name="fromNickName"
+                                               th:value="${session.userInfo.nickName}"/>
+                                        <input hidden="hidden" type="text" name="nickName"
+                                               th:value="${msginfo.nickName}"/>
+                                        <input hidden="hidden" type="text" name="parentId"
+                                               th:value="${msginfo.id}"/>
+                                        <input hidden="hidden" type="text" name="parentInfo"
+                                               th:value="${msginfo.Info}"/>
+                                        <a class="" onclick="document.getElementById('postmsg1').submit();">回复</a>
                                     </div>
+
+                                    </form>
                                 </div>
                             </div>
                         </li>
@@ -244,9 +254,8 @@
                             <p><span class="text-gray" th:text="|月收入：${session.visitUser.salary}元|"></span></p>
                         </div>
 
-                            </div>
-
                     </div>
+
                 </div>
             </div>
         </div>

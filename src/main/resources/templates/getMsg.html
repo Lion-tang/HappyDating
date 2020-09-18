@@ -81,7 +81,6 @@
                     <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
                     <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
                     <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
-
                 </p>
             </form>
 
@@ -119,15 +118,19 @@
                     <ul>
                         <li class="clearfix">
                             <div class="trend-footer">
-                                <form action="/leaveMsg" method="post" id="sendmsg">
+                                <form action="/leaveMsg" method="post" id="postmsg">
                                     <div class="right-contact-btn fr">
                                         <input placeholder="在这里留言" type="text" name="info"
                                                style="width: 460px; height: 50px"/>
                                         <input hidden="hidden" type="text" name="fromUserName"
-                                               th:value="${session.userInfo.userName}"></input>
+                                               th:value="${session.userInfo.userName}"/>
                                         <input hidden="hidden" type="text" name="userName"
-                                               th:value="${session.visitUser.userName}"></input>
-                                        <a class="icon-send-msg" onclick="document.getElementById('sendmsg').submit();"><em
+                                               th:value="${session.visitUser.userName}"/>
+                                        <input hidden="hidden" type="text" name="fromNickName"
+                                               th:value="${session.userInfo.nickName}"/>
+                                        <input hidden="hidden" type="text" name="nickName"
+                                               th:value="${session.visitUser.nickName}"/>
+                                        <a class="icon-send-msg" onclick="document.getElementById('postmsg').submit();"><em
                                                 class="icon-like native"></em></a>
                                     </div>
                                 </form>
@@ -143,17 +146,15 @@
                                 <em class="profile-time-arrowBottom"></em>
                             </div>
                             <div class="dating-list-info" th:each="msginfo,iterStat : ${session.msgInfoList}">
-                                <p class="dating-list-title" th:text="|${session.visitUser.nickName}：${msginfo.info}|"></p>
+                                <p class="dating-list-title" th:text="|${session.userInfo.nickName}：${msginfo.info}|"></p>
                                 <p class="dating-detail">
                                     <em class="dating-desc"></em>
-                                    <span th:text="|${session.userInfo.nickName}:${msginfo.parentInfo}|"></span>
+                                    <span th:text="|${session.visitUser.nickName}:${msginfo.parentInfo}|"></span>
                                 </p>
                                 <div class="footer-text clearfix">
-                                    <div class="right-contact-btn profile-join-btn fr">
-                                        <input placeholder="在这里回复" type="text" name="info"
-                                               style="width: 150px; height: 20px;"/>
-                                        <a class="" href="#">回复</a>
-                                    </div>
+                                    <h>
+
+                                    </h>
                                 </div>
                             </div>
                         </li>
