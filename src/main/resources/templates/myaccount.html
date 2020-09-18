@@ -33,14 +33,9 @@
     <div class="w clearfix">
         <div class="profile-basic-avatar fl">
             <div class="user-avatar">
-
-
-
                     <div class="user-check"><span>非真人头像，请上传清晰美观个人照</span></div>
                     <img th:src="@{../static/images/myaccount/{photo}(photo=${session.userInfo.photo})}" alt="" th:height="240px" th:width="240px"/>
                     <p>
-
-
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         <input type="file" name="file" accept="image/*">
                         <br>
@@ -75,7 +70,6 @@
                     <span>传统</span>
                     <span>羽毛球</span>
                 </p>
-
                 <!-- 没有标签记录时的文字提示 -->
                 <p class="profile-basic-tag-desc">
                     暂无标签（<a href="#">回答QA</a>、<a href="#">完善资料</a>获得更多标签）<a class="icon-edit-s" href="javascript:;" title="编辑标签"></a>
@@ -84,46 +78,30 @@
                 <div class="profile-basic-main fl">
 
                     <p class="profile-basic-relation">
-                        <a href="javascript:;" class="icon-mess"><em></em><i>私信</i></a>
+                        <a href="/getMsg" class="icon-mess"><em></em><i>我的私信</i></a>
                         <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
                         <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
                         <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
 
                     </p>
-                </div>
 
+                </div>
             </div>
-        </div>
-
     </div>
-    <div class="w">
-        <div class="profile-header">
-            <div class="monolog-box">
-                <div class="profile-monolog-preview">
-                    <em class="monolog-upper-arrows"></em>
-                    <em class="in-block icon-quote-up hide"></em>
-                    <span class="text-gray">今天我生日，希望能遇到那个合适的他，<i class="icon-noresult-s"></i></span>
-                    <em class="in-block icon-quote-down hide"></em>
-                    <span class="js-edit-btn hide"><a class="a-icon-edit" href="javascript:;"></a></span>
-                </div>
-                <div class="profile-monolog-edit-hd hide">
-                    <h3>内心独白</h3>
-                    <span class="profile-monolog-tips">一天内只可修改一次</span>
-                    <span class="js-edit-btn hide"><a class="a-cancel-edit-text" href="javascript:;">取消编辑</a></span>
-                </div>
-                <div class="profile-monolog-textarea hide ">
-                    <textarea></textarea>
-                </div>
-                <div class="profile-monolog-edit-send hide">
-                    <div class="js-body">
-                        <span class="char-constantia"><strong>147</strong>个字</span>
-                        <a class="red-button" href="javascript:;">保存</a>
+        <div class="w">
+            <div class="profile-header">
+                <div class="monolog-box">
+                    <div class="profile-monolog-preview">
+                        <em class="monolog-upper-arrows"></em>
+                        <em class="in-block icon-quote-up hide"></em>
+                        <span class="text-gray">今天我生日，希望能遇到那个合适的他，<i class="icon-noresult-s"></i></span>
+                        <em class="in-block icon-quote-down hide"></em>
+                        <span class="js-edit-btn hide"><a class="a-icon-edit" href="javascript:;"></a></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <div class="profile-content-box ">
     <div class="w clearfix main-box">
         <div class="con-left fl">

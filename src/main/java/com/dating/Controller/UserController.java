@@ -65,8 +65,17 @@ public class UserController {
         ParameterCheckUtils.checkMsgInfo(msgInfo);
         List result = userService.leaveMessage(msgInfo);
         Subject subject = SecurityUtils.getSubject();
-        subject.getSession().setAttribute("msgInfo", result);
+        subject.getSession().setAttribute("msgInfoList", result);
         return "leaveMsg";
+    }
+
+    @RequestMapping(value = "/getMsg", method = RequestMethod.GET)
+    public String getMessage(MsgInfo msgInfo) {
+        ParameterCheckUtils.getCheckMsgInfo(msgInfo);
+        List result = userService.getMessage(msgInfo);
+        Subject subject = SecurityUtils.getSubject();
+        subject.getSession().setAttribute("msgInfoList", result);
+        return "getMsg";
     }
 
     @RequestMapping(value = "/gettips", method = RequestMethod.GET)
@@ -79,7 +88,7 @@ public class UserController {
         ParameterCheckUtils.checkUserName(userInfo);
         UserInfo user = userService.getInfoByUserName(userInfo.getUserName());
         Subject subject = SecurityUtils.getSubject();
-        subject.getSession().setAttribute("vistUser", user);
+        subject.getSession().setAttribute("visitUser", user);
         return "details";
     }
 

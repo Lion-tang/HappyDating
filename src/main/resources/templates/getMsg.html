@@ -71,13 +71,19 @@
             </p>
 
 
-            <p class="profile-basic-relation">
-                <a href="/leaveMsg" class="icon-mess"><em></em><i>私信</i></a>
-                <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
-                <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
-                <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
+            <form action="/getMsg" method="get" id="sendmsg">
+                <input hidden="hidden" type="text" name="fromUserName"
+                       th:value="${session.userInfo.userName}"></input>
+                <input hidden="hidden" type="text" name="userName"
+                       th:value="${session.visitUser.userName}"></input>
+                <p class="profile-basic-relation">
+                    <a class="icon-mess" onclick="document.getElementById('sendmsg').submit();"><em></em><i>私信</i></a>
+                    <a href="#" class="icon-fav"><em></em><i>喜欢</i></a>
+                    <a href="#" class="sayhi"><em></em><i>打招呼</i></a>
+                    <a href="#" class="sendgift"><em></em><i>送礼物</i></a>
 
-            </p>
+                </p>
+            </form>
 
         </div>
     </div>
@@ -140,10 +146,12 @@
                                 <p class="dating-list-title" th:text="|${session.visitUser.nickName}：${msginfo.info}|"></p>
                                 <p class="dating-detail">
                                     <em class="dating-desc"></em>
-                                    <span th:text="${msginfo.parentInfo}"></span>
+                                    <span th:text="|${session.userInfo.nickName}:${msginfo.parentInfo}|"></span>
                                 </p>
                                 <div class="footer-text clearfix">
                                     <div class="right-contact-btn profile-join-btn fr">
+                                        <input placeholder="在这里回复" type="text" name="info"
+                                               style="width: 150px; height: 20px;"/>
                                         <a class="" href="#">回复</a>
                                     </div>
                                 </div>
@@ -244,9 +252,8 @@
                             <p><span class="text-gray" th:text="|月收入：${session.visitUser.salary}元|"></span></p>
                         </div>
 
-                            </div>
-
                     </div>
+
                 </div>
             </div>
         </div>
