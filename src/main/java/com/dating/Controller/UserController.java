@@ -5,6 +5,8 @@ import com.dating.common.ParameterCheckUtils;
 import com.dating.pojo.MsgInfo;
 import com.dating.pojo.UserInfo;
 import com.dating.service.UserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,9 +31,13 @@ public class UserController {
     @RequestMapping(value = "/updateInfo", method = RequestMethod.POST)
     public String updateUserInfo(UserInfo userInfo) {
         if (userService.updateUserInfo(userInfo)) {
-            return "成功";
+            Subject subject = SecurityUtils.getSubject();
+            userInfo = userService.getInfoByUserName(userInfo.getUserName());
+            subject.getSession().setAttribute("userInfo",userInfo);
+            System.out.println("更新成功");
+            return "myaccount";
         }
-        return "失败";
+        return "myaccount";
     }
 
     @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
