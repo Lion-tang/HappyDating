@@ -21,7 +21,6 @@ public class ParameterCheckUtils {
     public static void checkUserName(UserInfo userInfo){
         try {
             Preconditions.checkNotNull(userInfo);
-            System.out.println(userInfo.getUserName());
             Preconditions.checkArgument(!Strings.isNullOrEmpty(userInfo.getUserName()), "该用户不存在");
         } catch (Exception e) {
             throw new CheckBasicException(e.getMessage());
