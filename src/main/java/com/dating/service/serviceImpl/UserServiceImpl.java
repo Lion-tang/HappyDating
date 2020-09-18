@@ -33,19 +33,21 @@ public class UserServiceImpl implements UserService {
     private TipsDAO tipsDAO;
 
     @Override
-    public List<String> leaveMessage(MsgInfo msgInfo) {
+    public List<MsgInfo> leaveMessage(MsgInfo msgInfo) {
 
         List<MsgInfo> msgList = new ArrayList<>();
-        List<String> result = new ArrayList<>();
         if (messageDAO.createMessage(msgInfo)) {
             String userName = msgInfo.getUserName();
             msgList = messageDAO.getMessage(userName);
         }
-        while (!msgList.isEmpty()) {
-            MsgInfo tmp = msgList.remove(0);
-            result.add(new Gson().toJson(tmp));
-        }
-        return result;
+        return msgList;
+    }
+
+    @Override
+    public List<MsgInfo> getMessage(MsgInfo msgInfo) {
+        String userName = msgInfo.getUserName();
+        List<MsgInfo> msgList = messageDAO.getMessage(userName);
+        return msgList;
     }
 
     @Override

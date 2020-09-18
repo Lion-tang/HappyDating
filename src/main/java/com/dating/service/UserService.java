@@ -9,7 +9,9 @@ import java.util.List;
 
 public interface UserService {
 
-    public List<String> leaveMessage(MsgInfo msgInfo);
+    public List<MsgInfo> leaveMessage(MsgInfo msgInfo);
+
+    public List<MsgInfo> getMessage(MsgInfo msgInfo);
 
     public User findByUserName(String username);
 

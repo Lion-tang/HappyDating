@@ -1107,6 +1107,11 @@
     width: 202px !important;
 }
 
+.input-text.msg-colum {
+    display: inline-block;
+    width: 202px !important;
+}
+
 .form-control select.single-column {
     width: 224px !important;
 }

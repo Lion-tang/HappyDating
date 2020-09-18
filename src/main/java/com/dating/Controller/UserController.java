@@ -28,7 +28,7 @@ public class UserController {
         ParameterCheckUtils.checkDaterRequestDTO(daterRequestDTO);
         List<UserInfo> response = userService.getDaters(daterRequestDTO);
         Subject subject = SecurityUtils.getSubject();
-        if(response.size()>0){
+        if (response.size() > 0) {
             daterRequestDTO.setSex(response.get(0).getSex());
         }
         subject.getSession().setAttribute("daters", response);
@@ -61,9 +61,21 @@ public class UserController {
     }
 
     @RequestMapping(value = "/leaveMsg", method = RequestMethod.POST)
-    public List<String> leaveMessage(MsgInfo msgInfo) {
+    public String leaveMessage(MsgInfo msgInfo) {
         ParameterCheckUtils.checkMsgInfo(msgInfo);
-        return userService.leaveMessage(msgInfo);
+        List result = userService.leaveMessage(msgInfo);
+        Subject subject = SecurityUtils.getSubject();
+        subject.getSession().setAttribute("msgInfoList", result);
+        return "leaveMsg";
+    }
+
+    @RequestMapping(value = "/getMsg", method = RequestMethod.GET)
+    public String getMessage(MsgInfo msgInfo) {
+        ParameterCheckUtils.getCheckMsgInfo(msgInfo);
+        List result = userService.getMessage(msgInfo);
+        Subject subject = SecurityUtils.getSubject();
+        subject.getSession().setAttribute("msgInfoList", result);
+        return "getMsg";
     }
 
     @RequestMapping(value = "/gettips", method = RequestMethod.GET)
@@ -76,7 +88,7 @@ public class UserController {
         ParameterCheckUtils.checkUserName(userInfo);
         UserInfo user = userService.getInfoByUserName(userInfo.getUserName());
         Subject subject = SecurityUtils.getSubject();
-        subject.getSession().setAttribute("vistUser",user);
+        subject.getSession().setAttribute("visitUser", user);
         return "details";
     }
 
