@@ -104,8 +104,8 @@
         <div class="con-left fl">
             <div class="profile-tabbar clearfix">
                 <ul>
-                    <li class="trigger-trend current">写留言</li>
-                    <li class="trigger-info">她的资料</li>
+                    <li class="trigger-trend current">我的私信</li>
+                    <li class="trigger-info">我的资料</li>
                 </ul>
             </div>
             <div class="profile-trend-box">
@@ -240,22 +240,119 @@
                 <div class="summary-info-box">
                     <div class="member-base-info">
                         <h2 class="label-text">基本资料</h2>
+                        <span class="js-edit-btn"><a class="a-icon-edit" href="javascript:;"></a></span>
+                        <span class="js-edit-btn hide"><a class="a-cancel-edit-text" href="javascript:;">取消编辑</a></span>
                         <div class="js-info-preview">
-                            <p><span class="text-gray" th:text="|昵称:${session.visitUser.nickName}|"></span></p>
+                            <p><span class="text-gray" th:text="|昵称:${session.userInfo.nickName}|"></span></p>
                             <p><span class="text-gray" th:text="我在寻找：恋人"></span></p>
-                            <p><span class="text-gray" th:text="|性别：${session.visitUser.sex}|"></span></p>
-                            <p><span class="text-gray" th:text="|年龄：${session.visitUser.age}|"></span></p>
-                            <p><span class="text-gray" th:text="|身高：${session.visitUser.height}|"></span></p>
-                            <p><span class="text-gray" th:text="|体重：${session.visitUser.weight}kg|"></span></p>
+                            <p><span class="text-gray" th:text="|性别：${session.userInfo.sex}|"></span></p>
+                            <p><span class="text-gray" th:text="|年龄：${session.userInfo.age}|"></span></p>
+                            <p><span class="text-gray" th:text="|身高：${session.userInfo.height}|"></span></p>
+                            <p><span class="text-gray" th:text="|体重：${session.userInfo.weight}kg|"></span></p>
                             <p><span class="text-gray"
-                                     th:text="|居住在：${session.visitUser.province}${session.visitUser.city}|"></span></p>
-                            <p><span class="text-gray" th:text="|学历：${session.visitUser.edu}|"></span></p>
+                                     th:text="|居住在：${session.userInfo.province}${session.userInfo.city}|"></span></p>
+                            <p><span class="text-gray" th:text="|学历：${session.userInfo.edu}|"></span></p>
                             <p><span class="text-gray" th:text="目前职位：员工"></span></p>
-                            <p><span class="text-gray" th:text="|月收入：${session.visitUser.salary}元|"></span></p>
+                            <p><span class="text-gray" th:text="|月收入：${session.userInfo.salary}元|"></span></p>
                         </div>
 
-                    </div>
+                        <form action="/updateInfo" method="post">
+                            <div class="js-edit hide">
+                                <div class="form-row">
+                                    <label class="form-label">用户名:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="userName"
+                                               th:value="${session.userInfo.userName}" readonly="true">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">昵称:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="nickName"
+                                               th:value="${session.userInfo.nickName}">
+                                    </div>
+                                </div>
 
+                                <div class="form-row">
+                                    <label class="form-label">年龄:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="age"
+                                               th:value="${session.userInfo.age}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">性别:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="sex"
+                                               th:value="${session.userInfo.sex}" maxlength="1">
+                                    </div>
+
+                                </div>
+
+                                <div class="form-row">
+                                    <label class="form-label">居住城市:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="city"
+                                               th:value="${session.userInfo.city}">
+                                    </div></div>
+                                <div class="form-row">
+                                    <label class="form-label">居住省份:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="province"
+                                               th:value="${session.userInfo.province}">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-row">
+                                    <label class="form-label">身高:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="height"
+                                               th:value="${session.userInfo.height}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">体重:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="weight"
+                                               th:value="${session.userInfo.weight}">
+                                    </div>
+                                    <span>kg</span>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">学历:</label>
+                                    <div class="form-control">
+                                        <input class="input-text single-column" type="text" name="edu"
+                                               th:value="${session.userInfo.edu}">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label class="form-label">月收入:</label>
+                                    <div class="form-control">
+                                        <div class="form-control">
+                                            <input class="input-text single-column" type="text" name="salary"
+                                                   th:value="${session.userInfo.salary}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label">电话号码:</label>
+                                    <div class="form-control">
+                                        <div class="form-control">
+                                            <input class="input-text single-column" type="text" name="telephone"
+                                                   th:value="${session.userInfo.telephone}" maxlength="11">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label class="form-label"></label>
+                                    <input class="general-btn red-button submit-btn" type="submit" value="保存"/>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -266,7 +363,7 @@
                 <ul class="main-info">
                     <li><span>新手上路：</span><a href="#">教你快速找到意中人</a></li>
                     <li><span>安全中心：</span><a href="#">网上交友如何防骗</a></li>
-                    <li><span>花田帮助：</span><a href="#">常见反馈问题解答</a></li>
+                    <li><span>缘来有你帮助：</span><a href="#">常见反馈问题解答</a></li>
                     <li><span>联系客服：</span><a href="#">咨询客服</a><br/><span class="wrap-font">电话咨询 020-XXXXXXXX<br>( 工作日 10点 - 18点 )</span>
                     </li>
 
