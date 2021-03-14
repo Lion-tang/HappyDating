@@ -1,22 +1,22 @@
 package com.dating.Controller;
 
-import com.dating.pojo.User;
-import com.dating.pojo.UserInfo;
-import com.dating.service.UserService;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+        import com.dating.pojo.User;
+        import com.dating.pojo.UserInfo;
+        import com.dating.service.UserService;
+        import org.apache.shiro.SecurityUtils;
+        import org.apache.shiro.authc.IncorrectCredentialsException;
+        import org.apache.shiro.authc.UnknownAccountException;
+        import org.apache.shiro.authc.UsernamePasswordToken;
+        import org.apache.shiro.subject.Subject;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.stereotype.Controller;
+        import org.springframework.ui.Model;
+        import org.springframework.web.bind.annotation.GetMapping;
+        import org.springframework.web.bind.annotation.PathVariable;
+        import org.springframework.web.bind.annotation.PostMapping;
+        import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpSession;
+        import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -62,7 +62,7 @@ public class LoginHandler {
             e.printStackTrace();
             return "index";
         }
-        }
+    }
 
     @PostMapping("/register1")
     public String register1Handler(String userName,String passWord, Model model,HttpSession httpSession) {
@@ -79,14 +79,14 @@ public class LoginHandler {
     @PostMapping("/register2")
     public String register2Handler(HttpSession httpSession,Model model,UserInfo userInfo,String check) {
         if (check!=null) {
-            if (userInfo.getNickName()!=null && userInfo.getTelephone()!=null) {
+            if ( !userInfo.getNickName().equals("") && userInfo.getTelephone()!=null) {
                 User user= (User) httpSession.getAttribute("user");
                 userInfo.setUserName(user.getUserName());
 //                UserInfo userInfo = new UserInfo(null,user.getUserName(),nickName,age,sex,city,province,height,weight,edu,salary,telephone,"anonymous.jpg");
                 userService.insertUserAndUserInfo(user, userInfo);
                 model.addAttribute("msg", "账户注册成功");
                 return "index";
-            } else if (userInfo.getNickName() == null) {
+            } else if (userInfo.getNickName() == null || userInfo.getNickName().equals("")) {
                 model.addAttribute("msg", "昵称为空，请重新输入");
                 return "register2";
             } else {
@@ -94,8 +94,8 @@ public class LoginHandler {
                 return "register2";
             }
         }
-            model.addAttribute("msg", "需要同意协议才能注册用户");
-            return "register2";
+        model.addAttribute("msg", "需要同意协议才能注册用户");
+        return "register2";
 
 
     }
